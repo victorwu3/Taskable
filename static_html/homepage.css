@@ -1,0 +1,96 @@
+body {
+  margin: 8px 0 0 0;
+}
+
+.page-header {
+  border-bottom: 1px solid #dce0e6;
+  display: block;
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.header-elements-container {
+  margin: 0 auto;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: block;
+  background-image: url('./logo.png');
+  background-size: 170px 43px;
+  width: 170px;
+  height: 43px;
+  float: left;
+}
+
+.header-links-container {
+  float: right;
+  margin: 3px 0 3px 0;
+}
+
+.header-links-container a {
+  color: #51af33;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: normal;
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+.signup-button {
+  border: 1px solid #51af33;
+  border-radius: 4px;
+  padding: 0.8em 2em 0.8em;
+  background-color: white;
+}
+
+
+
+.main-content {
+  background-position: center center;
+  position: relative;
+  background-repeat: no-repeat;
+  height: 640px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  /*position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;*/
+  background-image: url('./taskrabbitbg.jpg');
+  /*background-size: 1597px 640px;*/
+  background-color: white;
+  /*5.3625*/
+}
+
+.main-content-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.main-content-title {
+  font-size: 2.8rem;
+  font-weight: 100;
+}
+
+.main-content-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.main-content-button-container {
+  max-width: 640px;
+}
