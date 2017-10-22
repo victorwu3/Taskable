@@ -1,3 +1,6 @@
+html {
+  font-family: sans-serif;
+}
 body {
   margin: 8px 0 0 0;
 }
@@ -38,7 +41,6 @@ body {
   font-weight: normal;
   position: relative;
   display: inline-block;
-  font-family: sans-serif;
   margin-left: 20px;
   font-size: 15px;
   font-weight: 100;
@@ -78,7 +80,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-family: sans-serif;
+  align-items: center;
 }
 
 .main-content-title {
@@ -93,4 +95,108 @@ body {
 
 .main-content-button-container {
   max-width: 640px;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.main-content-button {
+  border: 1px solid #51af33;
+  border-radius: 4px;
+  padding: 0.8em 2em 0.8em;
+  background-color: white;
+  color: #51af33;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-weight: 100;
+  display: inline-block;
+}
+
+.main-content-searchbar-container {
+  max-width: 620px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-form {
+  display: flex;
+  border: 1px solid #b1b9c3;
+  border-radius: 4px;
+}
+
+.material-icons {
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #51af33;
+  padding-top: 15px;
+}
+
+.main-content-searchbar {
+  /*border: 1px solid #b1b9c3;*/
+  max-width: 100%;
+}
+
+.search-form input {
+  font-size: 1.25rem;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  border: none;
+  font-weight: 300;
+}
+
+footer {
+  background: #67727e;
+  padding: 25px 0;
+  overflow: hidden;
+  color: #b1b9c3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-information {
+  width: 1200px;
+  display: flex;
+}
+
+.soc-links-caption {
+  padding-top: 22px;
+  padding-right: 12px;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.footer-links-container {
+  display: flex;
+  width: 1200px;
+  padding-top: 40px;
+}
+
+.footer-column {
+  width: 33.33%;
+  position: relative;
+  padding-right: 1em;
+  font-size: 19px;
+  font-weight: 100;
+}
+
+.links {
+  margin-top: 10px;
+
+}
+
+.links a {
+  color: white;
+  height: 1.7em;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
 }
