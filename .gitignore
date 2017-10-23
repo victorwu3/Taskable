@@ -19,3 +19,6 @@
 .byebug_history
 .bundle.js
 .bundle.map.js
+.byebug_history
+.DS_Store
+npm-debug.log
