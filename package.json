@@ -1,6 +1,10 @@
 {
   "name": "Taskable",
   "private": true,
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -23,7 +27,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
