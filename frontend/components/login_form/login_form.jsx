@@ -35,13 +35,12 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    let errors = this.props.errors.map( (error, i) => {
-      return (
-        <li key={i}>
-          {error};
-        </li>
-      );
-    });
+    let errors;
+    if (this.props.errors.includes('Invalid email/password combination')) {
+      errors = (<div className="error-msg">Invalid email/password combination</div>);
+    } else {
+      errors = (<div></div>);
+    }
 
     return(
 
@@ -51,12 +50,12 @@ class LoginForm extends React.Component {
           <div className="login-page-container">
             <img className="logo" src="assets/logo.png" alt=""></img>
             <ul>
-              {errors}
             </ul>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>
                 <input className="text-input" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+                {errors}
               </div>
               <div className="input-container">
                 <label>Password</label>
