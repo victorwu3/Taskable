@@ -25,6 +25,7 @@ class LoginForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+    // debugger
   }
 
   handleChange(field) {
@@ -34,22 +35,24 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    let errors = this.props.errors.map( (error, i) => {
+      return (
+        <li key={i}>
+          {error};
+        </li>
+      );
+    });
+
     return(
 
       <div className="login-page">
         <div className="login-background"></div>
         <div className="login-signup-panel">
-          <ul>
-            {this.props.errors.map((error, i)=> {
-              return (
-                <li key={i}>
-                  {error.responseText}
-                </li>
-              );
-            })}
-          </ul>
           <div className="login-page-container">
             <img className="logo" src="assets/logo.png" alt=""></img>
+            <ul>
+              {errors}
+            </ul>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>

@@ -33,7 +33,7 @@ body {
   margin-left: auto !important;
   margin-right: auto !important;
   position: relative;
-  height: 600px;
+  height: 625px;
   padding: 1.5rem 2rem;
   max-width: 400px;
   top: -2rem;
@@ -98,4 +98,10 @@ body {
   text-decoration: none;
   color: white;
   margin-top: 8px;
+}
+
+.error-msg {
+  font-size: 10px;
+  padding-top: 2px;
+  padding-bottom: 4px;
 }
