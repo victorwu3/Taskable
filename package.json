@@ -2,8 +2,8 @@
   "name": "Taskable",
   "private": true,
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
