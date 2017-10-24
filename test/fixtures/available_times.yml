@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: available_times
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  time_avl   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  time_avl: 1
+
+two:
+  user_id: 1
+  time_avl: 1

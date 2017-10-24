@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: hired_tutors
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  tutor_id    :integer          not null
+#  subject_id  :integer          not null
+#  date        :date             not null
+#  time_period :integer          not null
+#  rate        :integer          not null
+#  completed   :boolean          default(FALSE), not null
+#  description :text             not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  tutor_id: 1
+  subject_id: 1
+  date: 2017-10-24
+  time_period: 1
+  rate: 1
+  completed: false
+  description: MyText
+
+two:
+  user_id: 1
+  tutor_id: 1
+  subject_id: 1
+  date: 2017-10-24
+  time_period: 1
+  rate: 1
+  completed: false
+  description: MyText

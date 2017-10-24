@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  name            :string           not null
 #  email           :string           not null
 #  zipcode         :string           not null
 #  password_digest :string           not null
@@ -11,8 +10,9 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  fname           :string           not null
+#  lname           :string           not null
 #
-
 
 class User < ApplicationRecord
   validates :fname, :lname, :email, :zipcode, :password_digest, :phone_num, :session_token, presence: true
@@ -21,6 +21,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many :tutors_for_hire,
+    foreign_key: "user_id",
+    class_name: 'TutorsForHire'
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
