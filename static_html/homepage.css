@@ -53,7 +53,11 @@ body {
   background-color: white;
 }
 
-
+.signup-button:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+}
 
 .main-content {
   background-position: center center;
@@ -113,6 +117,12 @@ body {
   text-align: center;
   font-weight: 100;
   display: inline-block;
+}
+
+.main-content-button:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
 }
 
 .main-content-searchbar-container {

@@ -39,6 +39,12 @@ body {
   padding: 1.5rem 2rem;
 }
 
+.login-button:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
 .login-button {
   border: 1px solid #51af33;
   border-radius: 4px;
