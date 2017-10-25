@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TutorForm from './tutor_form';
-import { signup } from '../../actions/session_actions';
+import { fetchTutors } from '../../actions/tutor_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return (
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  login: user => dispatch(signup(user)),
+  fetchTutors: params => dispatch(fetchTutors(params)),
 });
 
 

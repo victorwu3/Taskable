@@ -16,9 +16,10 @@ class TutorForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-
+    const params = Object.assign({}, this.state);
+    this.props.fetchTutors(params);
   }
 
   handleChange(field) {
@@ -76,7 +77,7 @@ class TutorForm extends React.Component {
               </div>
             </div>
 
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="form-input-container">
                 <div className="build-form-input">
                   <h4>ADDRESS</h4>
@@ -110,16 +111,16 @@ class TutorForm extends React.Component {
                   <ul>
                     <fieldset className="radio-buttons" id="group1" onChange={this.handleChange('ed_lvl')}>
                       <li>
-                        <input type="radio" id="k8" name="group1" value="1"></input>
-                        <label>Elementary K-8</label>
+                        <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="1"></input>
+                           Elementary K-8</label>
                       </li>
                       <li>
-                        <input type="radio" id="hs" name="group1" value="2"></input>
-                        <label>High School Level</label>
+                        <label><input type="radio" id="hs" name="group1" value="2"></input>
+                           High School Level</label>
                       </li>
                       <li>
-                        <input type="radio" id="college" name="group1" value="3"></input>
-                        <label>College/Graduate Level</label>
+                        <label><input type="radio" id="college" name="group1" value="3"></input>
+                           College/Graduate Level</label>
                       </li>
                     </fieldset>
                   </ul>
@@ -132,7 +133,7 @@ class TutorForm extends React.Component {
                 </div>
 
                 <div className="form-submit-button-container">
-                  <button className="submit-form-btn" type="button" name="button">See Tutors & Prices</button>
+                  <input className="submit-form-btn" type="submit" name="button" value="See Tutors & Prices"></input>
                 </div>
 
               </div>
