@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TaskForm from './task_form';
+import TutorForm from './tutor_form';
 import { signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TaskForm);
+)(TutorForm);
