@@ -55,6 +55,7 @@ body {
   border-radius: 4px;
   padding: 0.8em 2em 0.8em;
   background-color: white;
+  transition: background-color 0.5s ease;
 }
 
 .homepage-signup-button:hover {
@@ -121,6 +122,7 @@ body {
   text-align: center;
   font-weight: 100;
   display: inline-block;
+  transition: background-color 0.5s ease;
 }
 
 .main-content-button:hover {
