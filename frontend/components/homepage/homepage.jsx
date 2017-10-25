@@ -39,14 +39,12 @@ class Homepage extends React.Component{
                     Choose from over 10,000 carefully vetted and feedback rated Tutors to get quick help
                   </div>
                   <div className="main-content-button-container">
-                    <a className="main-content-button" href="#">Math</a>
-                    <a className="main-content-button" href="#">Chemistry</a>
-                    <a className="main-content-button" href="#">English</a>
-                    <a className="main-content-button" href="#">Biology</a>
-                    <a className="main-content-button" href="#">Test Prep</a>
-                    <a className="main-content-button" href="#">History</a>
-                    <a className="main-content-button" href="#">Coding</a>
-                    <a className="main-content-button" href="#">Accounting</a>
+                    <Link to="tutors/form" className="main-content-button" subjectId="1">Math</Link>
+                    <Link to="tutors/form" className="main-content-button" subjectId="2">Chemistry</Link>
+                    <Link to="tutors/form" className="main-content-button" subjectId="3">English</Link>
+                    <Link to="tutors/form" className="main-content-button" subjectId="4">Biology</Link>
+                    <Link to="tutors/form" className="main-content-button" subjectId="5">Test Prep</Link>
+                    <Link to="tutors/form" className="main-content-button" subjectId="6">History</Link>
                   </div>
                   <div className="main-content-searchbar-container">
                     <div className="main-content-searchbar">

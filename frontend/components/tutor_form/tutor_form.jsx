@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class TutorForm extends React.Component {
 
   constructor(props) {
+    debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
