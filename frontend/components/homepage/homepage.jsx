@@ -17,7 +17,7 @@ class Homepage extends React.Component{
                       <span>Log in</span>
                     </a>
                     <a href="#/signup" className="homepage-signup-button">
-                      <span>Become a Tutor</span>
+                      <span>Sign up</span>
                     </a>
                   </div>
                 </div>
