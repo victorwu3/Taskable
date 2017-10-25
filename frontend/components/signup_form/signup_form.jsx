@@ -38,9 +38,6 @@ class SignupForm extends React.Component {
   }
 
   render() {
-
-
-
     let fnameError;
     let lnameError;
     let emailError;
@@ -85,6 +82,12 @@ class SignupForm extends React.Component {
         <div className="error-msg">Password is too short (minimum is 6 characters)</div>
       );} else {
         passwordError = (<div></div>);
+      }
+      if (this.props.errors.includes("Email has already been taken")) {
+        emailError = (
+        <div className="error-msg">Email has already been taken</div>
+      );} else {
+        emailError = (<div></div>);
       }
 
 
@@ -133,11 +136,6 @@ class SignupForm extends React.Component {
           </div>
         </div>
       </div>
-
-
-
-
-
     );
   }
 }

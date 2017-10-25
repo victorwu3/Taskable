@@ -94,6 +94,10 @@ body {
   font-size: 2rem;
 }
 
+.form-title-words {
+  margin: 20px 0 0 0;
+}
+
 .form-input-container {
   width: 800px;
   margin: 15px 15px;
@@ -102,10 +106,23 @@ body {
   border: 1px solid #dce0e6;
 }
 
+.search-bar-container {
+  width: 800px;
+}
+.address-input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: .625em 1em;
+  font-size: 1em;
+  font-weight: 200;
+  width: 90%;
+  min-height: 23px;
+}
+
 .build-form-input {
   display: flex;
   flex-direction: column;
-
+  color: #545e69;
 }
 
 .build-form-input ul {
@@ -113,6 +130,73 @@ body {
   padding-left: 10px;
 }
 
+.build-form-input span{
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.build-form-input h4 {
+  font-weight: normal;
+  margin-top: 15px;
+  margin-bottom: 12px;
+}
+
+.build-form-input label {
+  margin-left: 4px;
+  font-weight: 100;
+}
+
+.build-form-input select {
+  margin-bottom: 14px;
+}
 .address-row-container {
   display: flex;
+}
+
+.education-subtitle {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.radio-buttons {
+  border: none;
+  padding: 0 0;
+}
+
+.form-submit-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-form-btn:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.description {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: .625em 1em;
+  font-size: 1em;
+  font-weight: 200;
+  width: 90%;
+  white-space: normal;
+  min-height: 23px;
+}
+
+.submit-form-btn {
+
+  font-size: 1.25rem;
+  border: 1px solid #51af33;
+  width: 35%;
+  background: #51af33;
+  border-radius: 4px;
+  padding: 0.8em 2em 0.8em;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+  font-weight: 100;
+
 }
