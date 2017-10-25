@@ -51,11 +51,11 @@ class Homepage extends React.Component{
                   </div>
                   <div className="main-content-button-container">
                     <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(1)}>Math</Link>
-                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(2)}>Chemistry</Link>
-                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(3)}>English</Link>
-                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(4)}>Biology</Link>
-                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(5)}>Test Prep</Link>
-                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(6)}>History</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(2)}>Chemistry</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(3)}>Biology</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(4)}>English</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(5)}>History</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(6)}>Test Prep</Link>
                   </div>
                   <div className="main-content-searchbar-container">
                     <div className="main-content-searchbar">
