@@ -4,12 +4,14 @@ import { Link, withRouter } from 'react-router-dom';
 class TutorForm extends React.Component {
 
   constructor(props) {
-    debugger
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-
+      currentSubject: this.props.currentSubject,
+      address: null,
+      ed_lvl: null,
+      description: null
     };
   }
 
@@ -18,17 +20,15 @@ class TutorForm extends React.Component {
     const user = Object.assign({}, this.state);
 
   }
-  //...
-
 
   handleChange(field) {
+    debugger
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
   }
 
   render() {
-    debugger
 
     return(
       <div className="main">
@@ -61,7 +61,6 @@ class TutorForm extends React.Component {
             </div>
           </div>
 
-
           <div className="form-container">
             <div className="form-title-container">
               <div className="form-title">
@@ -78,7 +77,7 @@ class TutorForm extends React.Component {
                   <h4>ADDRESS</h4>
                   <div className="address-row-container">
                     <div className="search-bar-container">
-                      <input className="address-input" type="text" name="" value="" placeholder="Enter street address"></input>
+                      <input className="address-input" type="text" placeholder="Enter street address" onChange={this.handleChange('address')}></input>
                     </div>
                   </div>
                 </div>
@@ -86,7 +85,7 @@ class TutorForm extends React.Component {
                 <div className="build-form-input">
                   <h4>SUBJECT</h4>
                   <div className="subject-select-container">
-                    <select name="subject" id="mySelect" value={this.props.currentSubject}>
+                    <select name="subject" id="mySelect" value={this.state.currentSubject} onChange={this.handleChange('currentSubject')}>
                       <option value="0" disabled="true">Please select a Subject</option>
                       <option value="1" defaultValue>Math</option>
                       <option value="2">Chemistry</option>
@@ -104,17 +103,17 @@ class TutorForm extends React.Component {
                 <div className="build-form-input">
                   <h4 className="education-subtitle">EDUCATION REQUIREMENT</h4>
                   <ul>
-                    <fieldset className="radio-buttons" id="group1">
+                    <fieldset className="radio-buttons" id="group1" onChange={this.handleChange('ed_lvl')}>
                       <li>
-                        <input type="radio" id="k8" name="group1" value="Elementary K-8"></input>
+                        <input type="radio" id="k8" name="group1" value="1"></input>
                         <label>Elementary K-8</label>
                       </li>
                       <li>
-                        <input type="radio" id="hs" name="group1" value="High School Level"></input>
+                        <input type="radio" id="hs" name="group1" value="2"></input>
                         <label>High School Level</label>
                       </li>
                       <li>
-                        <input type="radio" id="college" name="group1" value="College/Graduate"></input>
+                        <input type="radio" id="college" name="group1" value="3"></input>
                         <label>College/Graduate Level</label>
                       </li>
                     </fieldset>
@@ -124,7 +123,7 @@ class TutorForm extends React.Component {
                 <div className="build-form-input">
                   <h4>TUTOR REQUEST DETAILS</h4>
                   <span>Please write any specific requests here, plus any requirements or questions that you may have. You can edit this later.</span>
-                  <textarea className="description" name="description" rows="8" cols="80" placeholder="EXAMPLE: I have a big chemistry test coming up in 2 weeks and I am having trouble understanding balancing chemical reactions. This is a high school AP Chemistry course."></textarea>
+                  <textarea className="description" rows="8" cols="80" onChange={this.handleChange('description')} placeholder="EXAMPLE: I have a big chemistry test coming up in 2 weeks and I am having trouble understanding balancing chemical reactions. This is a high school AP Chemistry course."></textarea>
                 </div>
 
                 <div className="form-submit-button-container">
@@ -134,15 +133,9 @@ class TutorForm extends React.Component {
               </div>
             </form>
 
-
           </div>
         </div>
-
-
       </div>
-
-
-
     );
   }
 }
