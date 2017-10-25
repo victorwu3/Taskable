@@ -58,6 +58,7 @@ class TutorForm extends React.Component {
             </div>
           </div>
 
+
           <div className="form-container">
             <div className="form-title-container">
               <div className="form-title">
@@ -68,64 +69,69 @@ class TutorForm extends React.Component {
               </div>
             </div>
 
-            <div className="form-input-container">
-              <div className="build-form-input">
-                <h4>ADDRESS</h4>
-                <div className="address-row-container">
-                  <div className="search-bar-container">
-                    <input className="address-input" type="text" name="" value="" placeholder="Enter street address"></input>
+            <form>
+              <div className="form-input-container">
+                <div className="build-form-input">
+                  <h4>ADDRESS</h4>
+                  <div className="address-row-container">
+                    <div className="search-bar-container">
+                      <input className="address-input" type="text" name="" value="" placeholder="Enter street address"></input>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="build-form-input">
-                <h4>SUBJECT</h4>
-                <div className="subject-select-container">
-                  <select name="subject">
-                    <option value="value0" disabled="true" selected>Please select a Subject</option>
-                    <option value="value1">Math</option>
-                    <option value="value2">Chemistry</option>
-                    <option value="value3">Biology</option>
-                    <option value="value4">English</option>
-                    <option value="value5">History</option>
-                    <option value="value6">Test Prep</option>
-                    <option value="value7">Coding</option>
-                    <option value="value8">Accounting</option>
-                    <option value="value9">Physics</option>
-                  </select>
+                <div className="build-form-input">
+                  <h4>SUBJECT</h4>
+                  <div className="subject-select-container">
+                    <select name="subject">
+                      <option value="value0" disabled="true" selected>Please select a Subject</option>
+                      <option value="1">Math</option>
+                      <option value="2">Chemistry</option>
+                      <option value="3">Biology</option>
+                      <option value="4">English</option>
+                      <option value="5">History</option>
+                      <option value="6">Test Prep</option>
+                      <option value="7">Coding</option>
+                      <option value="8">Accounting</option>
+                      <option value="9">Physics</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div className="build-form-input">
-                <h4 className="education-subtitle">EDUCATION REQUIREMENT</h4>
-                <ul>
-                  <fieldset className="radio-buttons" id="group1">
-                    <li>
-                      <input type="radio" id="k8" name="group1" value="Elementary K-8"></input>
-                      <label>Elementary K-8</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="hs" name="group1" value="High School Level"></input>
-                      <label>High School Level</label>
-                    </li>
-                    <li>
-                      <input type="radio" id="college" name="group1" value="College/Graduate"></input>
-                      <label>College/Graduate Level</label>
-                    </li>
-                  </fieldset>
-                </ul>
-              </div>
+                <div className="build-form-input">
+                  <h4 className="education-subtitle">EDUCATION REQUIREMENT</h4>
+                  <ul>
+                    <fieldset className="radio-buttons" id="group1">
+                      <li>
+                        <input type="radio" id="k8" name="group1" value="Elementary K-8"></input>
+                        <label>Elementary K-8</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="hs" name="group1" value="High School Level"></input>
+                        <label>High School Level</label>
+                      </li>
+                      <li>
+                        <input type="radio" id="college" name="group1" value="College/Graduate"></input>
+                        <label>College/Graduate Level</label>
+                      </li>
+                    </fieldset>
+                  </ul>
+                </div>
 
-              <div className="build-form-input">
-                <h4>TUTOR REQUEST DETAILS</h4>
-                <span>Please write any specific requests here, plus any requirements or questions that you may have. You can edit this later.</span>
-                <textarea className="description" name="description" rows="8" cols="80" placeholder="EXAMPLE: I have a big chemistry test coming up in 2 weeks and I am having trouble understanding balancing chemical reactions. This is a high school AP Chemistry course."></textarea>
-              </div>
+                <div className="build-form-input">
+                  <h4>TUTOR REQUEST DETAILS</h4>
+                  <span>Please write any specific requests here, plus any requirements or questions that you may have. You can edit this later.</span>
+                  <textarea className="description" name="description" rows="8" cols="80" placeholder="EXAMPLE: I have a big chemistry test coming up in 2 weeks and I am having trouble understanding balancing chemical reactions. This is a high school AP Chemistry course."></textarea>
+                </div>
 
-              <div className="form-submit-button-container">
-                <button className="submit-form-btn" type="button" name="button">See Tutors & Prices</button>
+                <div className="form-submit-button-container">
+                  <button className="submit-form-btn" type="button" name="button">See Tutors & Prices</button>
+                </div>
+
               </div>
-            </div>
+            </form>
+
+
           </div>
         </div>
 
