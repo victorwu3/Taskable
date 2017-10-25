@@ -22,7 +22,7 @@ body {
 
 .header-logo {
   display: block;
-  background-image: url('./logo.png');
+  background: image-url('logo.png');
   background-size: 170px 43px;
   width: 170px;
   height: 43px;
@@ -72,8 +72,30 @@ body {
   line-height: 1.5em;
 }
 
+.build-trust-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #e8ebef;
+}
+
+.build-trust-container {
+  max-width: 1200px;
+  margin: 10px 0;
+}
+.trust-icon {
+  background: image-url('trusticon.svg');
+  width: 35px;
+  height: 45px;
+}
+
 .not-active {
   color: #b1b9c3;
+}
+
+.build-progress-container {
+  display: flex;
+  margin: 0 auto;
 }
 
 .form-container {

@@ -22,7 +22,6 @@ class TutorForm extends React.Component {
   }
 
   handleChange(field) {
-    debugger
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
@@ -58,6 +57,12 @@ class TutorForm extends React.Component {
                 <i></i>
                 <span>3. Confirm & Book</span>
               </div>
+            </div>
+          </div>
+
+          <div className="build-trust-banner">
+            <div className="build-trust-container">
+              <div className="trust-icon"></div>
             </div>
           </div>
 
