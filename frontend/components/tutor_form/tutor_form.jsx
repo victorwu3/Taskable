@@ -28,6 +28,8 @@ class TutorForm extends React.Component {
   }
 
   render() {
+    debugger
+
     return(
       <div className="main">
 
@@ -84,9 +86,9 @@ class TutorForm extends React.Component {
                 <div className="build-form-input">
                   <h4>SUBJECT</h4>
                   <div className="subject-select-container">
-                    <select name="subject">
-                      <option value="value0" disabled="true" selected>Please select a Subject</option>
-                      <option value="1">Math</option>
+                    <select name="subject" id="mySelect" value={this.props.currentSubject}>
+                      <option value="0" disabled="true">Please select a Subject</option>
+                      <option value="1" defaultValue>Math</option>
                       <option value="2">Chemistry</option>
                       <option value="3">Biology</option>
                       <option value="4">English</option>

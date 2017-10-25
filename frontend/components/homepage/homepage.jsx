@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 class Homepage extends React.Component{
+  constructor(props) {
+    debugger
+    super(props);
+    this.updateSubject = this.updateSubject.bind(this);
+  }
 
+  updateSubject(subjectId) {
+    debugger
+    return e => {
+      this.props.updateSubject(subjectId);
+    };
+  }
   render(){
 
       return(
@@ -39,12 +50,12 @@ class Homepage extends React.Component{
                     Choose from over 10,000 carefully vetted and feedback rated Tutors to get quick help
                   </div>
                   <div className="main-content-button-container">
-                    <Link to="tutors/form" className="main-content-button" subjectId="1">Math</Link>
-                    <Link to="tutors/form" className="main-content-button" subjectId="2">Chemistry</Link>
-                    <Link to="tutors/form" className="main-content-button" subjectId="3">English</Link>
-                    <Link to="tutors/form" className="main-content-button" subjectId="4">Biology</Link>
-                    <Link to="tutors/form" className="main-content-button" subjectId="5">Test Prep</Link>
-                    <Link to="tutors/form" className="main-content-button" subjectId="6">History</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={this.updateSubject(1)}>Math</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(2)}>Chemistry</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(3)}>English</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(4)}>Biology</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(5)}>Test Prep</Link>
+                    <Link to="tutors/form" className="main-content-button" onClick={()=>this.updateSubject(6)}>History</Link>
                   </div>
                   <div className="main-content-searchbar-container">
                     <div className="main-content-searchbar">

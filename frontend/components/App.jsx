@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import { AuthRoute } from '../util/auth_route';
 import GreetingContainer from './greeting/greeting_container';
-import Homepage from './homepage/homepage';
+import HomepageContainer from './homepage/homepage_container';
 import TutorFormContainer from './tutor_form/tutor_form_container';
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/tutors/form" component={TutorFormContainer} />
-      <Route path="/" component={Homepage} />
+      <Route path="/" component={HomepageContainer} />
     </Switch>
   </div>
 );

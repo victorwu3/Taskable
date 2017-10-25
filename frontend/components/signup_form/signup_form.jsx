@@ -62,6 +62,9 @@ class SignupForm extends React.Component {
       if (this.props.errors.includes("Email can't be blank")) {
         emailError = (
         <div className="error-msg">Email can't be blank</div>
+      );} else if (this.props.errors.includes("Email has already been taken")) {
+        emailError = (
+        <div className="error-msg">Email has already been taken</div>
       );} else {
         emailError = (<div></div>);
       }
@@ -83,13 +86,6 @@ class SignupForm extends React.Component {
       );} else {
         passwordError = (<div></div>);
       }
-      if (this.props.errors.includes("Email has already been taken")) {
-        emailError = (
-        <div className="error-msg">Email has already been taken</div>
-      );} else {
-        emailError = (<div></div>);
-      }
-
 
     }
 
