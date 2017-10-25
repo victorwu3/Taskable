@@ -14,6 +14,7 @@ class Subject < ApplicationRecord
   has_many :tutors_for_hire,
     foreign_key: "subject_id",
     class_name: 'TutorsForHire'
-
+    
+  has_many :hired_tutors
 
 end

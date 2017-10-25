@@ -10,4 +10,7 @@
 #
 
 class AvailableTime < ApplicationRecord
+  validates :user_id, :time_avl, presence: true
+
+  belongs_to :user
 end

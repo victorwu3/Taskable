@@ -11,4 +11,7 @@
 #
 
 class Review < ApplicationRecord
+  validates :user_id, :body, :positive, presence: true
+
+  belongs_to :user
 end

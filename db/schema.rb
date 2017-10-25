@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024214708) do
+ActiveRecord::Schema.define(version: 20171024234943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,11 +57,13 @@ ActiveRecord::Schema.define(version: 20171024214708) do
     t.integer "user_id", null: false
     t.integer "subject_id", null: false
     t.integer "num_completed", default: 0, null: false
-    t.integer "level", null: false
     t.integer "rate", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "first_tier", null: false
+    t.boolean "second_tier", null: false
+    t.boolean "third_tier", null: false
   end
 
   create_table "users", force: :cascade do |t|
