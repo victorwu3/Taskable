@@ -11,7 +11,7 @@ import TutorFormContainer from './tutor_form/tutor_form_container';
 const App = () => (
   <div>
     <header>
-
+      <GreetingContainer/>
     </header>
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
