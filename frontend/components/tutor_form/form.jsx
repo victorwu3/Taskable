@@ -13,7 +13,7 @@ class Form extends React.Component {
       address: null,
       ed_lvl: null,
       description: null,
-      errors: []
+      errors: [],
     };
   }
 
@@ -25,8 +25,9 @@ class Form extends React.Component {
     e.preventDefault();
     const params = Object.assign({}, this.state);
     let errors = (Object.keys(params).filter(x => !params[x]));
-    debugger
     if (errors.length === 0) {
+      this.props.updateForm('show');
+      this.props.props.updateForm('show');
       this.props.props.fetchTutors(params);
       this.props.history.push('/tutors/recs');
     } else {
@@ -64,8 +65,6 @@ class Form extends React.Component {
         descripError = ( <div className="form-error-msg">Description can't be blank</div>);
       }
     }
-
-    debugger
 
     return (
       <div className="form-container">
