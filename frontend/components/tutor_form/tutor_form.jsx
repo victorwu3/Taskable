@@ -110,15 +110,15 @@ class TutorForm extends React.Component {
                   <ul>
                     <fieldset className="radio-buttons" id="group1" onChange={this.handleChange('ed_lvl')}>
                       <li>
-                        <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="1"></input>
+                        <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="first_tier"></input>
                            Elementary K-8</label>
                       </li>
                       <li>
-                        <label><input type="radio" id="hs" name="group1" value="2"></input>
+                        <label><input type="radio" id="hs" name="group1" value="second_tier"></input>
                            High School Level</label>
                       </li>
                       <li>
-                        <label><input type="radio" id="college" name="group1" value="3"></input>
+                        <label><input type="radio" id="college" name="group1" value="third_tier"></input>
                            College/Graduate Level</label>
                       </li>
                     </fieldset>

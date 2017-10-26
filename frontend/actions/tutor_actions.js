@@ -3,6 +3,7 @@ import * as TutorApiUtil from '../util/tutor_api_util';
 export const RECEIVE_TUTORS = 'RECEIVE_TUTORS';
 
 export const receiveTutors = tutors => {
+  debugger
   return ({
     type: RECEIVE_TUTORS,
     tutors

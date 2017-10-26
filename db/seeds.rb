@@ -49,11 +49,6 @@ user_list.each do |fname, lname, email, password, zipcode, phone_num|
   User.create(user: { fname: fname, lname: lname, email: email, password: password, zipcode: zipcode, phone_num: phone_num })
 end
 
-subject_names = ['Math', 'Chemistry', 'Biology', 'English', 'History', 'Test Prep', 'Coding', 'Accounting', 'Physics']
-
-subject_names.each do |title|
-  Subject.create(title: title)
-end
 availabilites = [
   [1, 1], [1, 2], [1, 3], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 16], [1, 17], [1, 18],
   [2, 4], [2, 5], [2, 6], [2, 13], [2, 14], [2, 15], [2, 10], [2, 11], [2, 12], [2, 16], [2, 17], [2, 18], [2, 19], [2, 20], [2,21],

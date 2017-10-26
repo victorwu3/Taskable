@@ -6,11 +6,13 @@
 #  user_id       :integer          not null
 #  subject_id    :integer          not null
 #  num_completed :integer          default(0), not null
-#  level         :integer          not null
 #  rate          :integer          not null
 #  description   :text             not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  first_tier    :boolean          not null
+#  second_tier   :boolean          not null
+#  third_tier    :boolean          not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
