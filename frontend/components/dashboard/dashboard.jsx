@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 class Dashboard extends React.Component{
 
+  constructor(props) {
+    super(props);
+  }
+
+
+
   render(){
       return(
         <div>
@@ -10,15 +16,15 @@ class Dashboard extends React.Component{
             <div className="header-container">
               <header className="page-header">
                 <div className="header-elements-container">
-                  <a className="header-logo" href="#" ></a>
+                  <Link className="header-logo" to="#" ></Link>
                   <div className="header-links-container">
-                    <a href="#/dashboard" className="homepage-login-button">
+                    <Link to="/dashboard" className="homepage-login-button">
                       <span>Dashboard</span>
-                    </a>
-                    <a href="#" className="homepage-login-button">
+                    </Link>
+                    <Link to="#" className="homepage-login-button">
                       <span>Account</span>
-                    </a>
-                    <a href="/" onClick={this.props.logout} className="homepage-signup-button">Logout</a>
+                    </Link>
+                    <span onClick={this.props.logout} className="homepage-signup-button">Logout</span>
                   </div>
                 </div>
               </header>
@@ -34,9 +40,9 @@ class Dashboard extends React.Component{
                 <div className="my-information">
                   <span className="soc-links-caption">Like what you see? Follow me here! </span>
                   <ul className="soc">
-                    <li><a className="soc-linkedin" href="#"></a></li>
-                    <li><a className="soc-github" href="#"></a></li>
-                    <li><a className="soc-instagram soc-icon-last" href="#"></a></li>
+                    <li><Link className="soc-linkedin" to="#"></Link></li>
+                    <li><Link className="soc-github" to="#"></Link></li>
+                    <li><Link className="soc-instagram soc-icon-last" to="#"></Link></li>
                   </ul>
                 </div>
                 <div className="footer-links-row">
@@ -44,20 +50,20 @@ class Dashboard extends React.Component{
                     <div className="footer-column">
                       <span>About TaskRabbit</span>
                       <div className="links">
-                        <a className="footer-link" href="#">Become a Tasker</a>
-                        <a className="footer-link" href="#">The TaskRabbit Elite</a>
-                        <a className="footer-link" href="#">Buy a Gift Card</a>
-                        <a className="footer-link" href="#">TaskRabbit for Good</a>
-                        <a className="footer-link" href="#">Help</a>
+                        <Link className="footer-link" to="#">Become a Tasker</Link>
+                        <Link className="footer-link" to="#">The TaskRabbit Elite</Link>
+                        <Link className="footer-link" to="#">Buy a Gift Card</Link>
+                        <Link className="footer-link" to="#">TaskRabbit for Good</Link>
+                        <Link className="footer-link" to="#">Help</Link>
                       </div>
                     </div>
                     <div className="footer-column">
                       <span>About Me</span>
                       <div className="links">
-                        <a className="footer-link" href="#">Portfolio</a>
-                        <a className="footer-link" href="#">Resume</a>
-                        <a className="footer-link" href="#">Github</a>
-                        <a className="footer-link" href="#">LinkedIn</a>
+                        <Link className="footer-link" to="#">Portfolio</Link>
+                        <Link className="footer-link" to="#">Resume</Link>
+                        <Link className="footer-link" to="#">Github</Link>
+                        <Link className="footer-link" to="#">LinkedIn</Link>
 
                       </div>
                     </div>

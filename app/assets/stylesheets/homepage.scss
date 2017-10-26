@@ -34,14 +34,13 @@ body {
   margin: 3px 0 3px 0;
 }
 
-.header-links-container a {
+.header-links-container span {
   color: #51af33;
   text-decoration: none;
   cursor: pointer;
   font-weight: normal;
   position: relative;
   display: inline-block;
-  margin-left: 20px;
   font-size: 15px;
   font-weight: 100;
 }
@@ -51,6 +50,8 @@ body {
 }
 
 .homepage-signup-button {
+  color: #51af33;
+  margin-left: 20px;
   border: 1px solid #51af33;
   border-radius: 4px;
   padding: 0.8em 2em 0.8em;
@@ -63,6 +64,7 @@ body {
   color: white;
   transition: background-color 0.5s ease;
 }
+
 
 .main-content {
   background-position: center center;

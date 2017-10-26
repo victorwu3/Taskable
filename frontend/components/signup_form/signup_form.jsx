@@ -132,9 +132,9 @@ class SignupForm extends React.Component {
                 {phoneNumError}
               </div >
               <button className="signup-button">Create Account</button>
-              <a href="#/login" className="signup-login-link">
+              <Link to="/login" className="signup-login-link">
                 <span>Log in  </span>
-              </a>
+              </Link>
             </form>
           </div>
         </div>

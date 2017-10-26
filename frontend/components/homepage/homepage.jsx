@@ -11,8 +11,8 @@ class Homepage extends React.Component{
       this.props.updateSubject(subjectId);
     };
   }
-  render(){
 
+  render(){
       return(
         <div>
           <div className="main">
@@ -20,14 +20,14 @@ class Homepage extends React.Component{
             <div className="header-container">
               <header className="page-header">
                 <div className="header-elements-container">
-                  <a className="header-logo" href="#" ></a>
+                  <Link className="header-logo" to="/" ></Link>
                   <div className="header-links-container">
-                    <a href="#/login" className="homepage-login-button">
+                    <Link to="/login" className="homepage-login-button">
                       <span>Log in</span>
-                    </a>
-                    <a href="#/signup" className="homepage-signup-button">
+                    </Link>
+                    <Link to="/signup" className="homepage-signup-button">
                       <span>Sign up</span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </header>

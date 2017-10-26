@@ -21,11 +21,9 @@ class LoginForm extends React.Component {
   //...
 
   componentWillReceiveProps(nextProps) {
-    // debugger
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
-    // debugger
   }
 
   handleChange(field) {
@@ -61,9 +59,9 @@ class LoginForm extends React.Component {
                 <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               </div >
               <button className="login-button">Log In</button>
-              <a href="#/signup" className="login-signup-link">
+              <Link to="/signup" className="login-signup-link">
                 <span>Sign up!</span>
-              </a>
+              </Link>
             </form>
           </div>
         </div>

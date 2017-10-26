@@ -16,7 +16,6 @@ class TutorForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const params = Object.assign({}, this.state);
     this.props.fetchTutors(params);
@@ -37,7 +36,7 @@ class TutorForm extends React.Component {
           <header className="page-header">
             <div className="header-elements-container">
 
-              <a className="header-logo" href="#" ></a>
+              <Link className="header-logo" to="/" ></Link>
 
             </div>
           </header>
