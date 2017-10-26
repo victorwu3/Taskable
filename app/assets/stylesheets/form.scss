@@ -85,6 +85,7 @@ body {
 }
 .trust-icon {
   background: image-url('trusticon.svg');
+  background-repeat: no-repeat;
   width: 35px;
   height: 45px;
 }
@@ -137,7 +138,7 @@ body {
   padding: .625em 1em;
   font-size: 1em;
   font-weight: 200;
-  width: 90%;
+  width: 95%;
   min-height: 23px;
 }
 
@@ -202,7 +203,7 @@ body {
   padding: .625em 1em;
   font-size: 1em;
   font-weight: 200;
-  width: 90%;
+  width: 95%;
   white-space: normal;
   min-height: 23px;
 }

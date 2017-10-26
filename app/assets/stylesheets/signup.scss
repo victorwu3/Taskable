@@ -96,15 +96,35 @@ body {
   width: 100%;
   background: #51af33;
   border-radius: 4px;
-  padding: 0.8em 4em 0.8em;
+  padding: 0.6em 4em 0.6em;
   text-decoration: none;
   color: white;
   margin-top: 8px;
   transition: background-color 0.5s ease;
+  margin-bottom: 10px;
 }
 
 .error-msg {
   font-size: 10px;
   padding-top: 2px;
   padding-bottom: 4px;
+}
+
+.signup-login-link span {
+  text-decoration: none;
+  float: right;
+  color: #51af33;
+}
+
+.signup-login-link span:hover {
+  color: #438e29;
+}
+
+.error-input {
+  border: 1px solid #f9c339 !important;
+}
+
+.error-msg {
+  color: #f9c339;
+  font-size: 10px;
 }

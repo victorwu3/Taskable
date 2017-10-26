@@ -37,6 +37,7 @@ class LoginForm extends React.Component {
   render() {
     let errors;
     if (this.props.errors.includes('Invalid email/password combination')) {
+      $(document.querySelector('#login')).addClass('error-input');
       errors = (<div className="error-msg">Invalid email/password combination</div>);
     } else {
       errors = (<div></div>);
@@ -49,12 +50,10 @@ class LoginForm extends React.Component {
         <div className="login-signup-panel">
           <div className="login-page-container">
             <img className="logo" src="assets/logo.png" alt=""></img>
-            <ul>
-            </ul>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>
-                <input className="text-input" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+                <input className="text-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
                 {errors}
               </div>
               <div className="input-container">
@@ -62,6 +61,9 @@ class LoginForm extends React.Component {
                 <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               </div >
               <button className="login-button">Log In</button>
+              <a href="#/signup" className="login-signup-link">
+                <span>Sign up!</span>
+              </a>
             </form>
           </div>
         </div>

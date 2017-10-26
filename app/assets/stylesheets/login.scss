@@ -95,10 +95,20 @@ body {
   width: 100%;
   background: #51af33;
   border-radius: 4px;
-  padding: 0.8em 4em 0.8em;
+  padding: 0.6em 4em 0.6em;
   text-decoration: none;
   color: white;
   margin-top: 8px;
   transition: background-color 0.5s ease;
+  margin-bottom: 10px;
+}
 
+.login-signup-link span {
+  text-decoration: none;
+  float: right;
+  color: #51af33;
+}
+
+.login-signup-link span:hover {
+  color: #438e29;
 }
