@@ -209,7 +209,8 @@ body {
 }
 
 .submit-form-btn {
-
+  display: flex;
+  justify-content: center;
   font-size: 1.25rem;
   border: 1px solid #51af33;
   width: 35%;
