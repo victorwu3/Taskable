@@ -7,12 +7,11 @@ import { AuthRoute, ProtectedRoute } from '../util/auth_route';
 import GreetingContainer from './greeting/greeting_container';
 import HomepageContainer from './homepage/homepage_container';
 import TutorFormContainer from './tutor_form/tutor_form_container';
-import DashboardContainer from './dashboard/dashboard';
+import DashboardContainer from './dashboard/dashboard_container';
 
 const App = () => (
   <div>
     <header>
-      <GreetingContainer/>
     </header>
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 class Dashboard extends React.Component{
 
   render(){
-    debugger
       return(
         <div>
           <div className="main">
@@ -19,7 +18,7 @@ class Dashboard extends React.Component{
                     <a href="#" className="homepage-login-button">
                       <span>Account</span>
                     </a>
-                    <button onClick={this.props.logout}>Logout</button>
+                    <a href="/" onClick={this.props.logout} className="homepage-signup-button">Logout</a>
                   </div>
                 </div>
               </header>
