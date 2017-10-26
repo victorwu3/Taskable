@@ -42,12 +42,23 @@ user_list = [
   ['Emily', 'Hansen', 'ehansen@email.com', 'password', '10001', '9080118568'],
   ['Oguzhan', 'Cakmak', 'ocakmak@email.com', 'password', '10001', '9081113465'],
   ['Patrick', 'Fulghum', 'pfulghum@email.com', 'password', '10001', '9089046244'],
-  ['Carly', 'Lorenz', 'clorenz@email.com', 'password', '10001', '9085502848']
+  ['Carly', 'Lorenz', 'clorenz@email.com', 'password', '10001', '9085502848'],
+  ['Benjamin', 'Berman', 'bberman@email.com', 'password', '10001', '9085502848'],
+  ['Chao', 'Fan', 'cfan@email.com', 'password', '10001', '9085502848'],
+  ['Chris', 'Lew', 'clew@email.com', 'password', '10001', '9085502848'],
+  ['Daniel', 'Nam', 'dnam@email.com', 'password', '10001', '9085502848'],
+  ['David', 'Webster', 'dwebster@email.com', 'password', '10001', '9085502848'],
+  ['Drew', 'Nguyen', 'dnguyen@email.com', 'password', '10001', '9085502848'],
+  ['Elliot', 'Grieco', 'egrieco@email.com', 'password', '10001', '9085502848'],
+  ['Ethan', 'Schneider', 'escheinder@email.com', 'password', '10001', '9085502848'],
+  ['George', 'Najm', 'gnajm@email.com', 'password', '10001', '9085502848'],
+  ['Isaac', 'Seessel', 'iseessel@email.com', 'password', '10001', '9085502848'],
 ]
 
 user_list.each do |fname, lname, email, password, zipcode, phone_num|
-  User.create(user: { fname: fname, lname: lname, email: email, password: password, zipcode: zipcode, phone_num: phone_num })
+  User.create(fname: fname, lname: lname, email: email, password: password, zipcode: zipcode, phone_num: phone_num)
 end
+
 
 availabilites = [
   [1, 1], [1, 2], [1, 3], [1, 7], [1, 8], [1, 9], [1, 10], [1, 11], [1, 12], [1, 16], [1, 17], [1, 18],
@@ -97,9 +108,13 @@ availabilites = [
   [45, 1], [45, 2], [45, 3], [45, 7], [45, 8], [45, 9], [45, 16], [45, 17], [45, 18],
 ]
 
+
 availabilites.each do |user_id, time_avl|
   AvailableTime.create(user_id: user_id, time_avl: time_avl)
 end
+
+
+
 
 # 9 subjects
 subjects = ['Math', 'Chemistry', 'Biology', 'English', 'History', 'Test Prep', 'Coding', 'Accounting', 'Physics']
@@ -107,6 +122,7 @@ subjects = ['Math', 'Chemistry', 'Biology', 'English', 'History', 'Test Prep', '
 subjects.each do |subject|
   Subject.create(title: subject)
 end
+
 
 tutors_for_hires = [
   [1, 1, 45, 50, true, true, false, "I have taught high school math for 11 years and have tutored math for 20 years. As a classroom teacher, I have taught Calculus, Algebra 1 and 2, Trigonometry, Number Theory, Geometry, SAT Prep, Problem Solving, Logic, Probability and Statistics, and Personal Finance. I have a Masters degree in Adolescent Math Education and have been a Master Teacher at Math for America for 6 years."],
@@ -159,5 +175,5 @@ tutors_for_hires = [
 ]
 
 tutors_for_hires.each do |user_id, subject_id, num_completed, rate, first_tier, second_tier, third_tier, description|
-  TutorsForHire.create(user_id: user_id, subject_id: subject_id, num_completed: num_completed, rate: rate, first_tier: first_tier, second_tier: second_tier, third_tier: third_tier)
+  TutorsForHire.create!(user_id: user_id, subject_id: subject_id, num_completed: num_completed, rate: rate, first_tier: first_tier, second_tier: second_tier, third_tier: third_tier, description: description)
 end
