@@ -17,10 +17,25 @@ class Form extends React.Component {
   }
 
   handleSubmit(e) {
+    let addressError;
+    let subjectError;
+    let levelError;
+    let descriptionError;
+    debugger
     e.preventDefault();
     const params = Object.assign({}, this.state);
-    this.props.props.fetchTutors(params);
-    this.props.history.push('/tutors/recs');
+    if (Object.values(params).every(x => x)) {
+      this.props.props.fetchTutors(params);
+      this.props.history.push('/tutors/recs');
+    } else {
+      if (!this.state.address) {
+        $(document.querySelector('#fname')).addClass('error-input');
+        addressError = (
+        <div className="error-msg">First name can't be blank</div>
+      );} else {
+        fnameError = (<div></div>);
+      }
+    }
 
   }
 
