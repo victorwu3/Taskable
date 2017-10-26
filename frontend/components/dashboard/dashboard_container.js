@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
 import { logout } from '../../actions/session_actions';
+import { updateSubject } from '../../actions/ui_actions';
 
 
 const mapStateToProps = (state) => {
@@ -8,7 +9,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { logout: () => dispatch(logout()) };
+  return ({
+    logout: () => dispatch(logout()),
+    updateSubject: id => dispatch(updateSubject(id))
+});
 };
 
 export default connect(

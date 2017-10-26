@@ -1,0 +1,93 @@
+.dashboard-main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  min-width: 800px;
+}
+
+.form-pictures {
+  width: 1200px;
+}
+
+.tile-container {
+  min-height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tutor-link-tile {
+  width: 33.333%
+}
+
+.tutor-link-title Link{
+
+  color: #438e29;
+}
+
+.biology {
+  background: image-url('biology.jpg');
+}
+
+.chemistry {
+  background: image-url('chemistry.jpeg');
+}
+
+.coding {
+  background: image-url('coding.jpg');
+}
+
+.history {
+  background: image-url('history.jpg');
+}
+
+.physics {
+  background: image-url('physics.jpeg');
+}
+
+.testprep {
+  background: image-url('test-prep.jpeg');
+}
+
+.tutor-link-tile {
+  height: 380px;
+  width: 380px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.flag-container {
+  position: relative;
+  z-index: 500;
+  display: block;
+  height: 50px;
+  vertical-align: baseline;
+}
+.subject-title-sub {
+  position: absolute;
+  top: 18rem;
+  padding: .6em 1.4em;
+  background-color: rgba(255,255,255,0.75);
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.subject-title-sub:hover {
+  background-color: white;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
+  color: #438e29;
+}

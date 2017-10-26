@@ -4,11 +4,17 @@ class Dashboard extends React.Component{
 
   constructor(props) {
     super(props);
+    this.updateSubject = this.updateSubject.bind(this);
   }
 
-
+  updateSubject(subjectId) {
+    return e => {
+      this.props.updateSubject(subjectId);
+    };
+  }
 
   render(){
+    const currentUser = this.props.currentUser;
       return(
         <div>
           <div className="main">
@@ -30,8 +36,65 @@ class Dashboard extends React.Component{
               </header>
             </div>
 
-            <div className="main-page">
+            <div className="dashboard-main-page">
+              <div className="dashboard-container">
+                <div className="row greeting">
+                  <div>
+                    <h1>Welcome to Taskable, {currentUser.fname}!</h1>
+                  </div>
+                </div>
 
+                <div className="row how-to-get-started">
+
+                </div>
+
+                <div className="form-pictures">
+                  <div className="tile-container">
+                    <Link to="tutors/form" onClick={this.updateSubject(3)}>
+                      <div className="tutor-link-tile biology">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">Biology</div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to="tutors/form" onClick={this.updateSubject(6)}>
+                      <div className="tutor-link-tile testprep">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">Test Prep</div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to="tutors/form" onClick={this.updateSubject(2)}>
+                      <div className="tutor-link-tile chemistry">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">Chemistry</div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to="tutors/form" onClick={this.updateSubject(7)}>
+                      <div className="tutor-link-tile coding">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">Coding</div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to="tutors/form" onClick={this.updateSubject(5)}>
+                      <div className="tutor-link-tile history">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">History</div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link to="tutors/form" onClick={this.updateSubject(9)}>
+                      <div className="tutor-link-tile physics">
+                        <div className="flag-container">
+                          <div className="subject-title-sub">Physics</div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
 
 
