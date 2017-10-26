@@ -140,6 +140,7 @@ body {
   font-weight: 200;
   width: 95%;
   min-height: 23px;
+  margin-bottom: 10px;
 }
 
 .build-form-input {
@@ -207,6 +208,7 @@ body {
   width: 95%;
   white-space: normal;
   min-height: 23px;
+  margin-bottom: 10px;
 }
 
 .submit-form-btn {
@@ -223,4 +225,9 @@ body {
   margin-top: 15px;
   font-weight: 100;
   transition: background-color 0.5s ease;
+}
+
+.form-error-msg {
+  font-size: 12px;
+  color: #f9c339;
 }

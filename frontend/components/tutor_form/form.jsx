@@ -49,19 +49,19 @@ class Form extends React.Component {
     if (this.state.errors.length > 0) {
       if (this.state.errors.includes('currentSubject')) {
         // $(document.querySelector('.subject-select-container')).addClass('error-input');
-        subjectError = ( <div className="error-msg">Subject can't be blank</div>);
+        subjectError = ( <div className="form-error-msg">Subject can't be blank</div>);
       }
       if (this.state.errors.includes('address')) {
         $(document.querySelector('.address-input')).addClass('error-input');
-        addressError = ( <div className="error-msg">Address can't be blank</div>);
+        addressError = ( <div className="form-error-msg">Address can't be blank</div>);
       }
       if (this.state.errors.includes('ed_lvl')) {
         // $(document.querySelector('.radio-buttons')).addClass('error-input');
-        lvlError = ( <div className="error-msg">Education level can't be blank</div>);
+        lvlError = ( <div className="form-error-msg">Education level can't be blank</div>);
       }
       if (this.state.errors.includes('description')) {
         $(document.querySelector('.description')).addClass('error-input');
-        descripError = ( <div className="error-msg">Description can't be blank</div>);
+        descripError = ( <div className="form-error-msg">Description can't be blank</div>);
       }
     }
 
