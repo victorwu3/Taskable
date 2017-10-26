@@ -18,13 +18,6 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user);
   }
-  //...
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
 
   handleChange(field) {
     return (e) => {

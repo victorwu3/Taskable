@@ -3,7 +3,6 @@ import merge from 'lodash/merge';
 
 
 const TutorsReducer = (state = [], action) => {
-  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_TUTORS:

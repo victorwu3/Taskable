@@ -10,7 +10,6 @@ class Api::TutorsForHiresController < ApplicationController
         description: tutor.description
       }
     end
-    debugger
     render :index
   end
 

@@ -23,13 +23,6 @@ class SignupForm extends React.Component {
     this.props.login(user);
   }
 
-  componentWillReceiveProps(nextProps) {
-    // debugger
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
-
   handleChange(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });

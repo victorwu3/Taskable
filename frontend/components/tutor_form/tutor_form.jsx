@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Form from './form';
 
 class TutorForm extends React.Component {
 
@@ -31,6 +32,7 @@ class TutorForm extends React.Component {
 
     return(
       <div className="main">
+        <Form props={this.props}/>
 
         <div className="header-container">
           <header className="page-header">
