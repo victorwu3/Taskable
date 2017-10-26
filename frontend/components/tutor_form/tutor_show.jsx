@@ -19,6 +19,16 @@ class TutorShow extends React.Component {
           </div>
         </div>
 
+        <div className ="recommendations-container">
+          <div className="recommendations-filter-container">
+
+          </div>
+
+          <div className="recommendations-list-container">
+            
+          </div>
+        </div>
+
 
       </div>
     );
