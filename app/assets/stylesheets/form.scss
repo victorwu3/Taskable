@@ -150,7 +150,7 @@ body {
 
 .build-form-input ul {
   list-style: none;
-  padding-left: 10px;
+  padding-left: 0;
 }
 
 .build-form-input span{
@@ -183,6 +183,7 @@ body {
 .radio-buttons {
   border: none;
   padding: 0 0;
+  margin-bottom: 10px;
 }
 
 .form-submit-button-container {

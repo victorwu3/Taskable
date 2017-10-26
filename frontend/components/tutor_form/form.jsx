@@ -12,7 +12,8 @@ class Form extends React.Component {
       currentSubject: this.props.props.currentSubject,
       address: null,
       ed_lvl: null,
-      description: null
+      description: null,
+      errors: []
     };
   }
 
@@ -21,22 +22,16 @@ class Form extends React.Component {
     let subjectError;
     let levelError;
     let descriptionError;
-    debugger
     e.preventDefault();
     const params = Object.assign({}, this.state);
-    if (Object.values(params).every(x => x)) {
+    let errors = (Object.keys(params).filter(x => !params[x]));
+    debugger
+    if (errors.length === 0) {
       this.props.props.fetchTutors(params);
       this.props.history.push('/tutors/recs');
     } else {
-      if (!this.state.address) {
-        $(document.querySelector('#fname')).addClass('error-input');
-        addressError = (
-        <div className="error-msg">First name can't be blank</div>
-      );} else {
-        fnameError = (<div></div>);
-      }
+      this.setState({errors: errors});
     }
-
   }
 
   handleChange(field) {
@@ -46,6 +41,32 @@ class Form extends React.Component {
   }
 
   render(){
+    let addressError = (<div></div>);
+    let subjectError = (<div></div>);
+    let lvlError = (<div></div>);
+    let descripError = (<div></div>);
+
+    if (this.state.errors.length > 0) {
+      if (this.state.errors.includes('currentSubject')) {
+        // $(document.querySelector('.subject-select-container')).addClass('error-input');
+        subjectError = ( <div className="error-msg">Subject can't be blank</div>);
+      }
+      if (this.state.errors.includes('address')) {
+        $(document.querySelector('.address-input')).addClass('error-input');
+        addressError = ( <div className="error-msg">Address can't be blank</div>);
+      }
+      if (this.state.errors.includes('ed_lvl')) {
+        // $(document.querySelector('.radio-buttons')).addClass('error-input');
+        lvlError = ( <div className="error-msg">Education level can't be blank</div>);
+      }
+      if (this.state.errors.includes('description')) {
+        $(document.querySelector('.description')).addClass('error-input');
+        descripError = ( <div className="error-msg">Description can't be blank</div>);
+      }
+    }
+
+    debugger
+
     return (
       <div className="form-container">
         <div className="form-title-container">
@@ -64,6 +85,7 @@ class Form extends React.Component {
               <div className="address-row-container">
                 <div className="search-bar-container">
                   <input className="address-input" type="text" placeholder="Enter street address" onChange={this.handleChange('address')}></input>
+                  {addressError}
                 </div>
               </div>
             </div>
@@ -83,6 +105,7 @@ class Form extends React.Component {
                   <option value="8">Accounting</option>
                   <option value="9">Physics</option>
                 </select>
+                {subjectError}
               </div>
             </div>
 
@@ -103,6 +126,7 @@ class Form extends React.Component {
                        College/Graduate Level</label>
                   </li>
                 </fieldset>
+                {lvlError}
               </ul>
             </div>
 
@@ -110,6 +134,7 @@ class Form extends React.Component {
               <h4>TUTOR REQUEST DETAILS</h4>
               <span>Please write any specific requests here, plus any requirements or questions that you may have. You can edit this later.</span>
               <textarea className="description" rows="8" cols="80" onChange={this.handleChange('description')} placeholder="EXAMPLE: I have a big chemistry test coming up in 2 weeks and I am having trouble understanding balancing chemical reactions. This is a high school AP Chemistry course."></textarea>
+              {descripError}
             </div>
 
             <div className="form-submit-button-container">
@@ -124,7 +149,5 @@ class Form extends React.Component {
   }
 
 }
-
-
 
 export default Form;
