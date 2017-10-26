@@ -5,12 +5,22 @@ class Dashboard extends React.Component{
   constructor(props) {
     super(props);
     this.updateSubject = this.updateSubject.bind(this);
+    this.mouseEnter=this.mouseEnter.bind(this);
+    this.mouseLeave=this.mouseLeave.bind(this);
   }
 
   updateSubject(subjectId) {
     return e => {
       this.props.updateSubject(subjectId);
     };
+  }
+
+  mouseEnter(e) {
+      $(e.currentTarget.lastChild.lastChild.lastChild).addClass('hover');
+  }
+
+  mouseLeave(e) {
+      $(e.currentTarget.lastChild.lastChild.lastChild).removeClass('hover');
   }
 
   render(){
@@ -50,42 +60,42 @@ class Dashboard extends React.Component{
 
                 <div className="form-pictures">
                   <div className="tile-container">
-                    <Link to="tutors/form" onClick={this.updateSubject(3)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(3)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile biology">
                         <div className="flag-container">
                           <div className="subject-title-sub">Biology</div>
                         </div>
                       </div>
                     </Link>
-                    <Link to="tutors/form" onClick={this.updateSubject(6)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(6)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile testprep">
                         <div className="flag-container">
                           <div className="subject-title-sub">Test Prep</div>
                         </div>
                       </div>
                     </Link>
-                    <Link to="tutors/form" onClick={this.updateSubject(2)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(2)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile chemistry">
                         <div className="flag-container">
                           <div className="subject-title-sub">Chemistry</div>
                         </div>
                       </div>
                     </Link>
-                    <Link to="tutors/form" onClick={this.updateSubject(7)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(7)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile coding">
                         <div className="flag-container">
                           <div className="subject-title-sub">Coding</div>
                         </div>
                       </div>
                     </Link>
-                    <Link to="tutors/form" onClick={this.updateSubject(5)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(5)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile history">
                         <div className="flag-container">
                           <div className="subject-title-sub">History</div>
                         </div>
                       </div>
                     </Link>
-                    <Link to="tutors/form" onClick={this.updateSubject(9)}>
+                    <Link to="tutors/form" onClick={this.updateSubject(9)} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseLeave}>
                       <div className="tutor-link-tile physics">
                         <div className="flag-container">
                           <div className="subject-title-sub">Physics</div>
