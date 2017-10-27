@@ -172,7 +172,7 @@ class TutorShow extends React.Component {
                         </select>
                       </div>
                       <div>
-                        <span>You can agree later on an exact start time with your selected Tutor.</span>
+                        <span className="filter-subtitle">You can agree later on an exact start time with your selected Tutor.</span>
                       </div>
                     </div>
                   </div>

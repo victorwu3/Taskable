@@ -22,8 +22,8 @@
 
 .filter-dropdown {
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: .3rem;
+  margin-bottom: .75rem;
   padding: 0.5em 0.75em;
   background-color: white;
   height: 46px;
@@ -33,13 +33,18 @@
 
 .time-dropdown {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.75rem;
   padding: 0.5em 0.75em;
   background-color: white;
   height: 46px;
   font-size: 1em;
   font-weight: 300;
+}
+
+.recommendations-filter-title {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
 }
 
 .datetime-window-container {
@@ -118,7 +123,7 @@
   padding-top: 1rem;
   border-top: 1px solid #dce0e6;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .blurb {
@@ -135,4 +140,33 @@
   margin-top: 10rem;
   font-weight: bold;
   font-size: 23px;
+}
+
+.filter-subtitle {
+  font-weight: 200;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.booking-link {
+  margin: 1rem 0;
+  font-size: 1.125rem;
+  border: 1px solid #51af33;
+  background: #51af33;
+  border-radius: 4px;
+  padding: 0.5625em 1.125em .375em 1.125em;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.5s ease;
+  font-weight: 200;
+}
+
+.booking-link:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
 }
