@@ -2,16 +2,20 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  email           :string           not null
-#  zipcode         :string           not null
-#  password_digest :string           not null
-#  phone_num       :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  fname           :string           not null
-#  lname           :string           not null
+#  id                 :integer          not null, primary key
+#  email              :string           not null
+#  zipcode            :string           not null
+#  password_digest    :string           not null
+#  phone_num          :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  fname              :string           not null
+#  lname              :string           not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -32,7 +36,9 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :hired_tutors
   has_many :available_times
-
+  has_many :times,
+    through: :available_times,
+    source: :time
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

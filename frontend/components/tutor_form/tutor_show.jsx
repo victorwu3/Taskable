@@ -8,11 +8,13 @@ class TutorShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.chooseBox = this.chooseBox.bind(this);
     this.state = {
       tutors: JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
-      time: null,
+      time: [1,2,3],
       date: 0,
+      day: (new Date).getDay(),
       selected: ((new Date).toDateString().slice(4,10).trim())
     };
   }
@@ -29,6 +31,12 @@ class TutorShow extends React.Component {
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  chooseBox(e) {
+    $(document.querySelector('.selected-date')).removeClass('selected-date');
+    $(e.currentTarget).addClass('selected-date');
+    this.setState({day: e.currentTarget.previousSibling.value});
   }
 
   dateArrays(num) {
@@ -72,10 +80,13 @@ class TutorShow extends React.Component {
     let dates = this.dateArrays(14);
     let dateBoxes = dates.map((date,idx)=> {
       return(
-        <DateBoxItem date={date} key={idx} selected={this.state.selected}/>
+        <DateBoxItem date={date} key={idx} selected={this.state.selected} chooseBox={this.chooseBox}/>
       );
     });
-    let sortedTutors = this.sortTutors();
+    let sortedTutors = Array.isArray(this.state.time) ? this.sortTutors() : this.sortTutors().filter( tutor => {
+      return (tutor.times.includes(this.state.time * this.state.day));
+    });
+
     let results = sortedTutors.map((tutor, idx) => {
       return (
         <TutorListItem key={idx} tutor={tutor}/>
@@ -147,11 +158,11 @@ class TutorShow extends React.Component {
                         {dateBoxes}
                       </div>
                       <div className="time-period-dropdown">
-                        <select className="time-dropdown" onChange={this.handleChange('sort')}>
-                          <option value={null}>I'm Flexible</option>
+                        <select className="time-dropdown" onChange={this.handleChange('time')}>
+                          <option value={[1,2,3]}>I'm Flexible</option>
                           <option value={1}>Morning 8AM - 12PM</option>
                           <option value={2}>Afternoon 12PM - 4PM</option>
-                          <option value={2}>Evening 4PM - 8PM</option>
+                          <option value={3}>Evening 4PM - 8PM</option>
                         </select>
                       </div>
                       <div>

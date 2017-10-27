@@ -13,4 +13,7 @@ class AvailableTime < ApplicationRecord
   validates :user_id, :time_avl, presence: true
 
   belongs_to :user
+  belongs_to :time,
+    foreign_key: 'time_avl',
+    class_name: 'TimeOfDay'
 end
