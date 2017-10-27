@@ -31,7 +31,7 @@ class TutorListItem extends React.Component {
         </div>
         <div className="recommendations-result-content">
           <div className="recommendations-result-top-row">
-            <div className="result-name">{tutor.fname.charAt(0).toUpperCase() + tutor.lname.slice(1)} {tutor.fname.slice(0,1).toUpperCase()}.</div>
+            <div className="result-name">{tutor.fname.charAt(0).toUpperCase() + tutor.fname.slice(1)} {tutor.lname.slice(0,1).toUpperCase()}.</div>
             <div className="result-rate">${tutor.rate}/hr</div>
           </div>
           <ul className="result-info">
