@@ -86,16 +86,18 @@ class TutorShow extends React.Component {
     let times = Array.from(this.state.time).map(x => x * (this.state.day === '0' ? 7 : this.state.day));
     let sortedTutors = this.sortTutors();
     sortedTutors = sortedTutors.filter( tutor => {
-      return times.some(time => {
+      return times.every(time => {
         return tutor.times.includes(time);
       });
     });
-
-    let results = sortedTutors.map((tutor, idx) => {
+    let results = (sortedTutors.length===0) ?
+     (<div className="none-available">Sorry! There are no tutors available at this time.</div>)
+      : sortedTutors.map((tutor, idx) => {
       return (
         <TutorListItem key={idx} tutor={tutor}/>
       );
     });
+
     return (
       <div className="main">
         <div className="header-container">
