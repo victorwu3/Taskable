@@ -86,7 +86,7 @@ class TutorShow extends React.Component {
     let times = Array.from(this.state.time).map(x => x * (this.state.day === '0' ? 7 : this.state.day));
     let sortedTutors = this.sortTutors();
     sortedTutors = sortedTutors.filter( tutor => {
-      return times.every(time => {
+      return times.some(time => {
         return tutor.times.includes(time);
       });
     });
