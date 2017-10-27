@@ -12,7 +12,8 @@ class TutorShow extends React.Component {
       tutors: JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
       time: null,
-      date: 0
+      date: 0,
+      selected: ((new Date).toDateString().slice(4,10).trim())
     };
   }
 
@@ -25,7 +26,6 @@ class TutorShow extends React.Component {
   }
 
   handleChange(field) {
-    debugger
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
@@ -37,10 +37,12 @@ class TutorShow extends React.Component {
     for (var i = 0; i < num; i++) {
       result.push({
         date: (x.toDateString().slice(4,10).trim()),
-        day: x.getDay()
+        day: x.getDay(),
+        day_string: x.toDateString().slice(0,3)
       });
       x.setDate(x.getDate() + 1);
     }
+    result[0].day_string = 'Today';
     return result;
   }
 
@@ -70,13 +72,13 @@ class TutorShow extends React.Component {
     let dates = this.dateArrays(14);
     let dateBoxes = dates.map((date,idx)=> {
       return(
-        <DateBoxItem date={date} />
+        <DateBoxItem date={date} key={idx} selected={this.state.selected}/>
       );
     });
     let sortedTutors = this.sortTutors();
     let results = sortedTutors.map((tutor, idx) => {
       return (
-        <TutorListItem key={idx} tutor={tutor} />
+        <TutorListItem key={idx} tutor={tutor}/>
       );
     });
     return (
