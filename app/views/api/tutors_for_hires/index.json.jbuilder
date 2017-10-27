@@ -5,4 +5,5 @@ json.array! @tutors do |tutor|
   json.rate tutor[:rate]
   json.description tutor[:description]
   json.num_completed tutor[:num_completed]
+  json.image_url asset_path(tutor[:user].image.url)
 end

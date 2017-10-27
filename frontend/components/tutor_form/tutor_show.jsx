@@ -1,23 +1,36 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import TutorListItem from './tutor_list_item';
 
 class TutorShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
-      tutors: JSON.parse(localStorage.getItem('tutors'))
+      tutors: JSON.parse(localStorage.getItem('tutors')),
+      sort: 'recommended'
     };
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.tutors) {
       localStorage.setItem('tutors', JSON.stringify(newProps.tutors));
+      localStorage.setItem('currentSubject', JSON.stringify(newProps.currentSubject));
       this.setState({ tutors: newProps.tutors});
     }
   }
 
+  handleChange(sort) {
+    this.setState({ sort: sort });
+  }
+
   render(){
+    let results = this.state.tutors.map(tutor => {
+      return (
+        <TutorListItem tutor={tutor} />
+      );
+    });
     return (
       <div className="main">
         <div className="header-container">
@@ -27,8 +40,6 @@ class TutorShow extends React.Component {
             </div>
           </header>
         </div>
-
-
           <div className="build-progress">
             <div className="build-progress-container">
               <div className="build-progress-step not-active">
@@ -65,11 +76,15 @@ class TutorShow extends React.Component {
 
             <div className ="recommendations-container">
               <div className="recommendations-filter-container">
+                <div className="recommendations-filter-panel">
 
+                </div>
               </div>
 
-              <div className="recommendations-list-container">
-
+              <div className="recommendations-results-container">
+                <div className="recommendations-results-list">
+                  {results}
+                </div>
               </div>
             </div>
 

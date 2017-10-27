@@ -41,6 +41,9 @@ class TutorForm extends React.Component {
   handleChange(field) {
     return (e) => {
       this.setState({ params: Object.assign(this.state.params, {[field]: e.target.value}) });
+      if (field === 'currentSubject') {
+        localStorage.setItem('currentSubject', e.target.value);
+      }
     };
   }
 
