@@ -83,8 +83,12 @@ class TutorShow extends React.Component {
         <DateBoxItem date={date} key={idx} selected={this.state.selected} chooseBox={this.chooseBox}/>
       );
     });
-    let sortedTutors = Array.isArray(this.state.time) ? this.sortTutors() : this.sortTutors().filter( tutor => {
-      return (tutor.times.includes(this.state.time * this.state.day));
+    let times = Array.from(this.state.time).map(x => x * (this.state.day === '0' ? 7 : this.state.day));
+    let sortedTutors = this.sortTutors();
+    sortedTutors = sortedTutors.filter( tutor => {
+      return times.some(time => {
+        return tutor.times.includes(time);
+      });
     });
 
     let results = sortedTutors.map((tutor, idx) => {
