@@ -8,6 +8,7 @@ import GreetingContainer from './greeting/greeting_container';
 import HomepageContainer from './homepage/homepage_container';
 import TutorFormContainer from './tutor_form/tutor_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
+import TutorShowContainer from './tutor_form/tutor_show_container';
 
 const App = () => (
   <div>
@@ -16,7 +17,8 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route path="/tutors" component={TutorFormContainer} />
+      <Route path="/tutors/form" component={TutorFormContainer} />
+      <Route path="/tutors/recs" component={TutorShowContainer} />
       <ProtectedRoute path="/dashboard" component={DashboardContainer} />
       <AuthRoute path="/" component={HomepageContainer} />
 

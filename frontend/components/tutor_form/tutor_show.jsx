@@ -5,30 +5,76 @@ class TutorShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      tutors: JSON.parse(localStorage.getItem('tutors'))
+    };
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.tutors) {
+      localStorage.setItem('tutors', JSON.stringify(newProps.tutors));
+      this.setState({ tutors: newProps.tutors});
+    }
   }
 
   render(){
     return (
-      <div className="form-container">
-        <div className="form-title-container">
-          <div className="form-title">
-            <p className="form-title-words">Pick a Tutor</p>
-          </div>
-          <div className="form-subtitle">
-            <p>After booking, you can chat with your Tasker, agree on an exact time, or go over any requirements or questions, if necessary.</p>
-          </div>
+      <div className="main">
+        <div className="header-container">
+          <header className="page-header">
+            <div className="header-elements-container">
+              <Link className="header-logo" to="/" ></Link>
+            </div>
+          </header>
         </div>
 
-        <div className ="recommendations-container">
-          <div className="recommendations-filter-container">
 
+          <div className="build-progress">
+            <div className="build-progress-container">
+              <div className="build-progress-step not-active">
+                <i></i>
+                <span>1. Fill Out Tutor Details</span>
+              </div>
+              <div className="build-progress-step">
+                <i></i>
+                <span>2. View Tutors and Price</span>
+              </div>
+              <div className="build-progress-step not-active">
+                <i></i>
+                <span>3. Confirm & Book</span>
+              </div>
+            </div>
           </div>
 
-          <div className="recommendations-list-container">
-            
+          <div className="build-trust-banner">
+            <div className="build-trust-container">
+              <div className="trust-icon"></div>
+            </div>
           </div>
-        </div>
 
+
+          <div className="form-container">
+            <div className="form-title-container">
+              <div className="form-title">
+                <p className="form-title-words">Pick a Tutor</p>
+              </div>
+              <div className="form-subtitle">
+                <p>After booking, you can chat with your Tasker, agree on an exact time, or go over any requirements or questions, if necessary.</p>
+              </div>
+            </div>
+
+            <div className ="recommendations-container">
+              <div className="recommendations-filter-container">
+
+              </div>
+
+              <div className="recommendations-list-container">
+
+              </div>
+            </div>
+
+
+          </div>
 
       </div>
     );
