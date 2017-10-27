@@ -11,7 +11,7 @@ class TutorForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formType: props.formType
+      formType: 'form'
     };
     this.updateFormtype = this.updateFormtype.bind(this);
   }
