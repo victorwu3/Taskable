@@ -17,7 +17,6 @@ class TutorListItem extends React.Component {
     super(props);
   }
   render(){
-    debugger
     let tutor = this.props.tutor;
     return (
       <div className="recommendation-result">

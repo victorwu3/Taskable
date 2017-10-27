@@ -126,7 +126,7 @@ class TutorForm extends React.Component {
               <div className="build-form-input">
                 <h4>SUBJECT</h4>
                 <div className="subject-select-container">
-                  <select name="subject" id="mySelect" value={this.state.params.currentSubject} onChange={this.handleChange('currentSubject')}>
+                  <select className="subject-select" name="subject" id="mySelect" value={this.state.params.currentSubject} onChange={this.handleChange('currentSubject')}>
                     <option value="0" disabled="true">Please select a Subject</option>
                     <option value="1" defaultValue>Math</option>
                     <option value="2">Chemistry</option>

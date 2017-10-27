@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import TutorListItem from './tutor_list_item';
+import DateBoxItem from './date_box_item';
 
 class TutorShow extends React.Component {
 
@@ -9,7 +10,9 @@ class TutorShow extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       tutors: JSON.parse(localStorage.getItem('tutors')),
-      sort: 'recommended'
+      sort: 'recommended',
+      time: null,
+      date: 0
     };
   }
 
@@ -21,14 +24,59 @@ class TutorShow extends React.Component {
     }
   }
 
-  handleChange(sort) {
-    this.setState({ sort: sort });
+  handleChange(field) {
+    debugger
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  dateArrays(num) {
+    let result = [];
+    let x = new Date;
+    for (var i = 0; i < num; i++) {
+      result.push({
+        date: (x.toDateString().slice(4,10).trim()),
+        day: x.getDay()
+      });
+      x.setDate(x.getDate() + 1);
+    }
+    return result;
+  }
+
+  sortTutors() {
+    let result;
+    switch (this.state.sort) {
+      case 'priceAsc':
+        result = this.state.tutors.sort(function(a,b) {
+          return a.rate - b.rate;
+        });
+        return result;
+      case 'priceDsc':
+        result = this.state.tutors.sort(function(a,b) {
+          return b.rate - a.rate;
+        });
+        return result;
+      case 'num_completed':
+        result = this.state.tutors.sort(function(a,b) {
+          return b.num_completed - a.num_completed;
+        });
+        return result;
+      default: return this.state.tutors;
+    }
   }
 
   render(){
-    let results = this.state.tutors.map(tutor => {
+    let dates = this.dateArrays(14);
+    let dateBoxes = dates.map((date,idx)=> {
+      return(
+        <DateBoxItem date={date} />
+      );
+    });
+    let sortedTutors = this.sortTutors();
+    let results = sortedTutors.map((tutor, idx) => {
       return (
-        <TutorListItem tutor={tutor} />
+        <TutorListItem key={idx} tutor={tutor} />
       );
     });
     return (
@@ -63,7 +111,6 @@ class TutorShow extends React.Component {
             </div>
           </div>
 
-
           <div className="form-container">
             <div className="form-title-container">
               <div className="form-title">
@@ -77,7 +124,39 @@ class TutorShow extends React.Component {
             <div className ="recommendations-container">
               <div className="recommendations-filter-container">
                 <div className="recommendations-filter-panel">
-
+                  <div className="recommendations-filter">
+                    <h4 className="recommendations-filter-title">
+                      <span>Sorted By:</span>
+                    </h4>
+                    <select className="filter-dropdown" onChange={this.handleChange('sort')}>
+                      <option value="Recommended">Recommended</option>
+                      <option value="priceAsc">Price (lowest to highest)</option>
+                      <option value="priceDsc">Price (highest to lowest)</option>
+                      <option value="num_completed">Number of Sessions Completed</option>
+                      <option value="Rating">Most Reviews</option>
+                    </select>
+                  </div>
+                  <div className="recommendations-filter">
+                    <h4 className="recommendations-filter-title">
+                      <span>Task Date & Time:</span>
+                    </h4>
+                    <div className="filter-time-container">
+                      <div className="datetime-window-container">
+                        {dateBoxes}
+                      </div>
+                      <div className="time-period-dropdown">
+                        <select className="time-dropdown" onChange={this.handleChange('sort')}>
+                          <option value={null}>I'm Flexible</option>
+                          <option value={1}>Morning 8AM - 12PM</option>
+                          <option value={2}>Afternoon 12PM - 4PM</option>
+                          <option value={2}>Evening 4PM - 8PM</option>
+                        </select>
+                      </div>
+                      <div>
+                        <span>You can agree later on an exact start time with your selected Tutor.</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -88,15 +167,9 @@ class TutorShow extends React.Component {
               </div>
             </div>
 
-
           </div>
-
       </div>
     );
   }
-
 }
-
-
-
 export default TutorShow;
