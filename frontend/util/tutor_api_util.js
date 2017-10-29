@@ -5,3 +5,9 @@ export const fetchTutors = params => (
     data: params
   })
 );
+
+export const fetchTutor = id => (
+  $.ajax({
+    method: 'get',
+  })
+);

@@ -1,0 +1,164 @@
+.confirmation-container {
+  padding: 0 2.5rem;
+}
+
+.confirm-result-top-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem 0;
+}
+
+.submit-container {
+  margin-top: 4rem;
+}
+
+.payment-sub {
+  color: #545e69;
+  font-size: .875rem;
+  margin-bottom: 1em;
+}
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  color: #545e69;
+}
+
+.payment-input-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .875rem;
+  color: black;
+  font-weight: 200;
+  border: 1px
+}
+
+.payment-input-row span {
+  margin-bottom: 3px;
+}
+
+.payment-input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-input-box select {
+  padding: 0.5em 0.75em;
+  height: 41px;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.mm {
+  width: 60px;
+}
+
+.yyyy {
+  width: 90px;
+}
+
+.payment-input-box input {
+  border: 1px solid #b1b9c3;
+  outline: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: normal;
+  height: 22px;
+  padding: 0.625em 1em;
+  margin-right: 1em;
+}
+
+.col-lg-2 {
+  width: 16.6666%
+}
+
+.col-lg-3 {
+  width: 25%
+}
+
+.col-lg-4 {
+  width: 33.3333%
+}
+
+.confirm-info {
+  border-top: 1px solid #dce0e6;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.date-time-confirm {
+  width: 50%;
+}
+
+.confirm-tutor-info {
+  width: 50%;
+  float: left;
+  position: relative;
+  display: flex;
+  border-left: 1px solid #b1b9c3;
+
+}
+
+.confirm-tutor-pic {
+  margin-left: 3rem;
+  margin-right: 1.5em;
+}
+
+.confirm-picture {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  margin-top: .4em;
+}
+
+.confirm-sub {
+  color: #545e69;
+  font-weight: 200;
+  font-size: .875rem;
+}
+
+.confirmation-date-time {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+.confirm-tutor-name {
+  display: flex;
+  flex-direction: column;
+  color: #545e69;
+  margin-top: .25em;
+}
+
+.tutor-name {
+  color: black;
+  font-size: 1.125rem;
+}
+
+.confirm-button-sub-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  font-size: .8em;
+}
+
+.confirm-form {
+  margin-bottom: 1rem;
+}
+
+.confirm-smallprint {
+  margin: 0 auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 720px;
+}
+
+.confirm-smallprint span {
+  width: 720px;
+  margin-bottom: 1.7rem;
+  color: #545e69;
+  font-weight: 100;
+}

@@ -9,6 +9,7 @@ class TutorShow extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.chooseBox = this.chooseBox.bind(this);
+    this.handleBook = this.handleBook.bind(this);
     this.state = {
       tutors: JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
@@ -17,16 +18,17 @@ class TutorShow extends React.Component {
       day: (new Date).getDay(),
       selected: ((new Date).toDateString().slice(4,10).trim())
     };
+    localStorage.setItem('selectedDate', this.state.selected);
+    localStorage.setItem('selectedDay', (new Date).toDateString().slice(0,3));
+    localStorage.setItem('selectedTime', "I'm flexible");
   }
 
   componentWillReceiveProps(newProps) {
     if (newProps.tutors) {
       localStorage.setItem('tutors', JSON.stringify(newProps.tutors));
-      localStorage.setItem('currentSubject', JSON.stringify(newProps.currentSubject));
       this.setState({ tutors: newProps.tutors});
     }
   }
-
   handleChange(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
@@ -36,6 +38,8 @@ class TutorShow extends React.Component {
   chooseBox(e) {
     $(document.querySelector('.selected-date')).removeClass('selected-date');
     $(e.currentTarget).addClass('selected-date');
+    localStorage.setItem('selectedDate', e.currentTarget.firstElementChild.nextElementSibling.innerText);
+    localStorage.setItem('selectedDay', e.currentTarget.firstChild.innerText);
     this.setState({day: e.currentTarget.previousSibling.value});
   }
 
@@ -76,6 +80,16 @@ class TutorShow extends React.Component {
     }
   }
 
+  handleBook(id) {
+    return ((e) => {
+      const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
+      localStorage.setItem('selectedTime', times[this.state.time]);
+      let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
+      localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
+      this.props.history.push('/tutors/confirm');
+    }).bind(this);
+  }
+
   render(){
     let dates = this.dateArrays(14);
     let dateBoxes = dates.map((date,idx)=> {
@@ -94,7 +108,7 @@ class TutorShow extends React.Component {
      (<div className="none-available">Sorry! There are no tutors available at this time.</div>)
       : sortedTutors.map((tutor, idx) => {
       return (
-        <TutorListItem key={idx} tutor={tutor}/>
+        <TutorListItem key={idx} tutor={tutor} handleBook={this.handleBook}/>
       );
     });
 

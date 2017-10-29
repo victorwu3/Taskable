@@ -13,7 +13,7 @@ class TutorForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = {
       params: {
-        currentSubject: props.currentSubject,
+        currentSubject: props.currentSubject || JSON.parse(localStorage.getItem('currentSubject')),
         address: null,
         ed_lvl: null,
         description: null,
@@ -31,6 +31,8 @@ class TutorForm extends React.Component {
     const params = Object.assign({}, this.state.params);
     let errors = (Object.keys(params).filter(x => !params[x]));
     if (errors.length === 0) {
+      localStorage.setItem('address', this.state.params.address);
+      localStorage.setItem('description', this.state.params.description);
       this.props.fetchTutors(params);
       this.props.history.push('/tutors/recs');
     } else {
@@ -43,6 +45,8 @@ class TutorForm extends React.Component {
       this.setState({ params: Object.assign(this.state.params, {[field]: e.target.value}) });
       if (field === 'currentSubject') {
         localStorage.setItem('currentSubject', e.target.value);
+      } else if (field === 'ed_lvl') {
+        localStorage.setItem('edlvl', e.target.parentElement.innerText);
       }
     };
   }

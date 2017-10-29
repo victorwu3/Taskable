@@ -9,6 +9,7 @@ import HomepageContainer from './homepage/homepage_container';
 import TutorFormContainer from './tutor_form/tutor_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import TutorShowContainer from './tutor_form/tutor_show_container';
+import TutorConfirmContainer from './tutor_form/tutor_confirm_container';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route path="/tutors/form" component={TutorFormContainer} />
       <Route path="/tutors/recs" component={TutorShowContainer} />
+      <Route path="/tutors/confirm" component={TutorConfirmContainer} />
       <ProtectedRoute path="/dashboard" component={DashboardContainer} />
       <AuthRoute path="/" component={HomepageContainer} />
 

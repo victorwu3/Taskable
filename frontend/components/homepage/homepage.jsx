@@ -9,6 +9,7 @@ class Homepage extends React.Component{
   updateSubject(subjectId) {
     return e => {
       this.props.updateSubject(subjectId);
+      localStorage.setItem('currentSubject', JSON.stringify(subjectId));
     };
   }
 

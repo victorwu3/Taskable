@@ -23,9 +23,9 @@ class TutorListItem extends React.Component {
         <div className="recommendations-result-figure">
           <img className="result-picture" src={tutor.image_url} />
           <div className="book-container">
-            <Link to="#" className="booking-link">
+            <div className="booking-link" onClick={this.props.handleBook(tutor.id)}>
               <span>Select & Continue</span>
-            </Link>
+            </div>
             <Link to="#" className="reviews-link"></Link>
           </div>
         </div>
