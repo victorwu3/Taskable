@@ -41,8 +41,9 @@ class TutorConfirm extends React.Component {
       description: this.state.description,
       location: localStorage.getItem('address')
     };
-    this.props.createBooking(params);
-    this.props.fetchHiredTutors(this.props.currentUser.id).then(this.props.history.push('/dashboard'));
+    this.props.createBooking(params).then(
+      this.props.fetchHiredTutors(this.props.currentUser.id).then(this.props.history.push('/dashboard'))
+    );
   }
 
   render(){
