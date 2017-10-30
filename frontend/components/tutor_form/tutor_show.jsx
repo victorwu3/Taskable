@@ -11,14 +11,13 @@ class TutorShow extends React.Component {
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
     this.state = {
-      tutors: this.props.tutors,
+      tutors: this.props.tutors || localStorage.getItem('tutors'),
       sort: 'recommended',
       time: [1,2,3],
       date: 0,
       day: (new Date).getDay(),
       selected: ((new Date).toDateString().slice(4,10).trim())
     };
-    debugger
     localStorage.setItem('selectedDate', this.state.selected);
     localStorage.setItem('selectedDay', (new Date).toDateString().slice(0,3));
     localStorage.setItem('selectedTime', "I'm flexible");
@@ -100,14 +99,11 @@ class TutorShow extends React.Component {
     });
     let times = Array.from(this.state.time).map(x => x * (this.state.day === '0' ? 7 : this.state.day));
     let sortedTutors = this.sortTutors();
-    debugger
-    if (sortedTutors.length > 0) {
       sortedTutors = sortedTutors.filter( tutor => {
         return times.some(time => {
           return tutor.times.includes(time);
         });
       });
-    }
     let results = (sortedTutors.length===0) ?
      (<div className="none-available">Sorry! There are no tutors available at this time.</div>)
       : sortedTutors.map((tutor, idx) => {
