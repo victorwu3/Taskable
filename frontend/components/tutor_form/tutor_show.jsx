@@ -11,7 +11,7 @@ class TutorShow extends React.Component {
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
     this.state = {
-      tutors: JSON.parse(localStorage.getItem('tutors')),
+      tutors: JSON.parse(localStorage.getItem('tutors')) || [],
       sort: 'recommended',
       time: [1,2,3],
       date: 0,
