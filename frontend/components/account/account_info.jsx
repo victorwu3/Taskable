@@ -16,7 +16,9 @@ class AccountInfo extends React.Component {
           <Link to="/account/edit" className="homepage-signup-button" >Edit</Link>
         </div>
         <div className="account-info-container">
-          <img className="account-picture" src={user.image_url} />
+          <div className="account-picture-container">
+            <img className="account-picture" src={user.image_url} />
+          </div>
           <div className="account-infos-container">
             <ul className="account-list">
               <li>

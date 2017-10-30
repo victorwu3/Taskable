@@ -69,4 +69,41 @@
   width: 175px;
   border-radius: 50%;
   margin: 1rem 3rem;
+
+}
+
+.account-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-photo-label {
+  margin: .5rem 0;
+}
+
+.edit-input {
+  margin-bottom: 7px;
+}
+
+.edit-form-btn {
+  margin-left: 10px;
+  font-size: 1.25rem;
+  border: 1px solid #51af33;
+  width: 100%;
+  background: #51af33;
+  border-radius: 4px;
+  padding: 0.6em 4em 0.6em;
+  text-decoration: none;
+  color: white;
+  margin-top: 8px;
+  transition: background-color 0.5s ease;
+  margin-bottom: 10px;
+}
+
+.edit-form-btn:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
 }

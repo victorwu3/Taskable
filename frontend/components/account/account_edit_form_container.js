@@ -7,10 +7,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return { updateUser: user => dispatch(updateUser(user)) };
+  return { updateUser: (params) => dispatch(updateUser(params)) };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(AccountEditForm);
