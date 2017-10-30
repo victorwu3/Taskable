@@ -79,7 +79,6 @@ class TutorShow extends React.Component {
 
   handleBook(id) {
     return ((e) => {
-      debugger
       const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
       localStorage.setItem('selectedTime', times[this.state.time]);
       let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});

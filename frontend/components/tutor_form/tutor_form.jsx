@@ -3,7 +3,6 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import { Switch } from 'react-router';
 import TutorShow from './tutor_show';
 import { PropsRoute } from 'react-router-with-props';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
 class TutorForm extends React.Component {
 
