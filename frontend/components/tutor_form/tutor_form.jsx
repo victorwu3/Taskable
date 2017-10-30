@@ -3,7 +3,7 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import { Switch } from 'react-router';
 import TutorShow from './tutor_show';
 import { PropsRoute } from 'react-router-with-props';
-
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 
 class TutorForm extends React.Component {
 
@@ -20,6 +20,7 @@ class TutorForm extends React.Component {
       },
       errors: [],
     };
+
   }
 
   handleSubmit(e) {
@@ -121,7 +122,7 @@ class TutorForm extends React.Component {
                 <h4>ADDRESS</h4>
                 <div className="address-row-container">
                   <div className="search-bar-container">
-                    <input className="address-input" type="text" placeholder="Enter street address" onChange={this.handleChange('address')}></input>
+                    <input className="address-input" id="address-search" type="text" placeholder="Enter street address" onChange={this.handleChange('address')}></input>
                     {addressError}
                   </div>
                 </div>
