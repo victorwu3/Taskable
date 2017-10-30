@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
         <div className="login-background"></div>
         <div className="login-signup-panel">
           <div className="login-page-container">
-            <img className="logo" src="assets/logo.png" alt=""></img>
+            <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>

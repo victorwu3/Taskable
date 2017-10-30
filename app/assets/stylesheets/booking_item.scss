@@ -1,0 +1,95 @@
+.booking-item {
+  min-width: 500px;
+  border: 1px solid #dce0e6;
+  border-radius: 4px;
+  padding: 1em 1em;
+  margin-bottom: 1rem;
+}
+
+.booking-result-figure {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dce0e6;
+}
+
+.booking-picture {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.booking-name {
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+
+.booking-rate {
+  float: right;
+}
+
+.booking-date-time-location {
+  display: flex;
+  font-weight: 200;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.booking-date-container {
+  display: flex;
+  align-items: center;
+}
+.booking-date {
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid gray;
+  font-weight: 400;
+}
+
+.booking-location-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-item label {
+  color: #67727e;
+  font-weight: 200;
+  font-size: .825rem;
+  margin-bottom: .5rem;
+}
+
+.booking-complete-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complete-booking-button {
+  font-size: 1.25rem;
+  border: 1px solid #51af33;
+  width: 50%;
+  background: #51af33;
+  border-radius: 4px;
+  padding: 0.6em 4em 0.6em;
+  text-decoration: none;
+  color: white;
+  margin-top: 8px;
+  transition: background-color 0.5s ease;
+  margin-bottom: 10px;
+}
+
+.complete-booking-button:hover {
+  background-color: #438e29;
+  color: white;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}

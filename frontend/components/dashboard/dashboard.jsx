@@ -9,6 +9,9 @@ class Dashboard extends React.Component{
     this.updateSubject = this.updateSubject.bind(this);
     this.mouseEnter=this.mouseEnter.bind(this);
     this.mouseLeave=this.mouseLeave.bind(this);
+    this.state = {
+      completed: false
+    };
   }
 
   componentDidMount(){
@@ -31,10 +34,11 @@ class Dashboard extends React.Component{
 
   render(){
     let hiredTutors = this.props.hiredTutors || [];
-    debugger
     let results = (hiredTutors.length === 0) ?
       (<div className="none-available">You have no current bookings at this time.</div>)
-       : hiredTutors.map((booking, idx) => {
+       : hiredTutors.filter(booking=> {
+         return !booking.completed;
+       }).map((booking, idx) => {
        return (
          <BookingItem key={idx} booking={booking}/>
        );
@@ -63,9 +67,10 @@ class Dashboard extends React.Component{
 
             <div className="dashboard-main-page">
               <div className="dashboard-container">
-                <div className="row greeting">
-                  <div>
-                    <h1>Welcome to Taskable, {currentUser.fname}!</h1>
+                <div className="row">
+                  <div className="greeting">
+                    <img className="greeting-picture" src={currentUser.image_url} />
+                    <h1>Welcome to Taskable, {currentUser.fname.charAt(0).toUpperCase() + currentUser.fname.slice(1)}!</h1>
                   </div>
                 </div>
 

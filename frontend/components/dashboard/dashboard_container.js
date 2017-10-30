@@ -6,7 +6,6 @@ import { fetchHiredTutors } from '../../actions/tutor_actions';
 
 
 const mapStateToProps = (state) => {
-  debugger
   return { currentUser: state.session.currentUser, hiredTutors: state.tutors.hiredTutors };
 };
 

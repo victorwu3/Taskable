@@ -7,4 +7,5 @@ json.array! @bookings do |booking|
   json.time_period booking.time_period
   json.location booking.location
   json.completed booking.completed
+  json.image_url booking.tutor.image.url
 end
