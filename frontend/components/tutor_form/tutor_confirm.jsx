@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
 export const SUBJECTS = {
   '1': 'Math',
   '2': 'Chemistry',
@@ -40,7 +41,9 @@ class TutorConfirm extends React.Component {
       description: this.state.description,
       location: localStorage.getItem('address')
     };
-
+    debugger
+    this.props.createBooking(params);
+    this.props.history.push('/dashboard');
   }
 
   render(){

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import TutorConfirm from './tutor_confirm';
 import { fetchTutors } from '../../actions/tutor_actions';
+import { createBooking } from '../../actions/tutor_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return (
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchTutors: params => dispatch(fetchTutors(params)),
+  createBooking: params => dispatch(createBooking(params))
 });
 
 

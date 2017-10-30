@@ -6,13 +6,14 @@
 #  user_id     :integer          not null
 #  tutor_id    :integer          not null
 #  subject_id  :integer          not null
-#  date        :date             not null
-#  time_period :integer          not null
 #  rate        :integer          not null
-#  completed   :boolean          default(FALSE), not null
 #  description :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  date        :string
+#  time_period :string
+#  location    :string
+#  completed   :boolean          default(FALSE)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
