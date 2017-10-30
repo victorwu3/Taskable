@@ -9,6 +9,9 @@ class Dashboard extends React.Component{
     this.mouseLeave=this.mouseLeave.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchHiredTutors(this.props.currentUser.id);
+  }
   updateSubject(subjectId) {
     return e => {
       this.props.updateSubject(subjectId);
@@ -56,7 +59,6 @@ class Dashboard extends React.Component{
                 </div>
 
                 <div className="row how-to-get-started">
-
                 </div>
 
                 <div className="form-pictures">
@@ -107,8 +109,6 @@ class Dashboard extends React.Component{
                 </div>
               </div>
             </div>
-
-
             <section className="footer-container">
               <footer>
                 <div className="my-information">
@@ -138,24 +138,19 @@ class Dashboard extends React.Component{
                         <Link className="footer-link" to="#">Resume</Link>
                         <Link className="footer-link" to="#">Github</Link>
                         <Link className="footer-link" to="#">LinkedIn</Link>
-
                       </div>
                     </div>
                     <div className="footer-column">
                       <span>Other cool Stuff</span>
                     </div>
-
                   </div>
                 </div>
               </footer>
             </section>
-
-
           </div>
         </div>
       );
     }
-
   }
 
 export default Dashboard;
