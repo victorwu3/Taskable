@@ -21,12 +21,14 @@ class TutorConfirm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       tutor: JSON.parse(localStorage.getItem('selectedTutor'))[0],
-      description: localStorage.getItem('description')
+      description: localStorage.getItem('description'),
     };
   }
 
-  handleChange(e) {
-      this.setState({description: e.target.value});
+  handleChange(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
   }
 
   handleSubmit(e) {
@@ -43,12 +45,13 @@ class TutorConfirm extends React.Component {
     };
     this.props.createBooking(params).then(
       this.props.fetchHiredTutors(this.props.currentUser.id)).then(this.props.history.push('/dashboard'))
-    ;
+      ;
   }
 
   render(){
     let tutor = this.state.tutor;
     return (
+
       <div className="main">
         <div className="header-container">
           <header className="page-header">
@@ -179,7 +182,7 @@ class TutorConfirm extends React.Component {
                     </div>
                     <div className="build-form-input">
                       <span className="confirm-sub">Tutor Session Details</span>
-                      <textarea className="description" rows="8" cols="80"  value={this.state.description} onChange={this.handleChange}></textarea>
+                      <textarea className="description" rows="8" cols="80"  value={this.state.description} onChange={this.handleChange('description')}></textarea>
                     </div>
                   </div>
 

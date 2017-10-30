@@ -2,6 +2,18 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import TutorListItem from './tutor_list_item';
 import DateBoxItem from './date_box_item';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 class TutorShow extends React.Component {
 
@@ -10,13 +22,18 @@ class TutorShow extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.state = {
       tutors: this.props.tutors || JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
       time: [1,2,3],
       date: 0,
       day: (new Date).getDay(),
-      selected: ((new Date).toDateString().slice(4,10).trim())
+      selected: ((new Date).toDateString().slice(4,10).trim()),
+      modalIsOpen: false,
+      email: "",
+      password: ""
     };
     if (this.props.tutors) {
       localStorage.setItem('tutors', JSON.stringify(this.props.tutors));
@@ -77,14 +94,32 @@ class TutorShow extends React.Component {
     }
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
   handleBook(id) {
     return ((e) => {
-      const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
-      localStorage.setItem('selectedTime', times[this.state.time]);
-      let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
-      localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
-      this.props.history.push('/tutors/confirm');
+      if (this.props.currentUser) {
+        const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
+        localStorage.setItem('selectedTime', times[this.state.time]);
+        let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
+        localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
+        this.props.history.push('/tutors/confirm');
+      } else {
+        this.openModal();
+      }
     }).bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.login(user);
   }
 
   render(){
@@ -111,6 +146,31 @@ class TutorShow extends React.Component {
 
     return (
       <div className="main">
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <button onClick={this.closeModal}>close</button>
+          <div>Please Log In</div>
+          <form>
+            <div className="input-container">
+              <label>Email Address</label>
+              <input className="text-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+            </div>
+            <div className="input-container">
+              <label>Password</label>
+              <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
+            </div >
+            <button className="login-button">Log In</button>
+            <Link to="/signup" className="login-signup-link">
+              <span>Sign up!</span>
+            </Link>
+          </form>
+        </Modal>
         <div className="header-container">
           <header className="page-header">
             <div className="header-elements-container">
