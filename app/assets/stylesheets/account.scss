@@ -107,3 +107,11 @@
   transition: background-color 0.5s ease;
   cursor: pointer;
 }
+
+.upload-photo-label {
+  height: 215px;
+  width: 175px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+}

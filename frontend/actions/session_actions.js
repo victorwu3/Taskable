@@ -18,8 +18,8 @@ export const receiveErrors = errors => {
   });
 };
 
-export const updateUser = user => dispatch => {
-  return SessionApiUtil.updateUser(user).then(
+export const updateUser = (formData, userId) => dispatch => {
+  return SessionApiUtil.updateUser(formData, userId).then(
     (user) => dispatch(receiveCurrentUser(user))
   );
 };

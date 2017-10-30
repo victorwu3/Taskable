@@ -10,10 +10,13 @@ class AccountEditForm extends React.Component {
       fname: user.fname,
       lname: user.lname,
       zipcode: user.zipcode,
-      phone_num: user.phone_num
+      phone_num: user.phone_num,
+      imageFile: null,
+      imageUrl: user.image_url
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleChange(field) {
@@ -24,9 +27,32 @@ class AccountEditForm extends React.Component {
 
   handleSubmit(e) {
     debugger
+    const file = this.state.imageFile;
+    const userId = this.props.currentUser.id;
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.updateUser({user: user, user_id: this.props.currentUser.id}).then(() => this.props.history.push('/account'));
+    const formData = new FormData();
+    formData.append("user[fname]", this.state.fname);
+    formData.append("user[lname]", this.state.lname);
+    formData.append("user[zipcode]", this.state.zipcode);
+    formData.append("user[email]", this.state.email);
+    formData.append("user[phone_num]", this.state.phone_num);
+    formData.append("user[id]", userId);
+    if (file) formData.append("user[image]", file);
+    this.props.updateUser(formData, userId).then(() => this.props.history.push('/account'));
+    // this.props.updateUser({user: user, user_id: this.props.currentUser.id}).then(() => this.props.history.push('/account'));
+  }
+
+  updateFile(e) {
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   render() {
@@ -42,10 +68,9 @@ class AccountEditForm extends React.Component {
         </div>
         <div className="account-info-container">
           <div className="account-picture-container">
-            <img className="account-picture" src={user.image_url} />
-            <label className="upload-photo-label">
-              <span>Upload a new photo</span>
-            </label>
+            <img className="account-picture" src={this.state.imageUrl} />
+            <input type="file" className="upload-photo-label" onChange={this.updateFile}></input>
+            <span>Upload a new photo</span>
           </div>
           <div className="account-infos-container">
             <form onSubmit={this.handleSubmit}>
