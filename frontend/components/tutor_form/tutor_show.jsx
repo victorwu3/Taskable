@@ -11,13 +11,14 @@ class TutorShow extends React.Component {
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
     this.state = {
-      tutors: this.props.tutors || localStorage.getItem('tutors'),
+      tutors: this.props.tutors || JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
       time: [1,2,3],
       date: 0,
       day: (new Date).getDay(),
       selected: ((new Date).toDateString().slice(4,10).trim())
     };
+    debugger
     localStorage.setItem('selectedDate', this.state.selected);
     localStorage.setItem('selectedDay', (new Date).toDateString().slice(0,3));
     localStorage.setItem('selectedTime', "I'm flexible");
