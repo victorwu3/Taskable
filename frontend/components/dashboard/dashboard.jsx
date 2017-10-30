@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BookingItem from './booking_item';
+
 class Dashboard extends React.Component{
 
   constructor(props) {
@@ -28,6 +30,15 @@ class Dashboard extends React.Component{
   }
 
   render(){
+    let hiredTutors = this.props.hiredTutors || [];
+    debugger
+    let results = (hiredTutors.length === 0) ?
+      (<div className="none-available">You have no current bookings at this time.</div>)
+       : hiredTutors.map((booking, idx) => {
+       return (
+         <BookingItem key={idx} booking={booking}/>
+       );
+     });
     const currentUser = this.props.currentUser;
       return(
         <div>
@@ -57,6 +68,8 @@ class Dashboard extends React.Component{
                     <h1>Welcome to Taskable, {currentUser.fname}!</h1>
                   </div>
                 </div>
+
+                {results}
 
                 <div className="row how-to-get-started">
                 </div>

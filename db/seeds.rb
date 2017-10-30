@@ -10,6 +10,11 @@ AvailableTime.destroy_all
 Subject.destroy_all
 TutorsForHire.destroy_all
 
+times = (1..21).to_a
+
+times.each do |time|
+  TimeOfDay.create!(time: time)
+end
 
 
 user_list = [
@@ -27,7 +32,6 @@ user_list = [
   ['Mashu', 'Duek', 'mduek@email.com', 'password', '10001', '6090100999'],
   ['Corey', 'Ladovsky', 'cladovsky@email.com', 'password', '10001', '6096778999'],
   ['David', 'Veytsman', 'dveytsmam@email.com', 'password', '10001', '6091579378'],
-  ['Mashu', 'Duek', 'mduek@email.com', 'password', '10001', '6092244980'],
   ['Thomas', 'Heimberger', 'theimberger@email.com', 'password', '10001', '6095519068'],
   ['Kevin', 'Migues', 'kmigues@email.com', 'password', '10001', '6097509921'],
   ['Michelle', 'Shang', 'mshang@email.com', 'password', '10001', '7329581467'],
@@ -61,7 +65,7 @@ user_list = [
 ]
 
 user_list.each do |fname, lname, email, password, zipcode, phone_num|
-  User.create(fname: fname, lname: lname, email: email, password: password, zipcode: zipcode, phone_num: phone_num)
+  User.create!(fname: fname, lname: lname, email: email, password: password, zipcode: zipcode, phone_num: phone_num)
 end
 
 
@@ -110,12 +114,11 @@ availabilites = [
   [42, 1], [42, 2], [42, 3], [42, 7], [42, 8], [42, 9], [42, 10], [42, 11], [42, 12], [42, 16], [42, 17], [42, 18],
   [43, 7], [43, 8], [43, 9], [43, 10], [43, 11], [43, 12], [43, 16], [43, 17], [43, 18],
   [44, 7], [44, 8], [44, 9], [44, 10],
-  [45, 1], [45, 2], [45, 3], [45, 7], [45, 8], [45, 9], [45, 16], [45, 17], [45, 18],
 ]
 
 
 availabilites.each do |user_id, time_avl|
-  AvailableTime.create(user_id: user_id, time_avl: time_avl)
+  AvailableTime.create!(user_id: user_id, time_avl: time_avl)
 end
 
 
@@ -125,7 +128,7 @@ end
 subjects = ['Math', 'Chemistry', 'Biology', 'English', 'History', 'Test Prep', 'Coding', 'Accounting', 'Physics']
 
 subjects.each do |subject|
-  Subject.create(title: subject)
+  Subject.create!(title: subject)
 end
 
 
@@ -176,7 +179,6 @@ tutors_for_hires = [
   [42, 7, 84, 145, true, true, true, "I have three Ivy League degrees, and I am a retired finance professor and Wall Street hedge fund manager. I have taught finance, economics, investments and business at the collegiate level. I bring both advanced teaching skills and real world career experience to motivate the learning process."],
   [43, 7, 45, 100, true, false, false, "I have been working as a full time tutor in NYC since 2014, and I previously tutored part time and worked as a teacher's assistant for several years in college and high school. I currently have thousands of hours of total experience across all channels including experience with premier test prep agencies, individual students, groups, and full classes. "],
   [44, 8, 69, 50, false, true, false, "I've been a tutor for the past 7 years, helping people overcome their difficulties with math and physics. My tutoring philosophy is based on the idea above: my job as a tutor is to help you understand how math works, making you able to do any problem yourself!"],
-  [45, 8, 93, 100, true, true, true, "I have three Ivy League degrees, and I am a retired finance professor and Wall Street hedge fund manager. I have taught finance, economics, investments and business at the collegiate level. I bring both advanced teaching skills and real world career experience to motivate the learning process."],
 ]
 
 tutors_for_hires.each do |user_id, subject_id, num_completed, rate, first_tier, second_tier, third_tier, description|
