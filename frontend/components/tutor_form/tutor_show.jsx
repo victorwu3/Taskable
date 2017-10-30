@@ -11,7 +11,7 @@ class TutorShow extends React.Component {
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
     this.state = {
-      tutors: JSON.parse(localStorage.getItem('tutors')) || [],
+      tutors: this.props.tutors,
       sort: 'recommended',
       time: [1,2,3],
       date: 0,
@@ -100,6 +100,7 @@ class TutorShow extends React.Component {
     });
     let times = Array.from(this.state.time).map(x => x * (this.state.day === '0' ? 7 : this.state.day));
     let sortedTutors = this.sortTutors();
+    debugger
     if (sortedTutors.length > 0) {
       sortedTutors = sortedTutors.filter( tutor => {
         return times.some(time => {

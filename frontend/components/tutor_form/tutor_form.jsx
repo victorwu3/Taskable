@@ -33,8 +33,7 @@ class TutorForm extends React.Component {
     if (errors.length === 0) {
       localStorage.setItem('address', this.state.params.address);
       localStorage.setItem('description', this.state.params.description);
-      this.props.fetchTutors(params);
-      this.props.history.push('/tutors/recs');
+      this.props.fetchTutors(params).then(() => this.props.history.push('/tutors/recs'));
     } else {
       this.setState({errors: errors});
     }
