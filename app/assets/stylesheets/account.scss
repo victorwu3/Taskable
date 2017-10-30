@@ -1,0 +1,72 @@
+.account-container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.account-box {
+  border: 1px solid #dce0e6;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.account-portal {
+  display: flex;
+
+}
+
+.account-info {
+  width: 70%;
+  padding: 1em;
+}
+
+.account-info-title {
+  font-size: 1.75rem;
+  position: absolute;
+  top: -18px;
+}
+
+.account-panel {
+  width: 25%;
+  float: left;
+  border-right: 1px solid #dce0e6;
+}
+
+.account-info-title-container {
+  position: relative;
+}
+.account-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dce0e6;
+  padding-bottom: 1em;
+}
+
+.account-info-container {
+  display: flex;
+}
+
+.account-infos-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.account-list li {
+  margin-bottom: 5px;
+  font-size: 23px;
+  font-weight: 300;
+  display: flex;
+}
+
+.account-picture {
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+  margin: 1rem 3rem;
+}

@@ -10,6 +10,7 @@ import TutorFormContainer from './tutor_form/tutor_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import TutorShowContainer from './tutor_form/tutor_show_container';
 import TutorConfirmContainer from './tutor_form/tutor_confirm_container';
+import AccountContainer from './account/account_container';
 
 const App = () => (
   <div>
@@ -18,9 +19,10 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path="/account" component={AccountContainer} />
       <Route path="/tutors/form" component={TutorFormContainer} />
       <Route path="/tutors/recs" component={TutorShowContainer} />
-      <Route path="/tutors/confirm" component={TutorConfirmContainer} />
+      <ProtectedRoute path="/tutors/confirm" component={TutorConfirmContainer} />
       <ProtectedRoute path="/dashboard" component={DashboardContainer} />
       <AuthRoute path="/" component={HomepageContainer} />
 

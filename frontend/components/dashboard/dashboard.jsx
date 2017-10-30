@@ -56,7 +56,7 @@ class Dashboard extends React.Component{
                     <Link to="/dashboard" className="homepage-login-button">
                       <span>Dashboard</span>
                     </Link>
-                    <Link to="#" className="homepage-login-button">
+                    <Link to="/account" className="homepage-login-button">
                       <span>Account</span>
                     </Link>
                     <span onClick={this.props.logout} className="homepage-signup-button">Logout</span>

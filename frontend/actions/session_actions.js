@@ -18,6 +18,12 @@ export const receiveErrors = errors => {
   });
 };
 
+export const updateUser = user => dispatch => {
+  return SessionApiUtil.updateUser(user).then(
+    (user) => dispatch(receiveCurrentUser(user))
+  );
+};
+
 export const signup = user => dispatch => {
   return SessionApiUtil.signup(user).then(
     (user) => dispatch(receiveCurrentUser(user)),
