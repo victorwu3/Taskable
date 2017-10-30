@@ -23,7 +23,7 @@ class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
-  has_attached_file :image, default_url: ("default.jpeg")
+  has_attached_file :image, default_url: ("https://s3.us-east-2.amazonaws.com/app-taskable-pro/default.jpeg")
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   after_initialize :ensure_session_token
