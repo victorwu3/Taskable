@@ -31,7 +31,6 @@ class Dashboard extends React.Component{
 
   render(){
     let hiredTutors = this.props.hiredTutors || [];
-    debugger
     let results = (hiredTutors.length === 0) ?
       (<div className="none-available">You have no current bookings at this time.</div>)
        : hiredTutors.map((booking, idx) => {
