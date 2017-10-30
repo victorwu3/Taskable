@@ -1,9 +1,7 @@
 class Api::HiredTutorsController < ApplicationController
 
   def index
-    debugger
     @bookings = User.find(params[:user_id]).hired_tutors
-    debugger
 
     render :index
   end
@@ -13,7 +11,6 @@ class Api::HiredTutorsController < ApplicationController
 
   def create
     @booking = HiredTutor.create!(booking_params)
-    debugger
   end
 
   def booking_params
