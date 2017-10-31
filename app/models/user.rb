@@ -22,6 +22,9 @@ class User < ApplicationRecord
   validates :fname, :lname, :email, :zipcode, :password_digest, :phone_num, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
+  validates :email, :fname, :lname, length: { maximum: 17 }
+  validates :zipcode, length: 5
+  validates :phone_num, length: { minimum: 7, maximum: 15 }
 
   has_attached_file :image, default_url: ("https://s3.us-east-2.amazonaws.com/app-taskable-pro/default.jpeg")
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
