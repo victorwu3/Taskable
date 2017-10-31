@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="my-information">
         <span className="soc-links-caption">Like what you see? Follow me here! </span>
         <ul className="soc">
-          <li><Link className="soc-linkedin" to="https://www.linkedin.com/in/victorwu3/"></Link></li>
-          <li><Link className="soc-github" to="https://github.com/victorwu3"></Link></li>
-          <li><Link className="soc-instagram soc-icon-last" to="#"></Link></li>
+          <li><a className="soc-linkedin" href="https://www.linkedin.com/in/victorwu3/"></a></li>
+          <li><a className="soc-github" href="https://github.com/victorwu3"></a></li>
+          <li><a className="soc-instagram soc-icon-last" href="https://www.instagram.com/taskrabbit/"></a></li>
         </ul>
       </div>
       <div className="footer-links-row">
@@ -29,8 +29,8 @@ const Footer = () => {
             <div className="links">
               <Link className="footer-link" to="#">Portfolio</Link>
               <Link className="footer-link" to="#">Resume</Link>
-              <Link className="footer-link" to="#">Github</Link>
-              <Link className="footer-link" to="#">LinkedIn</Link>
+              <a className="footer-link" href="https://github.com/victorwu3">Github</a>
+              <a className="footer-link" href="https://www.linkedin.com/in/victorwu3/">LinkedIn</a>
             </div>
           </div>
           <div className="footer-column">

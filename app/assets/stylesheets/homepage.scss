@@ -81,7 +81,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;*/
-  background-image: image-url('taskrabbitbg.jpg');
+  background-image: image-url('workspace.jpg');
   /*background-size: 1597px 640px;*/
   background-color: white;
   /*5.3625*/
@@ -125,12 +125,15 @@ body {
   font-weight: 100;
   display: inline-block;
   transition: background-color 0.5s ease;
+  opacity: 0.75;
+
 }
 
 .main-content-button:hover {
   background-color: #438e29;
   color: white;
   transition: background-color 0.5s ease;
+  opacity: 1;
 }
 
 .main-content-searchbar-container {
@@ -139,6 +142,7 @@ body {
   display: block;
   text-align: center;
   margin-bottom: 1rem;
+  opacity: .75;
 }
 
 .search-form {
@@ -152,6 +156,11 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   color: black;
+}
+
+.search-icon {
+  background: none;
+  margin-top: 13px;
 }
 
 .main-content-searchbar {

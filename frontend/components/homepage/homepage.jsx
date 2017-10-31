@@ -61,7 +61,7 @@ class Homepage extends React.Component{
                   <div className="main-content-searchbar-container">
                     <div className="main-content-searchbar">
                       <form className="search-form">
-                        <i className="material-icons">
+                        <i className="material-icons search-icon">
                           search
                         </i>
                         <input type="text" name="words" placeholder="Need something different?"></input>
