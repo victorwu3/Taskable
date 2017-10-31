@@ -36,7 +36,7 @@ class Dashboard extends React.Component{
   render(){
     let hiredTutors = this.props.hiredTutors || [];
     let results = (hiredTutors.length === 0) ?
-      (<div className="none-available">You have no current bookings at this time.</div>)
+      (<div className="no-booking-available">You have no current bookings at this time.</div>)
        : hiredTutors.filter(booking=> {
          return !booking.completed;
        }).map((booking, idx) => {
