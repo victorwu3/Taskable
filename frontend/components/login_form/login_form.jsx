@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Typed from 'typed.js';
 import { FacebookLogin } from 'react-facebook-login-component';
+import { GoogleLogin } from 'react-google-login-component';
 
 class LoginForm extends React.Component {
 
@@ -19,8 +20,13 @@ class LoginForm extends React.Component {
 
   responseFacebook (response) {
     debugger
-    console.log(response);
     this.props.fblogin(response.email);
+  }
+
+  responseGoogle (googleUser) {
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log({accessToken: id_token});
+    //anything else you want to do(save to localStorage)...
   }
 
   handleSubmit(e) {
@@ -64,15 +70,21 @@ class LoginForm extends React.Component {
           <div className="login-page-container">
             <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
             <span>{this.props.errors}</span>
-              <FacebookLogin socialId="307842506360655"
-                         language="en_US"
-                         scope="public_profile,email"
-                         responseHandler={this.responseFacebook}
-                         xfbml={true}
-                         fields="id,email,name"
-                         version="v2.10"
-                         className="facebook-login"
-                         buttonText="Login With Facebook"/>
+            <FacebookLogin socialId="307842506360655"
+                       language="en_US"
+                       scope="public_profile,email"
+                       responseHandler={this.responseFacebook}
+                       xfbml={true}
+                       fields="id,email,name"
+                       version="v2.10"
+                       className="loginBtn loginBtn--facebook"
+                       buttonText="Login With Facebook"/>
+             <GoogleLogin socialId="yourClientID"
+                    className="loginBtn loginBtn--google"
+                    scope="profile"
+                    fetchBasicProfile={false}
+                    responseHandler={this.responseGoogle}
+                    buttonText="Login With Google"/>
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>
