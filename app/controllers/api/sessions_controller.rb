@@ -24,7 +24,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def fblogin
-    @user = User.where(email: params[:email])
+    @user = User.find_by(email: params[:email])
 
     if @user
       login(@user)
