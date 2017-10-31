@@ -24,6 +24,12 @@ class TutorShow extends React.Component {
     this.handleBook = this.handleBook.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openModal2 = this.openModal2.bind(this);
+    this.closeModal2 = this.closeModal2.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.openSignUp = this.openSignUp.bind(this);
+    this.openLogIn = this.openLogIn.bind(this);
     this.state = {
       tutors: this.props.tutors || JSON.parse(localStorage.getItem('tutors')),
       sort: 'recommended',
@@ -32,8 +38,13 @@ class TutorShow extends React.Component {
       day: (new Date).getDay(),
       selected: ((new Date).toDateString().slice(4,10).trim()),
       modalIsOpen: false,
+      modal2IsOpen: false,
       email: "",
-      password: ""
+      password: "",
+      fname: "",
+      lname: "",
+      zipcode: "",
+      phone_num: ""
     };
     if (this.props.tutors) {
       localStorage.setItem('tutors', JSON.stringify(this.props.tutors));
@@ -102,9 +113,17 @@ class TutorShow extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
+  openModal2() {
+    this.setState({modal2IsOpen: true});
+  }
+
+  closeModal2() {
+    this.setState({modal2IsOpen: false});
+  }
+
   handleBook(id) {
     return ((e) => {
-      if (this.props.currentUser) {
+      if (this.props.loggedIn) {
         const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
         localStorage.setItem('selectedTime', times[this.state.time]);
         let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
@@ -119,10 +138,88 @@ class TutorShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user);
+    this.props.login(user).then(() => this.closeModal());
+  }
+
+  handleSignUp(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.signup(user).then(() => this.closeModal2());
+  }
+
+  openSignUp() {
+    this.closeModal();
+    this.openModal2();
+  }
+
+  openLogIn() {
+    this.closeModal2();
+    this.openModal();
   }
 
   render(){
+    let fnameError;
+    let lnameError;
+    let emailError;
+    let zipcodeError;
+    let phoneNumError;
+    let passwordError;
+    if (this.props.errors.length >0) {
+      if (this.props.errors.includes("Fname can't be blank")) {
+        $(document.querySelector('#fname')).addClass('error-input');
+        fnameError = (
+        <div className="error-msg">First name can't be blank</div>
+      );} else {
+        fnameError = (<div></div>);
+      }
+      if (this.props.errors.includes("Lname can't be blank")) {
+        $(document.querySelector('#lname')).addClass('error-input');
+        lnameError = (
+        <div className="error-msg">Last name can't be blank</div>
+      );} else {
+        lnameError = (<div></div>);
+      }
+      if (this.props.errors.includes("Email can't be blank")) {
+        $(document.querySelector('#email')).addClass('error-input');
+        emailError = (
+        <div className="error-msg">Email can't be blank</div>
+      );} else if (this.props.errors.includes("Email has already been taken")) {
+        $(document.querySelector('#email')).addClass('error-input');
+        emailError = (
+        <div className="error-msg">Email has already been taken</div>
+      );} else {
+        emailError = (<div></div>);
+      }
+      if (this.props.errors.includes("Zipcode can't be blank")) {
+        $(document.querySelector('#zip')).addClass('error-input');
+        zipcodeError = (
+        <div className="error-msg">Zipcode can't be blank</div>
+      );} else {
+        zipcodeError = (<div></div>);
+      }
+      if (this.props.errors.includes("Phone num can't be blank")) {
+        $(document.querySelector('#phone')).addClass('error-input');
+        phoneNumError = (
+        <div className="error-msg">Phone Number can't be blank</div>
+      );} else {
+        phoneNumError = (<div></div>);
+      }
+      if (this.props.errors.includes("Password is too short (minimum is 6 characters)")) {
+        $(document.querySelector('#password')).addClass('error-input');
+        passwordError = (
+        <div className="error-msg">Password is too short (minimum is 6 characters)</div>
+      );} else {
+        passwordError = (<div></div>);
+      }
+
+    }
+    let errors;
+    if (this.props.errors.includes('Invalid email/password combination')) {
+      $(document.querySelector('#login')).addClass('error-input');
+      errors = (<div className="error-msg">Invalid email/password combination</div>);
+    } else {
+      errors = (<div></div>);
+    }
     let dates = this.dateArrays(14);
     let dateBoxes = dates.map((date,idx)=> {
       return(
@@ -148,7 +245,6 @@ class TutorShow extends React.Component {
       <div className="main">
         <Modal
           isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
@@ -156,21 +252,70 @@ class TutorShow extends React.Component {
 
           <button onClick={this.closeModal}>close</button>
           <div>Please Log In</div>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="input-container">
               <label>Email Address</label>
               <input className="text-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+                {errors}
             </div>
             <div className="input-container">
               <label>Password</label>
               <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
             </div >
             <button className="login-button">Log In</button>
-            <Link to="/signup" className="login-signup-link">
+            <div className="login-signup-link" onClick={this.openSignUp}>
               <span>Sign up!</span>
-            </Link>
+            </div>
           </form>
         </Modal>
+
+        <Modal
+          isOpen={this.state.modal2IsOpen}
+          onRequestClose={this.closeModal2}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+
+          <button onClick={this.closeModal2}>close</button>
+          <div>Sign Up</div>
+          <form onSubmit={this.handleSignUp}>
+            <div className="input-container">
+              <label>First Name</label>
+              <input className="text-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
+              {fnameError}
+            </div>
+            <div className="input-container">
+              <label>Last Name</label>
+              <input className="text-input" id="lname" type="text" value={this.state.lname} onChange={this.handleChange('lname')}></input>
+              {lnameError}
+            </div >
+            <div className="input-container">
+              <label>Email Address</label>
+              <input className="text-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+              {emailError}
+            </div >
+            <div className="input-container">
+              <label>Password</label>
+              <input className="text-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
+              {passwordError}
+            </div >
+            <div className="input-container">
+              <label>Zip Code</label>
+              <input className="text-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
+              {zipcodeError}
+            </div >
+            <div className="input-container">
+              <label>Phone Number</label>
+              <input className="text-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
+              {phoneNumError}
+            </div >
+            <button className="signup-button">Create Account</button>
+            <div className="signup-login-link" onClick={this.openLogIn}>
+              <span>Log in  </span>
+            </div>
+          </form>
+        </Modal>
+
         <div className="header-container">
           <header className="page-header">
             <div className="header-elements-container">
