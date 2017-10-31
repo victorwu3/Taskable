@@ -21,6 +21,14 @@ export const logout = () => (
   })
 );
 
+export const fblogin = email => (
+  $.ajax({
+    method: 'POST',
+    url: '/api/fbsession',
+    data: {email: email}
+  })
+);
+
 export const updateUser = (formData, userId) => (
   $.ajax({
     method: 'PATCH',

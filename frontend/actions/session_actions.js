@@ -42,3 +42,9 @@ export const logout = () => dispatch => {
     () => dispatch(receiveCurrentUser(null)),
     (errors) => dispatch(receiveErrors(errors)));
 };
+
+export const fblogin = email => dispatch => {
+  return SessionApiUtil.fblogin(email).then(
+    (user) => dispatch(receiveCurrentUser(user)),
+    (errors) => dispatch(receiveErrors(errors)));
+};

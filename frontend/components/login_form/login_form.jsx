@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.responseFacebook = this.responseFacebook.bind(this);
     this.state = {
       email: "",
       password: ""
@@ -19,7 +20,7 @@ class LoginForm extends React.Component {
   responseFacebook (response) {
     debugger
     console.log(response);
-    //anything else you want to do(save to localStorage)...
+    this.props.fblogin(response.email);
   }
 
   handleSubmit(e) {
@@ -62,6 +63,7 @@ class LoginForm extends React.Component {
         <div className="login-signup-panel">
           <div className="login-page-container">
             <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
+            <span>{this.props.errors}</span>
               <FacebookLogin socialId="307842506360655"
                          language="en_US"
                          scope="public_profile,email"
