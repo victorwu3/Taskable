@@ -92,7 +92,7 @@ class SignupForm extends React.Component {
         <div className="login-background"></div>
         <div className="login-signup-panel">
           <div className="signup-page-container">
-            <img className="logo" src="assets/logo.png" alt=""></img>
+            <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
             <form className="signup-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>First Name</label>
