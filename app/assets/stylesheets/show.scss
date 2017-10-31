@@ -170,3 +170,18 @@
   transition: background-color 0.5s ease;
   cursor: pointer;
 }
+
+.result-info {
+  list-style: none;
+  position: relative;
+  padding-left: 0;
+}
+
+.list-icon {
+  position: absolute;
+  bottom: 0;
+}
+
+.list-item {
+  padding-left: 2.8rem;
+}

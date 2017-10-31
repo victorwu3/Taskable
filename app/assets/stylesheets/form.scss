@@ -82,6 +82,8 @@ body {
 .build-trust-container {
   max-width: 1200px;
   margin: 10px 0;
+  display: flex;
+  align-items: center;
 }
 .trust-icon {
   background: image-url('trusticon.svg');
@@ -90,6 +92,14 @@ body {
   height: 45px;
 }
 
+.trust-safety {
+  margin: 0 .4rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+.background-check {
+  font-weight: 200;
+}
 .not-active {
   color: #b1b9c3;
 }

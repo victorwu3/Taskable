@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import TrustBanner from '../shared/trust_banner';
 
 export const SUBJECTS = {
   '1': 'Math',
@@ -77,11 +78,7 @@ class TutorConfirm extends React.Component {
             </div>
           </div>
 
-          <div className="build-trust-banner">
-            <div className="build-trust-container">
-              <div className="trust-icon"></div>
-            </div>
-          </div>
+          <TrustBanner formType="confirm" />
 
           <div className="form-container submit-container">
             <div className="form-input-container">

@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import TutorListItem from './tutor_list_item';
 import DateBoxItem from './date_box_item';
 import Modal from 'react-modal';
+import TrustBanner from '../shared/trust_banner';
 
 const signupStyles = {
   overlay : {
@@ -378,12 +379,7 @@ class TutorShow extends React.Component {
             </div>
           </div>
 
-          <div className="build-trust-banner">
-            <div className="build-trust-container">
-              <div className="trust-icon"></div>
-            </div>
-          </div>
-
+          <TrustBanner formType="show" />
           <div className="form-container">
             <div className="form-title-container">
               <div className="form-title">

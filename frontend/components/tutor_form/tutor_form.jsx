@@ -3,6 +3,7 @@ import { Route, Link, withRouter } from 'react-router-dom';
 import { Switch } from 'react-router';
 import TutorShow from './tutor_show';
 import { PropsRoute } from 'react-router-with-props';
+import TrustBanner from '../shared/trust_banner';
 
 class TutorForm extends React.Component {
 
@@ -101,11 +102,7 @@ class TutorForm extends React.Component {
             </div>
           </div>
 
-          <div className="build-trust-banner">
-            <div className="build-trust-container">
-              <div className="trust-icon"></div>
-            </div>
-          </div>
+          <TrustBanner formType="form"/>
 
           <div className="form-title-container">
             <div className="form-title">
