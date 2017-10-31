@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../shared/footer';
+
 class Homepage extends React.Component{
   constructor(props) {
     super(props);
@@ -78,44 +80,7 @@ class Homepage extends React.Component{
 
             </section>
             <section className="footer-container">
-              <footer>
-                <div className="my-information">
-                  <span className="soc-links-caption">Like what you see? Follow me here! </span>
-                  <ul className="soc">
-                    <li><a className="soc-linkedin" href="#"></a></li>
-                    <li><a className="soc-github" href="#"></a></li>
-                    <li><a className="soc-instagram soc-icon-last" href="#"></a></li>
-                  </ul>
-                </div>
-                <div className="footer-links-row">
-                  <div className="footer-links-container">
-                    <div className="footer-column">
-                      <span>About TaskRabbit</span>
-                      <div className="links">
-                        <a className="footer-link" href="#">Become a Tasker</a>
-                        <a className="footer-link" href="#">The TaskRabbit Elite</a>
-                        <a className="footer-link" href="#">Buy a Gift Card</a>
-                        <a className="footer-link" href="#">TaskRabbit for Good</a>
-                        <a className="footer-link" href="#">Help</a>
-                      </div>
-                    </div>
-                    <div className="footer-column">
-                      <span>About Me</span>
-                      <div className="links">
-                        <a className="footer-link" href="#">Portfolio</a>
-                        <a className="footer-link" href="#">Resume</a>
-                        <a className="footer-link" href="#">Github</a>
-                        <a className="footer-link" href="#">LinkedIn</a>
-
-                      </div>
-                    </div>
-                    <div className="footer-column">
-                      <span>Other cool Stuff</span>
-                    </div>
-
-                  </div>
-                </div>
-              </footer>
+              <Footer />
             </section>
 
 
