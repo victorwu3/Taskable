@@ -4,14 +4,47 @@ import TutorListItem from './tutor_list_item';
 import DateBoxItem from './date_box_item';
 import Modal from 'react-modal';
 
+const signupStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    background: 'rgba(0, 0, 0, 0.5)'
+  },
+    content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    maxHeight                : '640px',
+    width : '475px',
+    borderRadius : '10px'
+  }
+};
 const customStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    background: 'rgba(0, 0, 0, 0.5)'
+  },
   content : {
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    width: '475px',
+    height: '400px;',
+    borderRadius : '10px'
+
   }
 };
 
@@ -148,13 +181,13 @@ class TutorShow extends React.Component {
   }
 
   openSignUp() {
-    this.closeModal();
-    this.openModal2();
+    this.closeModal2();
+    this.openModal();
   }
 
   openLogIn() {
-    this.closeModal2();
-    this.openModal();
+    this.closeModal();
+    this.openModal2();
   }
 
   render(){
@@ -244,74 +277,79 @@ class TutorShow extends React.Component {
     return (
       <div className="main">
         <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-
-          <button onClick={this.closeModal}>close</button>
-          <div>Please Log In</div>
-          <form onSubmit={this.handleSubmit}>
-            <div className="input-container">
-              <label>Email Address</label>
-              <input className="text-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
-                {errors}
-            </div>
-            <div className="input-container">
-              <label>Password</label>
-              <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
-            </div >
-            <button className="login-button">Log In</button>
-            <div className="login-signup-link" onClick={this.openSignUp}>
-              <span>Sign up!</span>
-            </div>
-          </form>
-        </Modal>
-
-        <Modal
           isOpen={this.state.modal2IsOpen}
           onRequestClose={this.closeModal2}
           style={customStyles}
           contentLabel="Example Modal"
         >
-
-          <button onClick={this.closeModal2}>close</button>
-          <div>Sign Up</div>
-          <form onSubmit={this.handleSignUp}>
-            <div className="input-container">
-              <label>First Name</label>
-              <input className="text-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
-              {fnameError}
-            </div>
-            <div className="input-container">
-              <label>Last Name</label>
-              <input className="text-input" id="lname" type="text" value={this.state.lname} onChange={this.handleChange('lname')}></input>
-              {lnameError}
-            </div >
-            <div className="input-container">
+          <div className="signup-modal-title">Please log in to continue.</div>
+          <form onSubmit={this.handleSubmit}>
+            <div className="modal-container">
               <label>Email Address</label>
-              <input className="text-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+              <input className="modal-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
+                {errors}
+            </div>
+            <div className="modal-container">
+              <label>Password</label>
+              <input className="modal-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
+            </div >
+            <button className="login-button modal-button">Log In</button>
+            <div className="switch-modal">
+              <span>Don't have an account?</span>
+              <div className="signup-login-link" onClick={this.openSignUp}>
+                <span>Sign up</span>
+              </div>
+            </div>
+          </form>
+        </Modal>
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={signupStyles}
+          contentLabel="Example Modal"
+        >
+          <div className="signup-modal-title">Create an Account</div>
+          <div className="signup-sub">You'll be able to review everything before booking</div>
+          <form className="signup-modal-form" onSubmit={this.handleSignUp}>
+            <div className="name-container">
+              <div className="name-input-container">
+                <label>First Name</label>
+                <input className="modal-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
+                {fnameError}
+              </div>
+              <div className="name-input-container">
+                <label>Last Name</label>
+                <input className="modal-input" id="lname" type="text" value={this.state.lname} onChange={this.handleChange('lname')}></input>
+                {lnameError}
+              </div >
+            </div>
+            <div className="modal-container">
+              <label>Email Address</label>
+              <input className="modal-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
               {emailError}
             </div >
-            <div className="input-container">
+            <div className="modal-container">
               <label>Password</label>
-              <input className="text-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
+              <input className="modal-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               {passwordError}
             </div >
-            <div className="input-container">
+            <div className="modal-container">
               <label>Zip Code</label>
-              <input className="text-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
+              <input className="modal-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
               {zipcodeError}
             </div >
-            <div className="input-container">
+            <div className="modal-container">
               <label>Phone Number</label>
-              <input className="text-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
+              <input className="modal-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
               {phoneNumError}
             </div >
-            <button className="signup-button">Create Account</button>
-            <div className="signup-login-link" onClick={this.openLogIn}>
-              <span>Log in  </span>
+            <button className="signup-button modal-button">Create Account</button>
+            <div className="switch-modal">
+              <span>Have an account?</span>
+              <div className="signup-login-link" onClick={this.openLogIn}>
+                <span>Log in</span>
+              </div>
             </div>
           </form>
         </Modal>
