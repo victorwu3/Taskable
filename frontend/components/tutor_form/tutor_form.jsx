@@ -1,3 +1,4 @@
+import * as AutoComplete from './google/google_autocomplete';
 import React from 'react';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { Switch } from 'react-router';
@@ -11,17 +12,27 @@ class TutorForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.geolocate = this.geolocate.bind(this);
+    this.getLocalityAndAddress = this.getLocalityAndAddress.bind(this);
+    this.initAutocomplete = this.initAutocomplete.bind(this);
     this.state = {
       params: {
         currentSubject: props.currentSubject || JSON.parse(localStorage.getItem('currentSubject')),
-        address: null,
         ed_lvl: null,
         description: null,
       },
+      address:"",
+      locality:"",
       errors: [],
     };
-
+    this.autocomplete = "";
   }
+
+  componentDidMount() {
+     this.autocomplete = this.initAutocomplete();
+     this.geolocate();
+     this.autocomplete.addListener('place_changed', this.getLocalityAndAddress);
+   }
 
   handleSubmit(e) {
     let addressError;
@@ -32,7 +43,7 @@ class TutorForm extends React.Component {
     const params = Object.assign({}, this.state.params);
     let errors = (Object.keys(params).filter(x => !params[x]));
     if (errors.length === 0) {
-      localStorage.setItem('address', this.state.params.address);
+      localStorage.setItem('address', this.state.address);
       localStorage.setItem('description', this.state.params.description);
       this.props.fetchTutors(params).then(() => this.props.history.push('/tutors/recs'));
     } else {
@@ -50,6 +61,42 @@ class TutorForm extends React.Component {
       }
     };
   }
+  initAutocomplete() {
+    return new google.maps.places.Autocomplete(
+      (document.getElementById('autocomplete')), {types: ['geocode']});
+  }
+
+  geolocate() {
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const geolocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          const circle = new google.maps.Circle({
+            center: geolocation,
+            radius: position.coords.accuracy
+          });
+          this.autocomplete.setBounds(circle.getBounds());
+        });
+      }
+  }
+
+  getLocalityAndAddress() {
+   let place = this.autocomplete.getPlace();
+   let locality = "";
+   let componentForm = { sublocality: 'long_name' };
+
+    for (var i = 0; i < place.address_components.length; i++) {
+
+      let addressType = place.address_components[i].types[1];
+      if (componentForm[addressType]) {
+        locality = place.address_components[i][componentForm[addressType]];
+      }
+    }
+    this.setState({ locality: locality, address: place.formatted_address });
+  }
+
 
   render() {
     let addressError = (<div></div>);
@@ -75,7 +122,6 @@ class TutorForm extends React.Component {
 
     return(
       <div className="main">
-
         <div className="header-container">
           <header className="page-header">
             <div className="header-elements-container">
@@ -118,7 +164,7 @@ class TutorForm extends React.Component {
                 <h4>ADDRESS</h4>
                 <div className="address-row-container">
                   <div className="search-bar-container">
-                    <input className="address-input" id="address-search" type="text" placeholder="Enter street address" onChange={this.handleChange('address')}></input>
+                    <input className="address-input location-input" id="autocomplete" type="text" placeholder="Enter street address" onFocus={this.geolocate} onChange={this.handleChange('address')}></input>
                     {addressError}
                   </div>
                 </div>
