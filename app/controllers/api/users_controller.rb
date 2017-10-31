@@ -14,9 +14,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    debugger
     @user = User.find(params[:user][:id])
-    debugger
     if @user.update(user_params)
       render :show
     else

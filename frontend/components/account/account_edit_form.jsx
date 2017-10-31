@@ -26,7 +26,6 @@ class AccountEditForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     const file = this.state.imageFile;
     const userId = this.props.currentUser.id;
     e.preventDefault();
@@ -40,7 +39,6 @@ class AccountEditForm extends React.Component {
     formData.append("user[id]", userId);
     if (file) formData.append("user[image]", file);
     this.props.updateUser(formData, userId).then(() => this.props.history.push('/account'));
-    // this.props.updateUser({user: user, user_id: this.props.currentUser.id}).then(() => this.props.history.push('/account'));
   }
 
   updateFile(e) {
