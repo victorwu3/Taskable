@@ -22,7 +22,7 @@ class User < ApplicationRecord
   validates :fname, :lname, :email, :zipcode, :password_digest, :phone_num, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
-  validates :email, :fname, :lname, length: { maximum: 25 }
+  validates :email, :fname, :lname, length: { maximum: 45 }
   validates :zipcode, length: { is: 5 }
   validates :phone_num, length: { minimum: 7, maximum: 15 }
 

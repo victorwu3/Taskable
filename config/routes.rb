@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :hired_tutors, only: [:index, :show, :create]
     end
     resource :session, only: [:create, :destroy, :show]
+    post 'fbsession', to: 'session#fblogin'
     resources :tutors_for_hires, only: [:index, :show, :create, :destroy]
     resources :subjects, only: [:index, :show] do
       resources :tutors_for_hires, only: [:index, :show, :create]
