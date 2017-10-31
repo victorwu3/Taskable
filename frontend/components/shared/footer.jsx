@@ -34,7 +34,6 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-column">
-            <span>Other cool Stuff</span>
           </div>
         </div>
       </div>

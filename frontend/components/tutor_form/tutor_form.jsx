@@ -20,8 +20,8 @@ class TutorForm extends React.Component {
         currentSubject: props.currentSubject || JSON.parse(localStorage.getItem('currentSubject')),
         ed_lvl: null,
         description: null,
+        address:null,
       },
-      address:"",
       locality:"",
       errors: [],
     };
@@ -43,7 +43,7 @@ class TutorForm extends React.Component {
     const params = Object.assign({}, this.state.params);
     let errors = (Object.keys(params).filter(x => !params[x]));
     if (errors.length === 0) {
-      localStorage.setItem('address', this.state.address);
+      localStorage.setItem('address', this.state.params.address);
       localStorage.setItem('description', this.state.params.description);
       this.props.fetchTutors(params).then(() => this.props.history.push('/tutors/recs'));
     } else {
@@ -94,7 +94,9 @@ class TutorForm extends React.Component {
         locality = place.address_components[i][componentForm[addressType]];
       }
     }
-    this.setState({ locality: locality, address: place.formatted_address });
+    this.setState({ locality: locality });
+    this.setState({ params: Object.assign(this.state.params, {address: place.formatted_address}) });
+
   }
 
 
