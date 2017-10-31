@@ -30,7 +30,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ['No account linked to that Facebook!'], status: 401
+      render json: ['No account linked to that Email!'], status: 401
     end
   end
 end

@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.responseFacebook = this.responseFacebook.bind(this);
+    this.responseGoogle = this.responseGoogle.bind(this);
     this.state = {
       email: "",
       password: ""
@@ -19,14 +20,14 @@ class LoginForm extends React.Component {
   }
 
   responseFacebook (response) {
-    debugger
     this.props.fblogin(response.email);
   }
 
   responseGoogle (googleUser) {
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log({accessToken: id_token});
-    //anything else you want to do(save to localStorage)...
+    googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+    const profile = googleUser.getBasicProfile();
+    var email = profile.getEmail();
+    this.props.fblogin(email);
   }
 
   handleSubmit(e) {
@@ -69,7 +70,7 @@ class LoginForm extends React.Component {
         <div className="login-signup-panel">
           <div className="login-page-container">
             <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
-            <span>{this.props.errors}</span>
+            <span>{this.props.errors.includes('No account linked to that Email!') ? this.props.errors : ""}</span>
             <FacebookLogin socialId="307842506360655"
                        language="en_US"
                        scope="public_profile,email"
@@ -79,10 +80,10 @@ class LoginForm extends React.Component {
                        version="v2.10"
                        className="loginBtn loginBtn--facebook"
                        buttonText="Login With Facebook"/>
-             <GoogleLogin socialId="yourClientID"
+             <GoogleLogin socialId="34772890096-ecl9viiprp71padujbp6d916181pnrb8.apps.googleusercontent.com"
                     className="loginBtn loginBtn--google"
-                    scope="profile"
-                    fetchBasicProfile={false}
+                    scope="email"
+                    fetchBasicProfile={true}
                     responseHandler={this.responseGoogle}
                     buttonText="Login With Google"/>
             <form className="login-form" onSubmit={this.handleSubmit}>
