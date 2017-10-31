@@ -2,16 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BookingItem from './booking_item';
 import Footer from '../shared/footer';
+import CompleteBooking from './complete_booking';
 
 class Dashboard extends React.Component{
 
   constructor(props) {
     super(props);
     this.updateSubject = this.updateSubject.bind(this);
-    this.mouseEnter=this.mouseEnter.bind(this);
-    this.mouseLeave=this.mouseLeave.bind(this);
+    this.mouseEnter = this.mouseEnter.bind(this);
+    this.mouseLeave = this.mouseLeave.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.state = {
-      completed: false
+      completed: false,
+      modalIsOpen: false,
     };
   }
 
@@ -23,6 +27,15 @@ class Dashboard extends React.Component{
       this.props.updateSubject(subjectId);
       localStorage.setItem('currentSubject', JSON.stringify(subjectId));
     };
+  }
+
+  openModal(e) {
+    localStorage.setItem('reviewUserId', e.target.id);
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   mouseEnter(e) {
@@ -41,12 +54,13 @@ class Dashboard extends React.Component{
          return !booking.completed;
        }).map((booking, idx) => {
        return (
-         <BookingItem key={idx} booking={booking}/>
+         <BookingItem key={idx} booking={booking} completeBooking={this.openModal}/>
        );
      });
     const currentUser = this.props.currentUser;
       return(
         <div>
+          <CompleteBooking isOpen={this.state.modalIsOpen} closeModal={this.closeModal} author={this.props.currentUser.id}/>
           <div className="main">
 
             <div className="header-container">

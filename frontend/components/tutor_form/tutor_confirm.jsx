@@ -77,13 +77,10 @@ class TutorConfirm extends React.Component {
               </div>
             </div>
           </div>
-
           <TrustBanner formType="confirm" />
-
           <div className="form-container submit-container">
             <div className="form-input-container">
               <div className="confirmation-container">
-
                 <form className="confirm-form" onSubmit={this.handleSubmit}>
                   <div className="confirm-result-top-row">
                     <div className="result-name">{SUBJECTS[JSON.parse(localStorage.getItem('currentSubject'))]}</div>
@@ -182,16 +179,13 @@ class TutorConfirm extends React.Component {
                       <textarea className="description" rows="8" cols="80"  value={this.state.description} onChange={this.handleChange('description')}></textarea>
                     </div>
                   </div>
-
                   <div className="form-submit-button-container">
                     <input className="submit-form-btn" type="submit" name="button" value="Confirm & Book"></input>
                   </div>
                   <div className="confirm-button-sub-container">
                     <span className="payment-sub">You are charged only after your tutor session is completed.</span>
                   </div>
-
                 </form>
-
               </div>
             </div>
           </div>

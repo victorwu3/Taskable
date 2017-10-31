@@ -30,7 +30,7 @@ class BookingItem extends React.Component {
             <span>{booking.description}</span>
           </div>
           <div className="booking-complete-container">
-            <button className="complete-booking-button">Complete</button>
+            <button className="complete-booking-button" onClick={this.props.completeBooking} id={booking.id}>Complete</button>
           </div>
         </form>
       </div>

@@ -1,6 +1,7 @@
 json.array! @bookings do |booking|
   json.fname booking.tutor.fname
   json.lname booking.tutor.lname
+  json.id booking.tutor.id
   json.rate booking.rate
   json.description booking.description
   json.date booking.date

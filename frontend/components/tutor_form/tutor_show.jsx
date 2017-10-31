@@ -45,7 +45,6 @@ const customStyles = {
     width: '475px',
     height: '400px;',
     borderRadius : '10px'
-
   }
 };
 
