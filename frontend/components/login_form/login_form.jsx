@@ -52,9 +52,13 @@ class LoginForm extends React.Component {
                 <input className="text-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               </div >
               <button className="login-button">Log In</button>
-              <Link to="/signup" className="login-signup-link">
-                <span>Sign up!</span>
-              </Link>
+              <div className="switch-modal">
+                <span>Don't have an account?</span>
+                <Link to="/signup" className="login-signup-link">
+                  <span>Sign up</span>
+                </Link>
+              </div>
+
             </form>
           </div>
         </div>
