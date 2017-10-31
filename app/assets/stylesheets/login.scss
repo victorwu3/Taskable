@@ -108,8 +108,19 @@ body {
   text-decoration: none;
   float: right;
   color: #51af33;
+  margin-left: .3rem;
 }
 
 .login-signup-link span:hover {
   color: #438e29;
+}
+
+.login-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.login-signup-link {
+  cursor: pointer;
 }
