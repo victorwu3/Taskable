@@ -35,7 +35,7 @@ class TutorListItem extends React.Component {
             <div className="result-rate">${tutor.rate}/hr</div>
           </div>
           <ul className="result-info">
-            <li><i class="material-icons list-icon">done</i><span className="list-item">{tutor.num_completed} Completed {SUBJECTS[JSON.parse(localStorage.getItem('currentSubject'))]} tutor sessions</span></li>
+            <li><i className="material-icons list-icon">done</i><span className="list-item">{tutor.num_completed} Completed {SUBJECTS[JSON.parse(localStorage.getItem('currentSubject'))]} tutor sessions</span></li>
           </ul>
           <div className="blurb-title">
             <span>How I can help:</span>

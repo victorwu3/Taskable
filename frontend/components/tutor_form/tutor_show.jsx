@@ -43,7 +43,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     width: '475px',
-    height: '400px;',
+    height: '400px',
     borderRadius : '10px'
   }
 };
@@ -171,13 +171,13 @@ class TutorShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user).then(() => this.closeModal());
+    this.props.login(user).then(() => this.closeModal2());
   }
 
   handleSignUp(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user).then(() => this.closeModal2());
+    this.props.signup(user).then(() => this.closeModal());
   }
 
   openSignUp() {
