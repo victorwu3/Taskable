@@ -7,49 +7,6 @@ import TrustBanner from '../shared/trust_banner';
 import SignupModal from './modals/signup_modal';
 import LoginModal from './modals/login_modal';
 
-const signupStyles = {
-  overlay : {
-    position          : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    background: 'rgba(0, 0, 0, 0.5)'
-  },
-    content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    maxHeight                : '640px',
-    width : '475px',
-    borderRadius : '10px'
-  }
-};
-const customStyles = {
-  overlay : {
-    position          : 'fixed',
-    top               : 0,
-    left              : 0,
-    right             : 0,
-    bottom            : 0,
-    background: 'rgba(0, 0, 0, 0.5)'
-  },
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    width: '475px',
-    height: '400px',
-    borderRadius : '10px'
-  }
-};
-
 class TutorShow extends React.Component {
 
   constructor(props) {
@@ -282,7 +239,6 @@ class TutorShow extends React.Component {
           state={this.state}
           handleSubmit={this.handleSubmit}
           openSignUp={this.openSignUp}
-          customStyles={customStyles}
           handleChange={this.handleChange}
           errors={errors}
           />
@@ -291,7 +247,6 @@ class TutorShow extends React.Component {
           handleSignUp={this.handleSignUp}
           handleChange={this.handleChange}
           openLogIn={this.openLogIn}
-          signupStyles={signupStyles}
           fnameError={fnameError}
           lnameError={lnameError}
           emailError={emailError}

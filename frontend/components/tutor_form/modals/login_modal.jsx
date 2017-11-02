@@ -1,6 +1,28 @@
 import React from 'react';
 import Modal from 'react-modal';
 
+const customStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    background: 'rgba(0, 0, 0, 0.5)'
+  },
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    width: '475px',
+    height: '400px',
+    borderRadius : '10px'
+  }
+};
+
 class LoginModal extends React.Component {
 
   render() {
@@ -8,7 +30,7 @@ class LoginModal extends React.Component {
       <Modal
         isOpen={this.props.state.modal2IsOpen}
         onRequestClose={this.props.closeModal2}
-        style={this.props.customStyles}
+        style={customStyles}
         contentLabel="Example Modal"
       >
         <div className="signup-modal-title">Please log in to continue.</div>

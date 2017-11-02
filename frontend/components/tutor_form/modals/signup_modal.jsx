@@ -1,6 +1,29 @@
 import React from 'react';
 import Modal from 'react-modal';
 
+
+const signupStyles = {
+  overlay : {
+    position          : 'fixed',
+    top               : 0,
+    left              : 0,
+    right             : 0,
+    bottom            : 0,
+    background: 'rgba(0, 0, 0, 0.5)'
+  },
+    content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    maxHeight                : '640px',
+    width : '475px',
+    borderRadius : '10px'
+  }
+};
+
 class SignupModal extends React.Component {
 
 
@@ -9,7 +32,7 @@ class SignupModal extends React.Component {
       <Modal
         isOpen={this.props.state.modalIsOpen}
         onRequestClose={this.props.closeModal}
-        style={this.props.signupStyles}
+        style={signupStyles}
         contentLabel="Example Modal"
       >
         <div className="signup-modal-title">Create an Account</div>
