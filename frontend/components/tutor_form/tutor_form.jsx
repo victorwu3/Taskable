@@ -191,6 +191,7 @@ class TutorForm extends React.Component {
               </div>
               <div className="build-form-input">
                 <h4 className="education-subtitle">EDUCATION REQUIREMENT</h4>
+
                 <ul>
                   <fieldset className="radio-buttons" id="group1" onChange={this.handleChange('ed_lvl')}>
                     <li>

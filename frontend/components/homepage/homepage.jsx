@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../shared/footer';
+import Results from './results';
 
 class Homepage extends React.Component{
   constructor(props) {
     super(props);
     this.updateSubject = this.updateSubject.bind(this);
+    this.state = {
+      input: ""
+    }
   }
 
   updateSubject(subjectId) {
@@ -13,6 +17,18 @@ class Homepage extends React.Component{
       this.props.updateSubject(subjectId);
       localStorage.setItem('currentSubject', JSON.stringify(subjectId));
     };
+  }
+
+  handleChange(){
+
+  }
+
+  handleFocus(){
+    $(document.querySelector('#search-results')).addClass('active');
+  }
+
+  handleUnfocus(){
+    $(document.querySelector('#search-results')).removeClass('active');
   }
 
   render(){
@@ -64,7 +80,11 @@ class Homepage extends React.Component{
                         <i className="material-icons search-icon">
                           search
                         </i>
-                        <input type="text" name="words" placeholder="Need something different?"></input>
+                        <input type="text" name="words" value={this.state.input} placeholder="Need something different?"
+                          onChange={this.handleChange}
+                          onFocus={this.handleFocus}
+                          onBlur={this.handleUnfocus}></input>
+                        <Results />
                       </form>
                     </div>
                   </div>
