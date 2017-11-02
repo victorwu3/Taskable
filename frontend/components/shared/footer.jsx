@@ -37,6 +37,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="created-by">Created by Victor Wu</div>
     </footer>
   );
 };
