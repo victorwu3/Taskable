@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../shared/footer';
 import Results from './results';
 import HowItWorks from './how_it_works';
+import Header from './header';
 
 const Subjects = [
   ['Coding', 7],
@@ -64,22 +65,7 @@ class Homepage extends React.Component{
       return(
         <div>
           <div className="main">
-            <div className="header-container">
-              <header className="page-header">
-                <div className="header-elements-container">
-                  <Link className="header-logo" to="/" ></Link>
-                  <div className="header-links-container">
-                    <Link to="/login" className="homepage-login-button">
-                      <span>Log in</span>
-                    </Link>
-                    <Link to="/signup" className="homepage-signup-button">
-                      <span>Sign up</span>
-                    </Link>
-                  </div>
-                </div>
-              </header>
-            </div>
-
+            <Header />
             <div className="main-page">
               <div className="main-content">
                 <div className="main-content-container">

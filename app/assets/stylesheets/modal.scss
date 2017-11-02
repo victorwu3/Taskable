@@ -15,6 +15,7 @@
 .modal-container {
   display: block;
   width: 100%;
+  position: relative;
 }
 
 .modal-input {
@@ -33,7 +34,7 @@
   width: 91%;
   font-size: 1em;
   display: block;
-  padding-left: 2.25em;
+  padding-left: 2.5em;
 }
 
 .name-container {
@@ -56,6 +57,7 @@
 .name-input-container {
   width: 50%;
   margin-right: 1.5rem;
+  position: relative;
 }
 
 .signup-login-link {
@@ -66,4 +68,11 @@
 .switch-modal {
   display: flex;
   margin-top: 1rem;
+}
+
+.modal-icon {
+  position: absolute;
+  top: 1.35em;
+  left: 0;
+  color: #67727e;
 }

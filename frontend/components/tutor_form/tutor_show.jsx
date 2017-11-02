@@ -286,11 +286,13 @@ class TutorShow extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="modal-container">
               <label>Email Address</label>
+              <i class="material-icons modal-icon">mail_outline</i>
               <input className="modal-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
-                {errors}
+              {errors}
             </div>
             <div className="modal-container">
               <label>Password</label>
+              <i class="material-icons modal-icon">vpn_key</i>
               <input className="modal-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
             </div >
             <button className="login-button modal-button">Log In</button>
@@ -315,6 +317,7 @@ class TutorShow extends React.Component {
             <div className="name-container">
               <div className="name-input-container">
                 <label>First Name</label>
+                <i class="material-icons modal-icon">person_outline</i>
                 <input className="modal-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
                 {fnameError}
               </div>
@@ -326,21 +329,25 @@ class TutorShow extends React.Component {
             </div>
             <div className="modal-container">
               <label>Email Address</label>
+              <i class="material-icons modal-icon">mail_outline</i>
               <input className="modal-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
               {emailError}
             </div >
             <div className="modal-container">
               <label>Password</label>
+              <i class="material-icons modal-icon">vpn_key</i>
               <input className="modal-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               {passwordError}
             </div >
             <div className="modal-container">
               <label>Zip Code</label>
+              <i class="material-icons modal-icon">place</i>
               <input className="modal-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
               {zipcodeError}
             </div >
             <div className="modal-container">
               <label>Phone Number</label>
+              <i class="material-icons modal-icon">phone</i>
               <input className="modal-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
               {phoneNumError}
             </div >
