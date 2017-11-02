@@ -1,5 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { FacebookLogin } from 'react-facebook-login-component';
+import { GoogleLogin } from 'react-google-login-component';
 
 const customStyles = {
   overlay : {
@@ -24,6 +26,22 @@ const customStyles = {
 };
 
 class LoginModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.responseFacebook = this.responseFacebook.bind(this);
+    this.responseGoogle = this.responseGoogle.bind(this);
+  }
+
+  responseFacebook (response) {
+    this.props.fblogin(response.email);
+  }
+
+  responseGoogle (googleUser) {
+    googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+    const profile = googleUser.getBasicProfile();
+    var email = profile.getEmail();
+    this.props.fblogin(email);
+  }
 
   render() {
     return (
@@ -33,7 +51,10 @@ class LoginModal extends React.Component {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <div className="signup-modal-title">Please log in to continue.</div>
+        <div className="modal-top-row">
+          <div className="signup-modal-title">Please log in to continue.</div>
+          <i class="material-icons modal-close" onClick={this.props.closeModal2}>close</i>
+        </div>
         <form onSubmit={this.props.handleSubmit}>
           <div className="modal-container">
             <label>Email Address</label>
@@ -52,6 +73,24 @@ class LoginModal extends React.Component {
             <div className="signup-login-link" onClick={this.props.openSignUp}>
               <span>Sign up</span>
             </div>
+          </div>
+          <div className="or">Or</div>
+          <div className="social-login-container">
+            <FacebookLogin socialId="307842506360655"
+              language="en_US"
+              scope="public_profile,email"
+              responseHandler={this.responseFacebook}
+              xfbml={true}
+              fields="id,email,name"
+              version="v2.10"
+              className="loginBtn loginBtn--facebook"
+              buttonText="Login With Facebook"/>
+            <GoogleLogin socialId="34772890096-ecl9viiprp71padujbp6d916181pnrb8.apps.googleusercontent.com"
+              className="loginBtn loginBtn--google"
+              scope="email"
+              fetchBasicProfile={true}
+              responseHandler={this.responseGoogle}
+              buttonText="Login With Google"/>
           </div>
         </form>
       </Modal>

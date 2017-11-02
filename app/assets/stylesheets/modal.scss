@@ -76,3 +76,22 @@
   left: 0;
   color: #67727e;
 }
+
+.or {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+.social-login-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-close {
+  cursor: pointer;
+}

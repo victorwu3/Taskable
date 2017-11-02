@@ -5,7 +5,7 @@ import DateBoxItem from './date_box_item';
 import Modal from 'react-modal';
 import TrustBanner from '../shared/trust_banner';
 import SignupModal from './modals/signup_modal';
-import LoginModal from './modals/login_modal';
+import LoginModalContainer from './modals/login_modal_container';
 import SortingContainer from './sorting_container';
 
 class TutorShow extends React.Component {
@@ -236,12 +236,13 @@ class TutorShow extends React.Component {
 
     return (
       <div className="main">
-        <LoginModal
+        <LoginModalContainer
           state={this.state}
           handleSubmit={this.handleSubmit}
           openSignUp={this.openSignUp}
           handleChange={this.handleChange}
           errors={errors}
+          closeModal2={this.closeModal2}
           />
         <SignupModal
           state={this.state}
@@ -254,6 +255,7 @@ class TutorShow extends React.Component {
           passwordError={passwordError}
           zipcodeError={zipcodeError}
           phoneNumError={phoneNumError}
+          closeModal={this.closeModal}
           />
 
         <div className="header-container">

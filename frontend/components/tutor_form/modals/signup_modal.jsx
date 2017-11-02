@@ -35,7 +35,10 @@ class SignupModal extends React.Component {
         style={signupStyles}
         contentLabel="Example Modal"
       >
-        <div className="signup-modal-title">Create an Account</div>
+        <div className="modal-top-row">
+          <div className="signup-modal-title">Create an Account</div>
+          <i class="material-icons modal-close" onClick={this.props.closeModal}>close</i>
+        </div>
         <div className="signup-sub">You'll be able to review everything before booking</div>
         <form className="signup-modal-form" onSubmit={this.props.handleSignUp}>
           <div className="name-container">
