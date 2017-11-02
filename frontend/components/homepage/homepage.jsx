@@ -31,18 +31,12 @@ class Homepage extends React.Component{
     if (this.state.input.length === 0) {
       return Subjects;
     }
-
     Subjects.forEach(sub => {
       let name = sub[0].slice(0, this.state.input.length);
       if (name.toLowerCase() === this.state.input.toLowerCase()) {
         matches.push(sub);
       }
     });
-    //
-    // if (matches.length === 0) {
-    //   matches.push('No matches');
-    // }
-
     return matches;
   }
 
