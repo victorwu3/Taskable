@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Results extends React.Component {
@@ -6,38 +7,16 @@ class Results extends React.Component {
 
   render() {
     return (
-      <ul id="search-results">
         <li className="search-result">
-          <a className="search-link">
+          <Link to="tutors/form" className="search-link" onMouseDown={this.props.updateSubject(this.props.subject[1])}>
             <div className="search-result-row">
               <div className="search-pic-container">
-                <div className="search-pic-coding"></div>
+                <div className={`search-pic search-pic-${this.props.subject[0]}`}></div>
               </div>
-              <div className="search-result-text">Coding</div>
+              <div className="search-result-text">{`${this.props.subject[0]}`}</div>
             </div>
-          </a>
+          </Link>
         </li>
-        <li className="search-result">
-          <a className="search-link">
-            <div className="search-result-row">
-              <div className="search-pic-container">
-                <div className="search-pic-accounting"></div>
-              </div>
-              <div className="search-result-text">Accounting</div>
-            </div>
-          </a>
-        </li>
-        <li className="search-result">
-          <a className="search-link">
-            <div className="search-result-row">
-              <div className="search-pic-container">
-                <div className="search-pic-physics"></div>
-              </div>
-              <div className="search-result-text">Physics</div>
-            </div>
-          </a>
-        </li>
-      </ul>
     )
   }
 }

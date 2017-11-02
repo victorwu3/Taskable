@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 import Footer from '../shared/footer';
 import Results from './results';
 
+const Subjects = [
+  ['Coding', 7],
+  ['Accounting', 8],
+  ['Physics', 9]
+]
+
 class Homepage extends React.Component{
   constructor(props) {
     super(props);
     this.updateSubject = this.updateSubject.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       input: ""
     }
@@ -19,19 +26,46 @@ class Homepage extends React.Component{
     };
   }
 
-  handleChange(){
+  matches(){
+    const matches = [];
+    if (this.state.input.length === 0) {
+      return Subjects;
+    }
 
+    Subjects.forEach(sub => {
+      let name = sub[0].slice(0, this.state.input.length);
+      if (name.toLowerCase() === this.state.input.toLowerCase()) {
+        matches.push(sub);
+      }
+    });
+    //
+    // if (matches.length === 0) {
+    //   matches.push('No matches');
+    // }
+
+    return matches;
+  }
+
+  handleChange(event){
+    this.setState({input: event.currentTarget.value});
   }
 
   handleFocus(){
     $(document.querySelector('#search-results')).addClass('active');
+    $(document.querySelector('#search-results')).removeClass('hidden');
   }
 
   handleUnfocus(){
     $(document.querySelector('#search-results')).removeClass('active');
+    $(document.querySelector('#search-results')).addClass('hidden');
   }
 
   render(){
+    let results = this.matches().map((subject,i) => {
+      return (
+        <Results updateSubject={this.updateSubject} subject={subject} />
+      )
+    });
       return(
         <div>
           <div className="main">
@@ -83,9 +117,11 @@ class Homepage extends React.Component{
                         <input type="text" name="words" value={this.state.input} placeholder="Need something different?"
                           onChange={this.handleChange}
                           onFocus={this.handleFocus}
-                          onBlur={this.handleUnfocus}></input>
-                        <Results />
+                          onBlur={()=>setTimeout(this.handleUnfocus, 100)}></input>
                       </form>
+                      <ul id="search-results" className="hidden">
+                        {results}
+                      </ul>
                     </div>
                   </div>
                 </div>

@@ -1,0 +1,73 @@
+#search-results {
+  position: absolute;
+  background: white;
+  margin: 0;
+  list-style: none;
+  z-index: 200;
+  border: 1px solid #dce0e6;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 2px 4px 1px rgba(177,185,195,0.3);
+  overflow: hidden;
+  opacity: 1;
+  padding-left: 0;
+}
+
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.search-result {
+  cursor: pointer;
+  min-width: 617px;
+  color: #438e29;
+  display: flex;
+  opacity: 1;
+}
+
+.search-result:hover {
+  background-color: #f9fafb;
+}
+
+.search-link {
+  padding: .3em 1.4em;
+  width: 100%;
+  text-decoration: none;
+  color: #438e29;
+}
+
+.search-result-row {
+  display: flex;
+  align-items: center;
+}
+
+.search-pic-container {
+  margin-right: 1.5em;
+}
+
+.search-pic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.search-pic-Coding {
+  background: image-url('coding.jpg');
+  background-size: cover;
+
+}
+
+.search-pic-Accounting {
+  background: image_url('accounting.jpeg');
+  background-size: cover;
+
+}
+
+.search-pic-Physics {
+  background: image-url('physics.jpeg');
+  background-size: cover;
+}
