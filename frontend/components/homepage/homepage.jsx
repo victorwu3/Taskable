@@ -57,13 +57,12 @@ class Homepage extends React.Component{
   render(){
     let results = this.matches().map((subject,i) => {
       return (
-        <Results updateSubject={this.updateSubject} subject={subject} />
+        <Results key={i} updateSubject={this.updateSubject} subject={subject} />
       )
     });
       return(
         <div>
           <div className="main">
-
             <div className="header-container">
               <header className="page-header">
                 <div className="header-elements-container">
