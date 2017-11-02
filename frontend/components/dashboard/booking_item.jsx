@@ -8,7 +8,7 @@ class BookingItem extends React.Component {
     let booking = this.props.booking;
     return (
       <div className="booking-item">
-        <form>
+        <form id={booking.booking_id}>
           <div className="booking-result-figure">
             <img className="booking-picture" src={booking.image_url} />
             <div className="booking-name">{booking.fname.charAt(0).toUpperCase() + booking.fname.slice(1)} {booking.lname.slice(0,1).toUpperCase()}.</div>

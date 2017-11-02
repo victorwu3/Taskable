@@ -13,6 +13,11 @@ class Api::HiredTutorsController < ApplicationController
     @booking = HiredTutor.create!(booking_params)
   end
 
+  def update
+    @booking = HiredTutor.find(params[:booking_id])
+    @booking.update({ completed: true })
+  end
+
   def booking_params
     params.permit(:user_id, :tutor_id, :subject_id, :rate, :description, :date, :time_period, :location)
   end

@@ -4,6 +4,7 @@ export const RECEIVE_TUTORS = 'RECEIVE_TUTORS';
 export const RECEIVE_TUTOR = 'RECEIVE_TUTOR';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const RECEIVE_HIRED_TUTORS = 'RECEIVE_HIRED_TUTORS';
+export const UPDATE_BOOKING = 'UPDATE_BOOKING';
 
 export const receiveTutors = (tutors, params) => {
   return ({
@@ -49,3 +50,11 @@ export const fetchHiredTutors = (userId) => dispatch => {
     hiredTutors => dispatch(receiveHiredTutors(hiredTutors))
   );
 };
+
+export const createReview = (params) => dispatch => {
+  return TutorApiUtil.createReview(params);
+}
+
+export const updateBooking = params => dispatch => {
+  return TutorApiUtil.updateBooking(params);
+}

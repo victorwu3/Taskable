@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BookingItem from './booking_item';
 import Footer from '../shared/footer';
-import CompleteBooking from './complete_booking';
+import CompleteBookingContainer from './complete_booking_container';
 
 class Dashboard extends React.Component{
 
@@ -30,9 +30,9 @@ class Dashboard extends React.Component{
   }
 
   openModal(e) {
-    debugger
     localStorage.setItem('reviewUserId', e.target.id);
     localStorage.setItem('reviewSubjectId', e.target.parentElement.id);
+    localStorage.setItem('bookingId', e.target.parentElement.parentElement.id);
     this.setState({modalIsOpen: true});
   }
 
@@ -62,7 +62,7 @@ class Dashboard extends React.Component{
     const currentUser = this.props.currentUser;
       return(
         <div>
-          <CompleteBooking
+          <CompleteBookingContainer
             isOpen={this.state.modalIsOpen}
             closeModal={this.closeModal}
             author={this.props.currentUser.id}

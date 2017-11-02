@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class CompleteBooking extends React.Component {
 
@@ -14,11 +15,6 @@ class CompleteBooking extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this.setState({user_id: parseInt(localStorage.getItem('reviewUserId'))});
-    this.setState({subject_id: parseInt(localStorage.getItem('reviewSubjectId'))});
-  }
-
   handleChange(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
@@ -27,15 +23,16 @@ class CompleteBooking extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    debugger
     let params = {
-      user_id: this.state.user_id,
+      user_id: parseInt(localStorage.getItem('reviewUserId')),
       author_id: this.state.author_id,
       positive: this.state.positive,
       body: this.state.body,
-      subject_id: this.state.subject_id
+      subject_id: parseInt(localStorage.getItem('reviewSubjectId')),
+      booking_id: parseInt(localStorage.getItem('bookingId'))
     }
-    
+    debugger
+    this.props.updateBooking(params).then(this.props.createReview(params).then(()=>this.props.history.push('/')));
   }
 
   render() {
@@ -78,7 +75,7 @@ class CompleteBooking extends React.Component {
           <ul className="positive-radio">
             <fieldset className="radio-buttons positive-radio" id="group1" onChange={this.handleChange('positive')}>
               <li className="positive-radio">
-                <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="true"></input>
+                <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="true" defaultChecked></input>
                 Positive</label>
               </li>
               <li>
@@ -94,4 +91,4 @@ class CompleteBooking extends React.Component {
   }
 }
 
-export default CompleteBooking;
+export default withRouter(CompleteBooking);

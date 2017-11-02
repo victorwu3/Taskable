@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show, :update, :destroy] do
-      resources :hired_tutors, only: [:index, :show, :create]
+      resources :hired_tutors, only: [:index, :show, :create, :update]
+      resources :reviews, only: [:index, :show, :create]
     end
     resource :session, only: [:create, :destroy, :show]
     post 'fbsession', to: 'sessions#fblogin'

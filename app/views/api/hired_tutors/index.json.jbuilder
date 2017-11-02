@@ -10,4 +10,5 @@ json.array! @bookings do |booking|
   json.completed booking.completed
   json.image_url booking.tutor.image.url
   json.subject_id booking.subject_id
+  json.booking_id booking.id
 end
