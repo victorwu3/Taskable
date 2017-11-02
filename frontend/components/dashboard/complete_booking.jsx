@@ -70,7 +70,7 @@ class CompleteBooking extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="modal-container">
             <label className="feedback">Feedback</label>
-            <textarea className="description" rows="8" cols="80" onChange={this.handleChange('body')}></textarea>
+            <textarea className="review-description" rows="8" cols="80 " onChange={this.handleChange('body')}></textarea>
           </div>
           <ul className="positive-radio">
             <fieldset className="radio-buttons positive-radio" id="group1" onChange={this.handleChange('positive')}>

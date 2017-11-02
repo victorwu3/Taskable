@@ -1,7 +1,20 @@
 .feedback {
-  margin-bottom: .3rem;
+  margin-bottom: .5rem;
 }
 
 .positive-radio {
   list-style: none;
+}
+
+.review-description {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: .625em 1em;
+  font-size: 1em;
+  font-weight: 200;
+  width: 92%;
+  white-space: normal;
+  min-height: 23px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
