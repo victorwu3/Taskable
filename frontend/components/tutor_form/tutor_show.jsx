@@ -4,6 +4,7 @@ import TutorListItem from './tutor_list_item';
 import DateBoxItem from './date_box_item';
 import Modal from 'react-modal';
 import TrustBanner from '../shared/trust_banner';
+import SignupModal from './modals/signup_modal';
 
 const signupStyles = {
   overlay : {
@@ -305,61 +306,19 @@ class TutorShow extends React.Component {
           </form>
         </Modal>
 
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={signupStyles}
-          contentLabel="Example Modal"
-        >
-          <div className="signup-modal-title">Create an Account</div>
-          <div className="signup-sub">You'll be able to review everything before booking</div>
-          <form className="signup-modal-form" onSubmit={this.handleSignUp}>
-            <div className="name-container">
-              <div className="name-input-container">
-                <label>First Name</label>
-                <i class="material-icons modal-icon">person_outline</i>
-                <input className="modal-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
-                {fnameError}
-              </div>
-              <div className="name-input-container">
-                <label>Last Name</label>
-                <input className="modal-input" id="lname" type="text" value={this.state.lname} onChange={this.handleChange('lname')}></input>
-                {lnameError}
-              </div >
-            </div>
-            <div className="modal-container">
-              <label>Email Address</label>
-              <i class="material-icons modal-icon">mail_outline</i>
-              <input className="modal-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
-              {emailError}
-            </div >
-            <div className="modal-container">
-              <label>Password</label>
-              <i class="material-icons modal-icon">vpn_key</i>
-              <input className="modal-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
-              {passwordError}
-            </div >
-            <div className="modal-container">
-              <label>Zip Code</label>
-              <i class="material-icons modal-icon">place</i>
-              <input className="modal-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
-              {zipcodeError}
-            </div >
-            <div className="modal-container">
-              <label>Phone Number</label>
-              <i class="material-icons modal-icon">phone</i>
-              <input className="modal-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
-              {phoneNumError}
-            </div >
-            <button className="signup-button modal-button">Create Account</button>
-            <div className="switch-modal">
-              <span>Have an account?</span>
-              <div className="signup-login-link" onClick={this.openLogIn}>
-                <span>Log in</span>
-              </div>
-            </div>
-          </form>
-        </Modal>
+        <SignupModal
+          state={this.state}
+          handleSignUp={this.handleSignUp}
+          handleChange={this.handleChange}
+          openLogIn={this.openLogIn}
+          signupStyles={signupStyles}
+          fnameError={fnameError}
+          lnameError={lnameError}
+          emailError={emailError}
+          passwordError={passwordError}
+          zipcodeError={zipcodeError}
+          phoneNumError={phoneNumError}
+          />
 
         <div className="header-container">
           <header className="page-header">
