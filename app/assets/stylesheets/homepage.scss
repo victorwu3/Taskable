@@ -240,9 +240,55 @@ footer {
   width: 600px;
 }
 .how-it-works {
-  padding: 6em 0;
-  background: #f9fafb;
+  padding: 4em 0;
+  background: aliceblue;
 
+}
+
+.how-it-works-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 300;
+
+}
+
+.how-it-works-step {
+  display: flex;
+  margin-bottom: 6rem;
+}
+
+.how-it-works-step-label {
+  color: #86919d;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #86919d;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-it-works-step-content {
+  margin-left: 1rem;
+  text-align: left;
+
+}
+
+.how-it-works-step-name {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+.how-it-works-step-description {
+  font-size: 1.125rem;
+  font-weight: 100;
+}
+.how-it-works-step-pic {
+  width: 180px;
+  margin-bottom: 2.5rem;
 }
 
 .how-it-works-separator {
