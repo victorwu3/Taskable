@@ -92,10 +92,13 @@ class SignupForm extends React.Component {
         <div className="login-background"></div>
         <div className="login-signup-panel">
           <div className="signup-page-container">
-            <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
+            <Link to="/">
+              <img className="logo" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/logo.png" alt=""></img>
+            </Link>
             <form className="signup-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>First Name</label>
+                <i class="material-icons modal-icon">person_outline</i>
                 <input className="text-input" id="fname" type="text" value={this.state.fname} onChange={this.handleChange('fname')}></input>
                 {fnameError}
               </div>
@@ -106,21 +109,25 @@ class SignupForm extends React.Component {
               </div >
               <div className="input-container">
                 <label>Email Address</label>
+                <i class="material-icons modal-icon">mail_outline</i>
                 <input className="text-input" id="email" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
                 {emailError}
               </div >
               <div className="input-container">
                 <label>Password</label>
+                <i class="material-icons modal-icon">vpn_key</i>
                 <input className="text-input" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
                 {passwordError}
               </div >
               <div className="input-container">
                 <label>Zip Code</label>
+                <i class="material-icons modal-icon">place</i>
                 <input className="text-input" id="zip" type="text" value={this.state.zipcode} onChange={this.handleChange('zipcode')}></input>
                 {zipcodeError}
               </div >
               <div className="input-container">
                 <label>Phone Number</label>
+                <i class="material-icons modal-icon">phone</i>
                 <input className="text-input" id="phone" type="text" value={this.state.phone_num} onChange={this.handleChange('phone_num')}></input>
                 {phoneNumError}
               </div >
