@@ -5,6 +5,7 @@ import DateBoxItem from './date_box_item';
 import Modal from 'react-modal';
 import TrustBanner from '../shared/trust_banner';
 import SignupModal from './modals/signup_modal';
+import LoginModal from './modals/login_modal';
 
 const signupStyles = {
   overlay : {
@@ -277,35 +278,14 @@ class TutorShow extends React.Component {
 
     return (
       <div className="main">
-        <Modal
-          isOpen={this.state.modal2IsOpen}
-          onRequestClose={this.closeModal2}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <div className="signup-modal-title">Please log in to continue.</div>
-          <form onSubmit={this.handleSubmit}>
-            <div className="modal-container">
-              <label>Email Address</label>
-              <i class="material-icons modal-icon">mail_outline</i>
-              <input className="modal-input" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
-              {errors}
-            </div>
-            <div className="modal-container">
-              <label>Password</label>
-              <i class="material-icons modal-icon">vpn_key</i>
-              <input className="modal-input" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
-            </div >
-            <button className="login-button modal-button">Log In</button>
-            <div className="switch-modal">
-              <span>Don't have an account?</span>
-              <div className="signup-login-link" onClick={this.openSignUp}>
-                <span>Sign up</span>
-              </div>
-            </div>
-          </form>
-        </Modal>
-
+        <LoginModal
+          state={this.state}
+          handleSubmit={this.handleSubmit}
+          openSignUp={this.openSignUp}
+          customStyles={customStyles}
+          handleChange={this.handleChange}
+          errors={errors}
+          />
         <SignupModal
           state={this.state}
           handleSignUp={this.handleSignUp}
