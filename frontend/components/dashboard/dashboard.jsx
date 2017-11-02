@@ -30,7 +30,9 @@ class Dashboard extends React.Component{
   }
 
   openModal(e) {
+    debugger
     localStorage.setItem('reviewUserId', e.target.id);
+    localStorage.setItem('reviewSubjectId', e.target.parentElement.id);
     this.setState({modalIsOpen: true});
   }
 
@@ -60,7 +62,11 @@ class Dashboard extends React.Component{
     const currentUser = this.props.currentUser;
       return(
         <div>
-          <CompleteBooking isOpen={this.state.modalIsOpen} closeModal={this.closeModal} author={this.props.currentUser.id}/>
+          <CompleteBooking
+            isOpen={this.state.modalIsOpen}
+            closeModal={this.closeModal}
+            author={this.props.currentUser.id}
+            />
           <div className="main">
 
             <div className="header-container">

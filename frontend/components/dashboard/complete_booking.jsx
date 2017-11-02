@@ -16,6 +16,7 @@ class CompleteBooking extends React.Component {
 
   componentDidMount(){
     this.setState({user_id: parseInt(localStorage.getItem('reviewUserId'))});
+    this.setState({subject_id: parseInt(localStorage.getItem('reviewSubjectId'))});
   }
 
   handleChange(field) {
@@ -26,6 +27,14 @@ class CompleteBooking extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+    debugger
+    let params = {
+      user_id: this.state.user_id,
+      author_id: this.state.author_id,
+      positive: this.state.positive,
+      body: this.state.body,
+      subject_id: this.state.subject_id
+    }
     
   }
 
@@ -53,7 +62,6 @@ class CompleteBooking extends React.Component {
     };
 
     let booking = this.props.booking;
-
     return (
       <Modal
         isOpen={this.props.isOpen}
