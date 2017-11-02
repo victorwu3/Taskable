@@ -235,3 +235,44 @@ footer {
 .footer-link {
   font-size: 1rem;
 }
+
+.how-it-works-container {
+  width: 600px;
+}
+.how-it-works {
+  padding: 6em 0;
+  background: #f9fafb;
+
+}
+
+.how-it-works-separator {
+  border: 1px solid transparent;
+  border-top-color: #86919d;
+  width: 7.5rem;
+  margin: 3rem auto 4rem;
+}
+.taskable-pledge {
+  display: flex;
+  text-align: left;
+}
+
+.how-it-works-pledge-pic {
+  max-width: 60px;
+  margin-bottom: 2rem;
+}
+
+.how-it-works-pledge-text-container {
+  margin-left: 1.5rem;
+}
+
+.pledge-name {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  margin-top: 1.6rem;
+  font-weight: 300;
+}
+
+.pledge-description {
+  font-size: 1.125rem;
+  font-weight: 100;
+}

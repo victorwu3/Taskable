@@ -120,19 +120,37 @@ class Homepage extends React.Component{
                 </div>
               </div>
             </div>
-
-            <section className="get-inspired">
-
-            </section>
-
             <section className="how-it-works">
+              <div className="main-content-container">
+                <div className="how-it-works-container">
+                  <h2 className="how-it-works-title">How it Works</h2>
+                  <div className="how-it-works-steps-container">
+                    <div className="how-it-works-step">
 
+                    </div>
+                    <div className="how-it-works-step">
+
+                    </div>
+                    <div className="how-it-works-step">
+
+                    </div>
+                  </div>
+                  <div className="how-it-works-separator">
+
+                  </div>
+                  <div className="taskable-pledge">
+                    <img className="how-it-works-pledge-pic" src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/pledge.svg"></img>
+                    <div className="how-it-works-pledge-text-container">
+                      <div className="pledge-name">The Taskable Satisfaction Pledge</div>
+                      <div className="pledge-description">Trust and safety are our top priority. All Tutors must undergo extensive background and identity checks. Always have peace of mind with our money back guarantee.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
             <section className="footer-container">
               <Footer />
             </section>
-
-
           </div>
         </div>
       );
