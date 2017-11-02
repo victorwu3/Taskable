@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import BookingItem from './booking_item';
 import Footer from '../shared/footer';
 import CompleteBookingContainer from './complete_booking_container';
+import HowToGetStarted from './how_to_get_started';
 
 class Dashboard extends React.Component{
 
@@ -97,7 +98,10 @@ class Dashboard extends React.Component{
 
                 {results}
 
+
+
                 <div className="row how-to-get-started">
+                  <HowToGetStarted />
                 </div>
 
                 <div className="form-pictures">

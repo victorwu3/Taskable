@@ -1,4 +1,13 @@
 # Taskable
+==========
+
+This is a Ruby on Rails application 
+
+
+
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

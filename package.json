@@ -18,6 +18,7 @@
     "react-facebook-login-component": "^0.9.1",
     "react-google-autocomplete": "^1.0.15",
     "react-google-login-component": "^0.9.2",
+    "react-list": "^0.8.8",
     "react-modal": "^3.1.0",
     "react-places-autocomplete": "^5.4.3",
     "react-redux": "^5.0.6",

@@ -117,3 +117,54 @@
   width: 100%;
   margin-right: 2rem;
 }
+
+.how-to-get-started-container {
+  margin-bottom: 3rem;
+}
+
+.get-started-step {
+  display: flex;
+}
+
+.get-started-figure {
+  margin-right: 1.5em;
+  margin-top: 1em;
+}
+
+.get-started-icon {
+  background-color: #67727e;
+  font-size: 1.25em;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  margin-top: 7px;
+  align-items: center;
+  justify-content: center;
+  line-height: 43px;
+}
+
+.get-started-title {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: normal;
+}
+
+.get-started-sub {
+  margin: 0 0 1rem 0;
+  color: #242a30;
+  font-family: "Proxima", Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.get-started-name {
+  color: #67727e;
+  line-height: 1.25;
+  margin-bottom: .3em;
+  font-weight: 400;
+}
