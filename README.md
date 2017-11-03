@@ -37,8 +37,9 @@ A sorted by field, a date field, and time selection dropdown were created to hel
 I chose to mimic the actual TaskRabbit site and created an array of 2 weeks worth of date-buttons instead of using a date-type input. This was done by manipulating the current Date so the site will update accordingly at any time.
 Implementing all three parameters was a tricky, making sure each change changed the React state of the page accordingly. A change in the state triggers a re-filter of the list of available tutors and re-renders the updated, sorted list.
 
+### Creating an array of date selection boxes
 
-```cpp
+```
 dateArrays(num) {
   let result = [];
   let x = new Date;
@@ -65,6 +66,7 @@ After logging in or signing up, they are subsequently logged in and able to make
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png" width="400">
 </div>
 
+### Conditional to prompt login modal
 
 ```
 handleBook(id) {
