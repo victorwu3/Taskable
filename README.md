@@ -20,7 +20,6 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 - many more awesome features to come...
 
 ![Splash Page](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+9.21.59+AM.png)
-![Form page with Google autocomplete](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.03.30+AM.png)
 
 ## Result Filtering and Sorting
 
@@ -46,6 +45,25 @@ dateArrays(num) {
 }
 ```
 
+
+
+
+
+
+![Form page with Google autocomplete](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.03.30+AM.png)
+
+
+## Built with
+- [Ruby on Rails](http://rubyonrails.org/) - A server-side web application framework written in Ruby, a MVC framework.
+- [React-Redux](https://github.com/reactjs/react-redux) - Redux is a predictable state container for JavaScript apps.
+- [Google Maps Places Api](https://developers.google.com/places/web-service/) - Gets data from same database used by Google Maps.
+- [Facebook Login Api](https://developers.facebook.com/docs/facebook-login/) - Facebook Login is a secure, fast and convenient way for people to log into your app or website.
+- [Google Signin](https://developers.google.com/identity/) - Google Sign-In is a secure authentication system that reduces the burden of login for your users, by enabling them to sign in with their Google account.
+
+## To-do
+- Implement reviews for each tutor. When browsing available tutors, users should be able to click on an individual user and view all of their previous reviews and a rating based on all of those reviews.
+- Add location functionality - check whether or not user inputted address is within range of any tutors.
+- Add a form for users to become a tutor
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
