@@ -45,12 +45,30 @@ dateArrays(num) {
 }
 ```
 
+## Prompt login or signup upon booking
 
+If user attempts to make a booking but is not signed in, a modal comes up to prompt user to sign up or log in.
 
+After logging in or signing up, they are subsequently logged in and able to make a booking.
 
+![sign up modal](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png)
+![login modal](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png)
+```cpp
+handleBook(id) {
+  return ((e) => {
+    if (this.props.loggedIn) {
+      const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
+      localStorage.setItem('selectedTime', times[this.state.time]);
+      let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
+      localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
+      this.props.history.push('/tutors/confirm');
+    } else {
+      this.openModal();
+    }
+  }).bind(this);
+}
+```
 
-
-![Form page with Google autocomplete](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.03.30+AM.png)
 
 
 ## Built with
@@ -67,23 +85,3 @@ dateArrays(num) {
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
