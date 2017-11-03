@@ -54,7 +54,9 @@ After logging in or signing up, they are subsequently logged in and able to make
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png" width="400">
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png" width="400">
 </div>
-```cpp
+
+
+```
 handleBook(id) {
   return ((e) => {
     if (this.props.loggedIn) {
