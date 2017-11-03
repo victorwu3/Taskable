@@ -5,9 +5,10 @@
 
 This is a Ruby on Rails application with a React-redux front-end inspired by the website TaskRabbit. It has the essential functionality of the TaskRabbit application but instead of hiring taskers for manual labor, Taskable allows hiring of tutors for educational help.
 
+---
+
 ## Demo
 Here is the working live demo : https://taskable.herokuapp.com
----
 
 ## Features
 - User authentication with additional social log in buttons (Facebook/Google)
