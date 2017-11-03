@@ -9,7 +9,7 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 
 ## Demo
 Here is the working live demo : https://taskable.herokuapp.com
-![demologin](https://giphy.com/gifs/l4Epek6Tq7cdmvar6)
+<iframe src="https://giphy.com/embed/l4Epek6Tq7cdmvar6" width="480" height="340" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/l4Epek6Tq7cdmvar6">via GIPHY</a></p>
 
 ## Features
 - User authentication with additional social log in buttons (Facebook/Google)
