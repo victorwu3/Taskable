@@ -51,9 +51,8 @@ If user attempts to make a booking but is not signed in, a modal comes up to pro
 
 After logging in or signing up, they are subsequently logged in and able to make a booking.
 
-![sign up modal](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png)
-<img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png" width="50">
-![login modal](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png)
+<img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png" width="400">
+<img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png" width="400">
 ```cpp
 handleBook(id) {
   return ((e) => {
