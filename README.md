@@ -9,6 +9,7 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 
 ## Demo
 Here is the working live demo : https://taskable.herokuapp.com
+![demologin](https://giphy.com/gifs/l4Epek6Tq7cdmvar6)
 
 ## Features
 - User authentication with additional social log in buttons (Facebook/Google)
@@ -32,6 +33,8 @@ Here is the working live demo : https://taskable.herokuapp.com
 
 A sorted by field, a date field, and time selection dropdown were created to help filter and sort the results of your search.
 I chose to mimic the actual TaskRabbit site and created an array of 2 weeks worth of date-buttons instead of using a date-type input. This was done by manipulating the current Date so the site will update accordingly at any time.
+Implementing all three parameters was a tricky, making sure each change changed the React state of the page accordingly. A change in the state triggers a re-filter of the list of available tutors and re-renders the updated, sorted list.
+
 
 ```cpp
 dateArrays(num) {
@@ -54,7 +57,7 @@ dateArrays(num) {
 
 If user attempts to make a booking but is not signed in, a modal comes up to prompt user to sign up or log in.
 
-After logging in or signing up, they are subsequently logged in and able to make a booking.
+After logging in or signing up, they are subsequently logged in and able to make a booking. Users can switch between the signup and login modal.
 <div display="flex">
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.40.03+AM.png" width="400">
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png" width="400">
