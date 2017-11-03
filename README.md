@@ -9,7 +9,8 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 
 ## Demo
 Here is the working live demo : https://taskable.herokuapp.com
-<div style="width:100%;height:0;padding-bottom:71%;position:relative;"><iframe src="https://giphy.com/embed/l4Epek6Tq7cdmvar6" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/l4Epek6Tq7cdmvar6">via GIPHY</a></p>
+![demologin](https://media.giphy.com/media/l4Epek6Tq7cdmvar6/giphy.gif)
+
 ## Features
 - User authentication with additional social log in buttons (Facebook/Google)
 - Searching for address using Google Places Api autocomplete
