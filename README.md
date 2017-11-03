@@ -9,6 +9,8 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 
 ## Demo
 Here is the working live demo : https://taskable.herokuapp.com
+
+
 ![demologin](https://media.giphy.com/media/l4Epek6Tq7cdmvar6/giphy.gif)
 
 ## Features
@@ -29,7 +31,7 @@ Here is the working live demo : https://taskable.herokuapp.com
 
 ## Result Filtering and Sorting
 
-![sorting results](https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.09.56+AM.png)
+![sorting results](https://media.giphy.com/media/xT1Ra7FBsNjpPnREly/giphy.gif)
 
 A sorted by field, a date field, and time selection dropdown were created to help filter and sort the results of your search.
 I chose to mimic the actual TaskRabbit site and created an array of 2 weeks worth of date-buttons instead of using a date-type input. This was done by manipulating the current Date so the site will update accordingly at any time.
