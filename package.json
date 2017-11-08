@@ -44,7 +44,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "inline-environment-variables-webpack-plugin": "^1.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/victorwu3/Taskable.git"

@@ -1,4 +1,5 @@
 var path = require('path');
+var InlineEnvironmentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 
 module.exports = {
   entry: './frontend/taskable.jsx',
@@ -20,5 +21,8 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '*']
-  }
+  },
+  plugins: [
+    new InlineEnvironmentVariablesPlugin()
+  ],
 };
