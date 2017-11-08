@@ -91,13 +91,13 @@ class LoginForm extends React.Component {
             <form className="login-form" onSubmit={this.handleSubmit}>
               <div className="input-container">
                 <label>Email Address</label>
-                <i class="material-icons modal-icon">mail_outline</i>
+                <i className="material-icons modal-icon">mail_outline</i>
                 <input className="text-input email-typed" id="login" type="text" value={this.state.email} onChange={this.handleChange('email')}></input>
                 {errors}
               </div>
               <div className="input-container">
                 <label>Password</label>
-                <i class="material-icons modal-icon">vpn_key</i>
+                <i className="material-icons modal-icon">vpn_key</i>
                 <input className="text-input password-typed" id="password" type="password" value={this.state.password} onChange={this.handleChange('password')}></input>
               </div >
               <button className="login-button">Log In</button>

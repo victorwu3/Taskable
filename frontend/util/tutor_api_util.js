@@ -6,12 +6,6 @@ export const fetchTutors = params => (
   })
 );
 
-export const fetchTutor = id => (
-  $.ajax({
-    method: 'get',
-  })
-);
-
 export const createBooking = params => (
   $.ajax({
     method: 'post',

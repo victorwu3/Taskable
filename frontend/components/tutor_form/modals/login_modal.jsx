@@ -53,7 +53,7 @@ class LoginModal extends React.Component {
       >
         <div className="modal-top-row">
           <div className="signup-modal-title">Please log in to continue.</div>
-          <i class="material-icons modal-close" onClick={this.props.closeModal2}>close</i>
+          <i className="material-icons modal-close" onClick={this.props.closeModal2}>close</i>
         </div>
         <form onSubmit={this.props.handleSubmit}>
           <div className="modal-container">
