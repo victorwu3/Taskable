@@ -27,6 +27,7 @@ module.exports = {
   output: {
     filename: './app/assets/javascripts/bundle.js',
   },
+  plugins: plugins,
   module: {
     loaders: [
       {
