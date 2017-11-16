@@ -2,6 +2,7 @@ import * as SessionApiUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'
 
 
 export const receiveCurrentUser = current_user => {
@@ -18,6 +19,11 @@ export const receiveErrors = errors => {
   });
 };
 
+export const clearSessionErrors = () => {
+  return ({
+    type: CLEAR_ERRORS
+  });
+};
 export const updateUser = (formData, userId) => dispatch => {
   return SessionApiUtil.updateUser(formData, userId).then(
     (user) => dispatch(receiveCurrentUser(user))
@@ -48,3 +54,7 @@ export const fblogin = email => dispatch => {
     (user) => dispatch(receiveCurrentUser(user)),
     (errors) => dispatch(receiveErrors(errors)));
 };
+
+export const clearErrors = () => dispatch => {
+  return dispatch(clearSessionErrors());
+}

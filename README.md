@@ -87,7 +87,9 @@ handleBook(id) {
 
 ## Built with
 - [Ruby on Rails](http://rubyonrails.org/) - A server-side web application framework written in Ruby, a MVC framework.
-- [React-Redux](https://github.com/reactjs/react-redux) - Redux is a predictable state container for JavaScript apps.
+- [React](https://reactjs.org/) - React is a JS library to build an interactive, seamless UI
+- [Redux](https://redux.js.org/) - Predictable state container for JS apps
+- [React-Redux](https://github.com/reactjs/react-redux) - Binds React state with Redux store
 - [Google Maps Places Api](https://developers.google.com/places/web-service/) - Gets data from same database used by Google Maps.
 - [Facebook Login Api](https://developers.facebook.com/docs/facebook-login/) - Facebook Login is a secure, fast and convenient way for people to log into your app or website.
 - [Google Signin](https://developers.google.com/identity/) - Google Sign-In is a secure authentication system that reduces the burden of login for your users, by enabling them to sign in with their Google account.

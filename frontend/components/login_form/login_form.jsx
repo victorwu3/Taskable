@@ -18,7 +18,9 @@ class LoginForm extends React.Component {
       password: ""
     };
   }
-
+  componentWillMount() {
+    this.props.clearErrors();
+  }
   responseFacebook (response) {
     this.props.fblogin(response.email);
   }
@@ -63,6 +65,7 @@ class LoginForm extends React.Component {
     } else {
       errors = (<div></div>);
     }
+    // this.props.errors = [];
 
     return(
       <div className="login-page">
