@@ -146,6 +146,7 @@ class TutorShow extends React.Component {
   }
 
   openLogIn() {
+    // this.props.clearErrors();
     this.closeModal();
     this.openModal2();
   }

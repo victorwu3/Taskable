@@ -60,7 +60,7 @@ class LoginModal extends React.Component {
             <label>Email Address</label>
             <i className="material-icons modal-icon">mail_outline</i>
             <input className="modal-input" id="login" type="text" value={this.props.state.email} onChange={this.props.handleChange('email')}></input>
-            {this.props.errors}
+            <div className="error-msg">{this.props.errors.includes('Invalid email/password combination') ? "Invalid Email/Password Combination" : ""}</div>
           </div>
           <div className="modal-container">
             <label>Password</label>
