@@ -25,13 +25,13 @@ class Account extends React.Component{
                 <div>
                   <ul className="side-nav">
                     <Link to="/account" className="side-nav-link"><li className="side-nav-item">Profile</li></Link>
-                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Become a Tasker</li></Link>
+                    <Link to="/taskerform" className="side-nav-link"><li className="side-nav-item">Become a Tasker</li></Link>
                   </ul>
                 </div>
               </div>
               <Switch>
                 <Route path="/account/edit" component={AccountEditFormContainer} />
-                <Route path="/account" component={AccountInfoContainer} />
+                <Route path="/account/" component={AccountInfoContainer} />
               </Switch>
             </div>
 
