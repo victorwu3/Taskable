@@ -38,10 +38,7 @@ class Account extends React.Component{
                 <div>
                   <ul className="side-nav">
                     <Link to="/account" className="side-nav-link"><li className="side-nav-item">Profile</li></Link>
-                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Password</li></Link>
-                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Billing Info</li></Link>
                     <Link to="/account" className="side-nav-link"><li className="side-nav-item">Become a Tasker</li></Link>
-                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Deactivate Account</li></Link>
                   </ul>
                 </div>
               </div>
