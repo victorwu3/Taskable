@@ -75,9 +75,9 @@ handleBook(id) {
       localStorage.setItem('selectedTime', times[this.state.time]);
       let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
       localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
-      this.props.history.push('/tutors/confirm');
+      this.props.history.push('/tutors/confirm');  // redirect to next page to book a tutor
     } else {
-      this.openModal();
+      this.openModal(); // open signup modal to prompt user to sign up
     }
   }).bind(this);
 }
