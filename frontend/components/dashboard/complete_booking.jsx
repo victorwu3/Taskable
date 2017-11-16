@@ -31,7 +31,6 @@ class CompleteBooking extends React.Component {
       subject_id: parseInt(localStorage.getItem('reviewSubjectId')),
       booking_id: parseInt(localStorage.getItem('bookingId'))
     }
-    debugger
     this.props.updateBooking(params).then(this.props.createReview(params).then(()=>this.props.history.push('/')));
   }
 
