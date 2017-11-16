@@ -37,7 +37,10 @@ class Account extends React.Component{
               <div className="account-panel">
                 <div>
                   <ul className="side-nav">
-                    <li className="side-nav-item">Profile</li>
+                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Profile</li></Link>
+                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Password</li></Link>
+                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Billing Info</li></Link>
+                    <Link to="/account" className="side-nav-link"><li className="side-nav-item">Deactivate Account</li></Link>
                   </ul>
                 </div>
               </div>

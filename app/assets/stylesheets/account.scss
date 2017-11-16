@@ -116,3 +116,26 @@
   z-index: 1;
   opacity: 0;
 }
+
+.side-nav {
+  list-style: none;
+  color: #51af33;
+  padding-left: 0;
+  margin: 0;
+}
+
+.side-nav-item {
+  border-bottom: 1px solid #dce0e6;
+  padding-left: 40px;
+  padding: 18px 40px;
+  cursor: pointer;
+}
+
+.side-nav-link {
+  text-decoration: none;
+  color: #51af33;
+}
+
+.side-nav-link:hover {
+  color: #438e29;
+}
