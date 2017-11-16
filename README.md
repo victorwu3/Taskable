@@ -98,6 +98,3 @@ handleBook(id) {
 - Implement reviews for each tutor. When browsing available tutors, users should be able to click on an individual user and view all of their previous reviews and a rating based on all of those reviews.
 - Add location functionality - check whether or not user inputted address is within range of any tutors.
 - Add a form for users to become a tutor
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
