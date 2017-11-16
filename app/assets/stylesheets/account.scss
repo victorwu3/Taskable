@@ -125,10 +125,13 @@
 }
 
 .side-nav-item {
-  border-bottom: 1px solid #dce0e6;
   padding-left: 40px;
   padding: 18px 40px;
   cursor: pointer;
+}
+
+.side-nav-item:hover {
+    border-left: 5px solid gray;
 }
 
 .side-nav-link {
@@ -138,4 +141,5 @@
 
 .side-nav-link:hover {
   color: #438e29;
+
 }
