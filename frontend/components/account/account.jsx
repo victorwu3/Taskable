@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import AccountInfoContainer from './account_info_container';
 import AccountEditFormContainer from './account_edit_form_container';
+import AccountHeader from '../shared/header'
 
 class Account extends React.Component{
 
@@ -11,22 +12,8 @@ class Account extends React.Component{
   render() {
     return (
       <div className="main">
-        <div className="header-container">
-          <header className="page-header">
-            <div className="header-elements-container">
-              <Link className="header-logo" to="/dashboard" ></Link>
-              <div className="header-links-container">
-                <Link to="/dashboard" className="homepage-login-button">
-                  <span>Dashboard</span>
-                </Link>
-                <Link to="/account" className="homepage-login-button">
-                  <span>Account</span>
-                </Link>
-                <span onClick={this.props.logout} className="homepage-signup-button">Logout</span>
-              </div>
-            </div>
-          </header>
-        </div>
+        <AccountHeader logout={this.props.logout}/>
+
 
         <div className="account-container">
           <h1>
