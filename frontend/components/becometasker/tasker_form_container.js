@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import TaskerForm from './tasker_form';
+import { createTutor } from '../../actions/tutor_actions';
 import { logout } from '../../actions/session_actions';
 
 
@@ -10,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     logout: () => dispatch(logout()),
+    createTutor: (params) => dispatch(createTutor(params))
 });
 };
 

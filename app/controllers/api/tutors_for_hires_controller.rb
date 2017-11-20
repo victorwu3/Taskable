@@ -15,9 +15,20 @@ class Api::TutorsForHiresController < ApplicationController
     render :index
   end
 
+  def create
+    tutor = TutorsForHire.where({user_id: params[:user_id], subject_id: params[:subject_id]})
+    if tutor.length > 0
+      render json: ["You already have signed up to be a tutor for that Subject. To edit, go to your Account page"], status: 401
+    else
+      @tutor = TutorsForHire.create!(tutorParams)
+    end
+  end
+
   def show
   end
 
-
+  def tutorParams
+    params.permit(:user_id, :subject_id, :rate, :description, :first_tier, :second_tier, :third_tier)
+  end
 
 end

@@ -6,20 +6,33 @@ class TaskerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSubject: 0,
-      ed_lvl: null,
+      subject_id: 1,
       description: null,
-      rate: 50
+      rate: 50,
+      user_id: this.props.currentUser.id,
+      first_tier: false,
+      second_tier: false,
+      third_tier: false
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.check= this.check.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e){
-
+    e.preventDefault();
+    this.props.createTutor(this.state);
   }
 
   handleChange(field) {
     return (e) => {
-      this.setState({ params: Object.assign(this.state, {[field]: e.target.value}) });
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  check(field) {
+    return (e) => {
+      this.setState({[field] : e.target.checked})
     };
   }
 
@@ -43,7 +56,7 @@ class TaskerForm extends React.Component {
             <div className="build-form-input">
               <h4>What Subject can you Tutor in?</h4>
               <div className="subject-select-container">
-                <select className="subject-select" name="subject" id="mySelect" value={this.state.currentSubject} onChange={this.handleChange('currentSubject')}>
+                <select className="subject-select" name="subject" id="mySelect" value={this.state.subject_id} onChange={this.handleChange('subject_id')}>
                   <option value="0" disabled="true">Please select a Subject</option>
                   <option value="1" defaultValue>Math</option>
                   <option value="2">Chemistry</option>
@@ -68,22 +81,19 @@ class TaskerForm extends React.Component {
             </div>
             <div className="build-form-input">
               <h4 className="education-subtitle">What level of education can you provide service for?</h4>
-
-              <ul>
-                <fieldset className="radio-buttons" id="group1" onChange={this.handleChange('ed_lvl')}>
+              <ul className="radio-buttons">
                   <li>
-                    <label className="form-radio-btn"><input type="radio" id="k8" name="group1" value="first_tier"></input>
-                       Elementary K-8</label>
+                    <label><input id="first_tier" type="checkbox" value="first_tier" checked={this.state.first_tier} onChange={this.check('first_tier')}></input>
+                      Elementary K-8</label>
                   </li>
                   <li>
-                    <label><input type="radio" id="hs" name="group1" value="second_tier"></input>
-                       High School Level</label>
+                    <label><input id="second_tier" type="checkbox" value="second_tier" checked={this.state.second_tier} onChange={this.check('second_tier')}></input>
+                      High School Level</label>
                   </li>
                   <li>
-                    <label><input type="radio" id="college" name="group1" value="third_tier"></input>
-                       College/Graduate Level</label>
+                    <label><input id="third_tier" type="checkbox" value="third_tier" checked={this.state.third_tier} onChange={this.check('third_tier')}></input>
+                      College/Graduate Level</label>
                   </li>
-                </fieldset>
               </ul>
             </div>
             <div className="build-form-input">

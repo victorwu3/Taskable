@@ -58,3 +58,7 @@ export const createReview = (params) => dispatch => {
 export const updateBooking = params => dispatch => {
   return TutorApiUtil.updateBooking(params);
 }
+
+export const createTutor = params => dispatch => {
+  return TutorApiUtil.createTutor(params);
+}

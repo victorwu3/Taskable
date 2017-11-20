@@ -36,3 +36,11 @@ export const updateBooking = params => (
     data: params
   })
 )
+
+export const createTutor = params => (
+  $.ajax({
+    method: 'post',
+    url: `/api/subjects/${params.subject_id}/tutors_for_hires`,
+    data: params
+  })
+)
