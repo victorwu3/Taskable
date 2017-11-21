@@ -38,3 +38,12 @@ export const updateUser = (formData, userId) => (
     data: formData
   })
 );
+
+export const createAvlTimes = avlTimes => (
+  $.ajax({
+    method: 'post',
+    // TODO: interpolate user id
+    url: '/api/users/:user_id/available_times',
+    data: avlTimes
+  })
+);

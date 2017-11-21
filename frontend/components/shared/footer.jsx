@@ -17,18 +17,17 @@ const Footer = () => {
           <div className="footer-column">
             <span>About TaskRabbit</span>
             <div className="links">
-              <Link className="footer-link" to="#">Become a Tasker</Link>
-              <Link className="footer-link" to="#">The TaskRabbit Elite</Link>
-              <Link className="footer-link" to="#">Buy a Gift Card</Link>
-              <Link className="footer-link" to="#">TaskRabbit for Good</Link>
-              <Link className="footer-link" to="#">Help</Link>
+              <Link className="footer-link" to="/taskerform">Become a Tasker</Link>
+              <a className="footer-link" href="https://www.taskrabbit.com/">TaskRabbit</a>
+              <a className="footer-link" href="https://www.taskrabbit.com/taskrabbit-good">TaskRabbit for Good</a>
+              <a className="footer-link" href="https://support.taskrabbit.com/hc/en-us">Help</a>
             </div>
           </div>
           <div className="footer-column">
             <span>About Me</span>
             <div className="links">
-              <Link className="footer-link" to="#">Portfolio</Link>
-              <Link className="footer-link" to="#">Resume</Link>
+              <a className="footer-link" href="http://victorwu.me">Portfolio</a>
+              <a className="footer-link" href="https://drive.google.com/file/d/1wfr454n6T0ij_Uu23SHNqtjZPjJL4Ztf/view?usp=sharing">Resume</a>
               <a className="footer-link" href="https://github.com/victorwu3">Github</a>
               <a className="footer-link" href="https://www.linkedin.com/in/victorwu3/">LinkedIn</a>
             </div>

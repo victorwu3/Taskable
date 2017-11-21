@@ -35,7 +35,8 @@ const Times = ({component: Component, path, loggedIn}) => (
 
 
 const mapStateToProps = state => {
-  return {loggedIn: Boolean(state.session.currentUser)
+  return {loggedIn: Boolean(state.session.currentUser),
+    avlTimes: Boolean(state.session.avlTimes)
   };
 };
 

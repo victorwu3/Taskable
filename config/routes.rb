@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update, :destroy] do
       resources :hired_tutors, only: [:index, :show, :create, :update]
       resources :reviews, only: [:index, :show, :create]
+      resources :available_times, only: [:index, :create]
     end
     resource :session, only: [:create, :destroy, :show]
     post 'fbsession', to: 'sessions#fblogin'
