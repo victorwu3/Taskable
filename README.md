@@ -65,23 +65,7 @@ After logging in or signing up, they are subsequently logged in and able to make
 <img src="https://s3.us-east-2.amazonaws.com/app-taskable-pro/Screen+Shot+2017-11-03+at+10.42.16+AM.png" width="400">
 </div>
 
-#### Conditional to prompt login modal
 
-```
-handleBook(id) {
-  return ((e) => {
-    if (this.props.loggedIn) {
-      const times = { 1: 'Morning 8AM-12PM', 2: 'Afternoon 12PM - 4PM', 3: 'EVENING 4PM-8PM', '1,2,3': "I'm Flexible"};
-      localStorage.setItem('selectedTime', times[this.state.time]);
-      let selectedTutor = JSON.parse(localStorage.getItem('tutors')).filter(tutor=>{return tutor.id===id;});
-      localStorage.setItem('selectedTutor', JSON.stringify(selectedTutor));
-      this.props.history.push('/tutors/confirm');  // redirect to next page to book a tutor
-    } else {
-      this.openModal(); // open signup modal to prompt user to sign up
-    }
-  }).bind(this);
-}
-```
 
 
 
