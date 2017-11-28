@@ -7,12 +7,14 @@ import TrustBanner from '../shared/trust_banner';
 import SignupModal from './modals/signup_modal';
 import LoginModalContainer from './modals/login_modal_container';
 import SortingContainer from './sorting_container';
+import Typed from 'typed.js';
 
 class TutorShow extends React.Component {
 
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.chooseBox = this.chooseBox.bind(this);
     this.handleBook = this.handleBook.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -96,6 +98,20 @@ class TutorShow extends React.Component {
         return result;
       default: return this.state.tutors;
     }
+  }
+
+  demoLogin() {
+    new Typed("#login", {
+      strings: ['guest@taskable.com'],
+      typeSpeed: 30
+    });
+    setTimeout(()=> {
+      new Typed("#password" ,{
+      strings: ['password'],
+      typeSpeed: 30
+    });}, 1000);
+
+    setTimeout(()=> this.props.login({email: 'guest@taskable.com', password: 'password'}).then(this.setState({modal2IsOpen: false})).then(this.setState({modalIsOpen: false})), 2100);
   }
 
   openModal() {
@@ -244,6 +260,7 @@ class TutorShow extends React.Component {
           handleChange={this.handleChange}
           errors={errors}
           closeModal2={this.closeModal2}
+          demoLogin={this.demoLogin}
           />
         <SignupModal
           state={this.state}

@@ -65,13 +65,18 @@ class LoginModal extends React.Component {
           <div className="modal-container">
             <label>Password</label>
             <i className="material-icons modal-icon">vpn_key</i>
-            <input className="modal-input" type="password" value={this.props.state.password} onChange={this.props.handleChange('password')}></input>
+            <input className="modal-input" id="password" type="password" value={this.props.state.password} onChange={this.props.handleChange('password')}></input>
           </div >
           <button className="login-button modal-button">Log In</button>
           <div className="switch-modal">
             <span>Don't have an account?</span>
             <div className="signup-login-link" onClick={this.props.openSignUp}>
               <span>Sign up</span>
+            </div>
+            <div className="demo-login">
+              <div className="login-signup-link" onClick={this.props.demoLogin}>
+                <span>Demo Login</span>
+              </div>
             </div>
           </div>
           <div className="or">Or</div>
