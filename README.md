@@ -34,7 +34,7 @@ Here is the working live demo : https://taskable.me/
 ![sorting results](https://media.giphy.com/media/xT1Ra7FBsNjpPnREly/giphy.gif)
 
 A sorted by field, a date field, and time selection dropdown were created to help filter and sort the results of your search.
-Implementing all three parameters was a tricky, making sure each change changed the React state of the page accordingly. A change in the state triggers a re-filter of the list of available tutors and re-renders the updated, sorted list.
+Implementing all three parameters was tricky, making sure each change changed the React state of the page accordingly. A change in the state triggers a re-filter of the list of available tutors and re-renders the updated, sorted list.
 
 #### Creating an array of date selection boxes
 
