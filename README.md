@@ -8,7 +8,7 @@ This is a Ruby on Rails application with a React-redux front-end inspired by the
 ---
 
 ## Demo
-Here is the working live demo : https://taskable.herokuapp.com
+Here is the working live demo : https://taskable.me/
 
 
 ![demologin](https://media.giphy.com/media/l4Epek6Tq7cdmvar6/giphy.gif)

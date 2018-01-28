@@ -21,6 +21,7 @@ export const geolocate = (autocomplete) => {
   };
 };
 
+
 export const addAptNumToAddress = (address, apt_num) => {
   address_components = address.split(",");
 
